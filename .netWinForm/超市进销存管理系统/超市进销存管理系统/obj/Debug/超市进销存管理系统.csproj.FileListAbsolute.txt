@@ -1,0 +1,113 @@
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Form1.resources
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.Cache
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Form2.resources
+c:\users\s509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Form3.resources
+C:\Users\S509-1\documents\visual studio 2013\Projects\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csprojResolveAssemblyReference.cache
+G:\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+G:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+G:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+E:\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+E:\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+E:\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.cache
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Login.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Homepage.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Employee.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Supplier.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Base.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_info.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Refund.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.AssemblyReference.cache
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.CoreCompileInputs.cache
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Custom.resources
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_manage.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.AssemblyReference.cache
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Base.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Custom.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Login.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Homepage.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Employee.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_info.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_manage.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Refund.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Supplier.resources
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.cache
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.CoreCompileInputs.cache
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+C:\Users\Qiu\Desktop\作业\.NET\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale_Info.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csprojResolveAssemblyReference.cache
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Base.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Custom.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale_Info.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Login.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Homepage.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Employee.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_info.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_manage.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Refund.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Supplier.resources
+C:\Users\wh\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.Cache
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.AssemblyReference.cache
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Base.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Custom.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale_Info.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Login.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Homepage.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Employee.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_info.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_manage.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Refund.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Supplier.resources
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.cache
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.CoreCompileInputs.cache
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+C:\Users\pmy\Desktop\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe.config
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\bin\Debug\超市进销存管理系统.exe
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\bin\Debug\超市进销存管理系统.pdb
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.AssemblyReference.cache
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Base.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Custom.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale_Info.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Login.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Homepage.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Employee.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_info.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Product_manage.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Properties.Resources.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Refund.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.Supplier.resources
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.GenerateResource.cache
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.csproj.CoreCompileInputs.cache
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.exe
+C:\Users\pmy\Desktop\超市进销存管理系统last\超市进销存管理系统\obj\Debug\超市进销存管理系统.pdb
+E:\超市进销存管理系统\超市进销存管理系统\obj\Debug\超市进销存管理系统.Sale_Info.resources
