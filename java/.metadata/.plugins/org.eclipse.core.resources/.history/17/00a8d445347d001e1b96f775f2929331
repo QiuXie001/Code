@@ -1,0 +1,9 @@
+
+public class Example05_1 {
+	public static void main(String[] args) {
+		String str1 =new String("Hello,world!");
+		String str2 = new String("Helllo,world!,0,5");
+		System.out.println("str1:"+str1);
+		System.out.println("str2:"+str2);
+    }
+}

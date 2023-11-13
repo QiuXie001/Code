@@ -1,0 +1,300 @@
+package com.v1;
+class Student1{
+	String name;
+	int age;
+	public Student1(String name,int age) {
+		this.name=name;
+		this.age=age;
+	}
+	public void speak() {
+		System.out.println(name);
+		System.out.println(age);
+	}
+}
+public class MainClass {
+public static void main(String[] arg) {
+	Student1 stu1=new Student1("正义",36);
+	stu1.speak();
+	
+}
+}
+
+
+package com.v1;
+class Student1{
+	String name;
+	int age;
+
+	public Student1(String name,int age) {
+		this(name);
+		this.age=age;
+	}
+	public void speak() {
+		System.out.println(name);
+		System.out.println(age);
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public Student1() {
+		System.out.println("无参数构造方法");
+	}
+	public Student1(String name) {
+		System.out.println("单参数构造方法");
+		this.name=name;
+	}
+}
+public class MainClass {
+public static void main(String[] arg) {
+	Student1 stu1=new Student1("正义",36);
+	stu1.speak();
+	Student1 stu2=new Student1();
+	stu2.setName("温良");
+	stu2.setAge(37);
+	stu2.speak();
+	System.out.println(stu2.getName());
+	Student1 stu3=new Student1("周易");
+	stu3.speak();
+	
+}
+}
+
+
+package com.v1;
+
+import com.v2.Student1;
+
+public class MainClass {
+public static void main(String[] arg) {
+	Student1 stu1=new Student1("侠义",35);
+	stu1.speak();
+	
+}
+}
+
+package com.v2;
+
+public class Student1 {
+	String name;
+	int age;
+	public Student1(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	public void speak() {
+		System.out.println(name);
+		System.out.println(age);
+	}
+}
+
+package com.v1;
+
+import com.v2.Student1;
+
+public class MainClass {
+
+public static void main(String[] arg) {
+	Student1 stu1=new Student1();
+	stu1.speak();
+	stu1.setAge(16);
+	stu1.speak();
+	stu1.setAge(-7);
+	stu1.speak();
+	
+}
+}
+
+package com.v2;
+
+import java.util.Scanner;
+
+public class Student1 {
+
+	String name;
+	int age;
+	public Student1(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		if(age>0) {
+			this.age = age;
+		}
+		else
+		{
+			System.out.println("年龄不能为负数,重新输入");
+			Scanner scan=new Scanner(System.in);
+			int newAge=scan.nextInt();
+			setAge(newAge);
+		}
+	}
+	public Student1() {
+		
+	}
+
+	public void speak() {
+		System.out.println(name);
+		System.out.println(age);
+	}
+}
+
+package com.v1;
+
+import com.v2.Student1;
+class Family{
+	String first;
+	String second;
+	public Family(String first,String second) {
+		this.first=first;
+		this.second=second;
+	}
+	public void speak() {
+		System.out.print(first);
+		System.out.println(second);
+	}
+}
+public class MainClass {
+
+public static void main(String[] arg) {
+	Family obj1=new Family("张","飞");
+	Family obj2=new Family("张","良");
+	obj1.speak();
+	obj2.speak();
+	
+	
+}
+}
+
+package com.v1;
+
+import com.v2.Student1;
+class Family{
+	static String  first;
+	String second;
+	public Family(String first,String second) {
+		this.first=first;
+		this.second=second;
+	}
+	public void speak() {
+		System.out.print(first);
+		System.out.println(second);
+	}
+}
+public class MainClass {
+
+public static void main(String[] arg) {
+	Family obj1=new Family("张","飞");
+	Family obj2=new Family("李","良");
+	obj1.speak();
+	obj2.speak();
+	obj1.speak();
+	
+	
+}
+}
+
+package com.v1;
+
+import com.v2.Student1;
+class Family{
+	static String  first;
+	String second;
+	public Family(String first,String second) {
+		this.first=first;
+		this.second=second;
+	}
+	public void speak() {
+		System.out.print(first);
+		System.out.println(second);
+	}
+	public static void preSpeak() {
+		System.out.println("preprocessing-----------");
+		
+	}
+}
+public class MainClass {
+
+public static void main(String[] arg) {
+	Family.preSpeak();
+	System.out.println(Family.first);
+	Family obj1=new Family("张","飞");
+	System.out.println(Family.first);
+	Family obj2=new Family("李","良");
+	System.out.println(Family.first);
+	obj1.speak();
+	obj2.speak();
+	obj1.speak();
+	obj1.preSpeak();
+	
+	
+}
+}
+
+package com.v1;
+
+import com.v2.Student1;
+class Family{
+	static {
+		System.out.println("Family static code");
+	}
+	static String  first;
+	String second;
+	public Family(String first,String second) {
+		this.first=first;
+		this.second=second;
+		 {
+			System.out.println("constructor code");
+		}
+	}
+	public void speak() {
+		System.out.print(first);
+		System.out.println(second);
+	}
+	public static void preSpeak() {
+		System.out.println("preprocessing-----------");
+		
+	}
+}
+public class MainClass {
+static {
+	System.out.println("MainClass static code");
+}
+public static void main(String[] arg) {
+	Family.preSpeak();
+	System.out.println(Family.first);
+	Family obj1=new Family("张","飞");
+	System.out.println(Family.first);
+	Family obj2=new Family("李","良");
+	System.out.println(Family.first);
+	obj1.speak();
+	obj2.speak();
+	obj1.speak();
+	obj1.preSpeak();
+	
+	
+}
+}

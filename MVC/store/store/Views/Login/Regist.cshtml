@@ -1,0 +1,38 @@
+﻿@model db.Account
+@{
+    ViewBag.Title = "Regist";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regist</title>
+    <link rel="stylesheet" href="~/css/Regist.css">
+</head>
+<h2>Regist</h2>
+@using (Html.BeginForm("Regist", "Login", FormMethod.Post))
+{
+<div>
+    用户名：@Html.TextBox("username", "", new { @class = "", id_text = "" })
+</div>
+<div>
+    密码：@Html.TextBox("password")
+</div>
+<div>
+    年龄：@Html.RadioButton("age", "18")<span>18</span>
+    @Html.RadioButton("age", "19")<span>19</span>
+    @Html.RadioButton("age", "20")<span>20</span>
+    @Html.RadioButton("age", "21")<span>21</span>
+</div>
+<div>
+    城市：@Html.DropDownList("city",db.bill.City.GetCity())
+</div>
+<div>
+    爱好：@Html.ListBox("hobby",db.bill.Hobby.GetHobby())
+</div>  
+<div>
+    @Html.ActionLink("返回", "List", "Book")
+</div>                                                                                                                                        
+<p>
+    <input type="submit" value="注册" />
+</p>
+}

@@ -1,0 +1,5 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "dotnet.preferCSharpExtension": true,
+    "git.ignoreLimitWarning": true
+}

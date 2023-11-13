@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "UserInfo";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserInfo</title>
+    <link rel="stylesheet" href="~/css/Regist.css">
+</head>
+<h2>UserInfo--注册成功</h2>
+@using (Html.BeginForm("UserInfo", "Login", FormMethod.Get))
+{
+    <div>name = @TempData["username"]</div>
+    <div>password = @TempData["password"]</div>
+    <div>age = @TempData["age"]</div>
+    <div>city = @TempData["city"]</div>
+    <div>hobby = @TempData["hobby"]</div>
+}

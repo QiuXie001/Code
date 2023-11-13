@@ -1,0 +1,2 @@
+D:\Code\Test\dbLibrary\obj\Debug\dbLibrary.csproj.AssemblyReference.cache
+D:\Code\Test\dbLibrary\obj\Debug\dbLibrary.csproj.CoreCompileInputs.cache

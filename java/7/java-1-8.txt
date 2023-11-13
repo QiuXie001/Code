@@ -1,0 +1,198 @@
+class Animal{
+public void sleep(){}
+}
+class Cat extends Animal{
+public void sleep(){
+System.out.println("cat sleep");
+}
+public void catchMouse(){
+System.out.println("cat catchMouse");
+}
+}
+class Dog extends Animal{
+public void sleep(){
+System.out.println("dog sleep");
+}
+public void catchMouse(){
+System.out.println("dog catchMouse");
+}
+}
+public class MainClass{
+public static void main(String[] args)
+{
+Cat cat=new Cat();
+cat.sleep();
+Animal animal1=cat;
+animal1.sleep();
+Dog dog=new Dog();
+Animal animal2=dog;
+animal2.sleep();
+Dog dog2=(Dog)animal2;
+dog2.sleep();
+}
+}
+
+abstract class Animal{
+public abstract void sleep();
+}
+class Cat extends Animal{
+public void sleep(){
+System.out.println("cat sleep");
+}
+public void catchMouse(){
+System.out.println("cat catchMouse");
+}
+}
+class Dog extends Animal{
+public void sleep(){
+System.out.println("dog sleep");
+}
+public void catchMouse(){
+System.out.println("dog catchMouse");
+}
+}
+public class MainClass{
+public static void main(String[] args)
+{
+Cat cat=new Cat();
+cat.sleep();
+Animal animal1=cat;
+animal1.sleep();
+Dog dog=new Dog();
+Animal animal2=dog;
+animal2.sleep();
+Dog dog2=(Dog)animal2;
+dog2.sleep();
+}
+}
+
+interface Animal{
+public void sleep();
+}
+class Cat implements Animal{
+public void sleep(){
+System.out.println("cat sleep");
+}
+public void catchMouse(){
+System.out.println("cat catchMouse");
+}
+}
+class Dog implements Animal{
+public void sleep(){
+System.out.println("dog sleep");
+}
+public void catchMouse(){
+System.out.println("dog catchMouse");
+}
+}
+public class MainClass{
+public static void main(String[] args)
+{
+Cat cat=new Cat();
+cat.sleep();
+Animal animal1=cat;
+animal1.sleep();
+Dog dog=new Dog();
+Animal animal2=dog;
+animal2.sleep();
+Dog dog2=(Dog)animal2;
+dog2.sleep();
+}
+}
+
+interface Inter{
+public void show();
+public void method();
+}
+class Temp implements Inter{
+public void show(){
+System.out.println("I am show");
+}
+public void method(){
+System.out.println("I am method");
+}
+}
+class Outer{
+public void function(Inter con){
+System.out.println("I am going to call show and method");
+con.show();
+con.method();
+}
+}
+public class MainClass{
+public static void main(String[] args)
+{
+new Outer().function(new Temp());
+new Outer().function(new Inter(){
+public void show(){
+System.out.println("I am not show");
+}
+public void method(){
+System.out.println("I am not method");
+}
+});
+}
+}
+
+
+public class MainClass{
+public static void main(String[] args) throws ArithmeticException
+{
+System.out.println(3/0);
+}
+}
+
+
+public class MainClass{
+public static void main(String[] args) throws Exception
+{
+System.out.println("before");
+throw new Exception("definition exception");
+
+}
+}
+
+
+public class MainClass{
+public static void main(String[] args) throws Exception
+{
+int[] a={10,100};
+System.out.println(a[2]);
+
+}
+}
+
+class Dog extends Cat{
+}
+class Cat{
+}
+public class MainClass{
+public static void main(String[] args) throws Exception
+{
+Dog dog=(Dog)new Cat();
+
+}
+}
+
+
+public class MainClass{
+public static void main(String[] args) throws Exception
+{
+try{
+//double x=3/0;
+throw new Exception("123");
+}
+catch(ArithmeticException e){
+System.out.println("you can not divide 0 "+e.getMessage());
+}
+catch(Exception e)
+{
+System.out.println("ordinary exception "+e.getMessage());
+System.exit(0);
+}
+finally{
+System.out.println("forever in there");
+}
+}
+}
+

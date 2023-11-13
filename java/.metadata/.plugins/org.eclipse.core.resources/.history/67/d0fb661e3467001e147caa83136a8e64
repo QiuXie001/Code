@@ -1,0 +1,25 @@
+package com.v1;
+
+public class T5 {
+	String name;
+	int className;
+	public T5(String name,int className) {
+		this.name=name;
+		this.className=className;
+	}
+	public void speak() {
+		System.out.println(name);
+		System.out.println(className);
+	}
+}
+class MainClass {
+public static void main(String[] arg) {
+	T5 stu1=new T5("正义",36);
+	stu1.speak();
+	T5 stu2=new T5("正义",36);
+	stu2.speak();
+	T5 stu3=new T5("正义",36);
+	stu3.speak();
+	
+}
+}

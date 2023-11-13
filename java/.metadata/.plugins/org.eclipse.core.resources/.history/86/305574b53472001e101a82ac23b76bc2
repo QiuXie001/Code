@@ -1,0 +1,8 @@
+interface Inter {
+    void show();
+    void method();
+}
+
+public class Example04_6 {
+
+}

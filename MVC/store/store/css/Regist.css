@@ -1,0 +1,42 @@
+﻿form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+
+input[type="checkbox"],
+input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+    input[type="radio"] + span,
+    input[type="checkbox"] + span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: #ccc;
+        border-radius: 50%;
+    }
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }

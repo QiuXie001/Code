@@ -1,0 +1,12 @@
+
+public class Example04_4 {
+	interface Animal {
+	    void sleep();
+	}
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.v1;
+
+public class T5 {
+	String name;
+	int age;
+	public T5(String name,int age) {
+		this.name=name;
+		this.age=age;
+	}
+	public void speak() {
+		System.out.println(name);
+		System.out.println(age);
+	}
+}
+public class MainClass {
+public static void main(String[] arg) {
+	Student1 stu1=new Student1("正义",36);
+	stu1.speak();
+	
+}
+
+}

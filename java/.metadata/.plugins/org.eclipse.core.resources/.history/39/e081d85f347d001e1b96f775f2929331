@@ -1,0 +1,13 @@
+public class Example05_1 {  
+    public static void main(String[] args) {  
+        // 使用不同的构造方法创建字符串对象  
+        String str1 = new String("Hello, world!");  
+        String str2 = new String("Hello, world!", 0, 5);  
+        String str3 = new String("Hello, world!", 0);
+
+        // 输出字符串内容  
+        System.out.println("str1: " + str1);  
+        System.out.println("str2: " + str2);  
+        System.out.println("str3: " + str3);  
+    }  
+}

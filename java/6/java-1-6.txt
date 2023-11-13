@@ -1,0 +1,141 @@
+package com.v1;
+
+import com.v2.Student;
+class Visitor{
+	String name;
+	{
+		this.name="abc";
+		System.out.println("constructor code");
+	}
+	public Visitor() {
+		System.out.println("constructor method");
+	}
+	public static void staticMethod() {
+		{
+			System.out.println("exectute until called");
+		}
+	}
+}
+public class MainClass {
+	static {
+		System.out.println("static code in MainClass");
+	}
+public static void main(String[] arg) {
+	Visitor v1=new Visitor();
+	Visitor v2=new Visitor();
+	v2.staticMethod();
+}
+}
+
+package com.v1;
+
+import com.v2.Student;
+class Visitor{
+	String name;
+	static int counter=0;
+	public Visitor(String name) {
+		this.name=name;
+		counter++;
+		{
+			System.out.println(name+" 你是第"+counter+"个访问者！");
+		}
+	}
+	public void staticMethod() {
+		
+	}
+}
+public class MainClass {
+	static {
+		System.out.println("static code in MainClass");
+	}
+public static void main(String[] arg) {
+	Visitor v1=new Visitor("张三");
+	Visitor v2=new Visitor("李四");
+	Visitor v3=new Visitor("王五");
+
+}
+}
+
+package com.v1;
+
+import com.v2.Student;
+class Son extends Object{
+	public String toString() {
+		return "个性化的Son模样";
+	}
+}
+class Son1{
+	public String toString() {
+		return "个性化的Son1模样";
+	}
+}
+public class MainClass {
+
+public static void main(String[] arg) {
+	System.out.println(new Son());
+	System.out.println(new Son1());
+
+}
+}
+
+package com.v1;
+
+import com.v2.Student;
+class Person{
+	String name;
+	
+	public Person(String name) {
+		super();
+		this.name = name;
+	}
+
+	public void work() {
+		System.out.println("我是父类的work方法");
+	}
+}
+class Worker extends Person{
+	String skill;
+	public Worker(String name,String skill) {
+		super(name);
+		this.skill=skill;
+	}
+	public void work() {
+		System.out.println("我是"+name+",我的工种是"+skill);
+	}
+	public void exercise() {
+		System.out.println("业余我喜欢打篮球");
+	}
+}
+class Teacher extends Person{
+	String subject;
+	public Teacher(String name,String subject) {
+		super(name);
+		this.subject=subject;
+	}
+	public void work() {
+		System.out.println("我教的是"+subject);
+	}
+	public void study() {
+		System.out.println("执行work");
+		super.work();
+		System.out.println("终身学习");
+	}
+}
+public class MainClass {
+
+public static void main(String[] arg) {
+	Teacher teacher=new Teacher("张三","计算机");
+	teacher.work();
+	teacher.study();
+	Worker work=new Worker("李四","车工");
+	work.work();
+	work.exercise();
+	Person per=new Person("王五");
+	per=teacher;
+	per.work();
+	per=work;
+	per.work();
+	Person per1=new Person("周仓");
+
+}
+}

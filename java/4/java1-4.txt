@@ -1,0 +1,158 @@
+package com.v1;
+class Teacher {
+String info="教书育人";
+public void work() {
+	System.out.println("教书");
+}
+}
+class Student1 extends Teacher{
+	public void work() {
+		System.out.println("编程");
+	}
+}
+class Student2 extends Teacher{
+	public void work() {
+		System.out.println("设计");
+	}
+}
+public class MainClass {
+public static void main(String[] arg) {
+	Teacher teacher=new Teacher();
+	Student1 stu1=new Student1();
+	Student2 stu2=new Student2();
+	teacher.work();
+	stu1.work();
+	stu2.work();
+	}
+}
+
+package com.v1;
+class Teacher {
+ private String info;
+ public Teacher(String info) {
+	 this.info=info;
+ }
+ public void display() {
+	 System.out.println(info);
+ }
+}
+
+public class MainClass {
+public static void main(String[] arg) {
+	Teacher teacher=new Teacher("教书育人");
+	teacher.display();
+	
+	}
+}
+
+
+package com.v1;
+class Teacher {
+ private String info;
+ private String name;
+ public Teacher(String info) {
+	 this.info=info;
+ }
+ public Teacher(String info, String name) {
+	this(info);
+	this.name = name;
+}
+
+public void display() {
+	 System.out.println(name);
+	 System.out.println(info);
+ }
+}
+
+public class MainClass {
+public static void main(String[] arg) {
+	Teacher teacher=new Teacher("教书育人","张三");
+	teacher.display();
+	Teacher teacher1=new Teacher("传道");
+	teacher1.display();
+	Teacher teacher2=new Teacher("传道","李四");
+	teacher2.display();
+	
+	}
+}
+
+package com.v1;
+class Teacher {
+ private String info;
+ private String name;
+ public Teacher() {
+	 
+ }
+ public Teacher(String info) {
+	 this.info=info;
+ }
+ public Teacher(String info, String name) {
+	this(info);
+	this.name = name;
+}
+
+public String getInfo() {
+	return info;
+}
+public void setInfo(String info) {
+	this.info = info;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public void display() {
+	 System.out.println(name);
+	 System.out.println(info);
+ }
+}
+
+public class MainClass {
+public static void main(String[] arg) {
+	Teacher teacher=new Teacher("教书育人","张三");
+	teacher.display();
+	Teacher teacher1=new Teacher("传道");
+	teacher1.display();
+	Teacher teacher2=new Teacher("传道","李四");
+	teacher2.display();
+	Teacher teacher3=new Teacher();
+	teacher3.display();
+	teacher3.setInfo("解惑");
+	teacher3.setName("王五");
+	teacher3.display();
+	System.out.println(teacher3.getInfo());
+	}
+}
+
+package com.v1;
+class Kong extends Object{
+	String where;
+	public Kong(String where) {
+		System.out.println("I am Kong");
+		this.where=where;
+	}
+	public String getWhere() {
+		return where;
+	}
+	public void setWhere(String where) {
+		this.where = where;
+	}
+	
+}
+class Teacher extends Kong{
+	public Teacher(String where) {
+		super(where);
+		System.out.println("先调用Kong()");
+	}
+}
+
+public class MainClass {
+public static void main(String[] arg) {
+	Teacher tea=new Teacher("曲阜");
+	Kong kon=tea;
+	System.out.println(kon.getWhere());
+}
+}
+

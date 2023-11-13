@@ -1,0 +1,256 @@
+package com.v1;
+
+public class MainClass {
+public static void main(String[] arg) {
+	System.out.println(~3);
+	System.out.println(!false);
+	
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	public  void print99() {
+		System.out.println("print 99");
+	}
+public static void main(String[] arg) {
+	System.out.println(~3);
+	System.out.println(!false);
+	MainClass obj=new MainClass();
+	obj.print99();
+	}
+}
+
+
+package com.v1;
+
+public class MainClass {
+	public static void print99() {
+		System.out.println("--------------");
+		for(int i=1;i<=9;i++) {
+			for(int j=1;j<=9;j++) {
+				if(i>=j) {
+					System.out.print(i+"*"+j+"="+i*j+" ");
+				}
+				
+			}
+			System.out.println();	
+		}
+	}
+	public static void print99(int k) {
+		System.out.println("--------------");
+		for(int i=1;i<=k;i++) {
+			for(int j=1;j<=9;j++) {
+				if(i>=j) {
+					System.out.print(i+"*"+j+"="+i*j+" ");
+				}
+				
+			}
+			System.out.println();	
+		}
+	}
+public static void main(String[] arg) {
+	System.out.println(~3);
+	System.out.println(!false);
+	print99();
+	print99(3);
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int a=-3;
+	if(a>=0) {
+		System.out.println(a +" is no negative number");
+	}else
+	{
+		System.out.println(a +" is negative number");
+	}
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int a=-3,b=-6,result=0;
+	if(a>=0) {
+		if(b>=0) {
+			result=a+b;
+		}
+		else
+		{
+			result=a-b;
+		}
+	}
+	else
+	{
+		if(b>=0) {
+			result=b-a;
+		}
+		else
+		{
+			result=-a-b;
+		}
+	}
+	System.out.println("result="+result);
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int a=-3,b=-6,result=0;
+	if(a>=0 &b>=0) {
+		result=a+b;
+	}
+	if(a>=0 &b<0) {
+		result=a-b;
+	}
+	if(a<0 &b>=0) {
+		result=b-a;
+	}
+	if(a<0 &b<0) {
+		result=-a-b;
+	}
+	System.out.println("result="+result);
+	}
+}
+
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int score=89;
+	System.out.println(89/10);
+	switch(score/10) {
+	case 10:
+		System.out.println("A");
+		break;
+case 9:
+	System.out.println("A");
+	break;
+case 8:
+	System.out.println("B");
+	//break;
+case 7:
+	System.out.println("C");
+	break;
+case 6:
+	System.out.println("D");
+	break;
+	default:
+		System.out.println("E");
+}
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int result=0;
+	int i=1;
+	for(;i<=100;) {
+		result+=i;
+		i++;
+	}
+	System.out.println(result);
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int result=0;
+	int i=1;
+	while(i<=100) {
+		result+=i;
+		i++;
+	}
+	System.out.println(result);
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int result=0;
+	int i=1;
+	while(true) {
+		result+=i;
+		i++;
+		if(i>100) break;
+	}
+	System.out.println(result);
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int result=0;
+	int i=1;
+	while(true) {
+		if(i%2==1) {
+			i++;
+			continue;
+		}
+		result+=i;
+		System.out.println(i);
+		i++;
+		if(i>100) break;
+	}
+	System.out.println(result);
+	}
+}
+
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int[] a= {1,2,3};
+	for(int i=0;i<a.length;i++) {
+		System.out.println("a["+i+"]="+a[i]);
+	}
+	}
+}
+
+package com.v1;
+
+public class MainClass {
+	
+public static void main(String[] arg) {
+	int[][] a= {{1,2,3},{4,5,6}};
+	int max=a[0][0];
+	for(int i=0;i<a.length;i++) {
+		for(int j=0;j<a[i].length;j++) {
+			System.out.print(a[i][j]+" ");
+			if(a[i][j]>max)
+				max=a[i][j];
+		}
+		System.out.println();
+	}
+	System.out.println("max="+max);
+	}
+}
+
+

@@ -1,0 +1,18 @@
+interface Animal2 {
+    void sleep();
+}
+class Cat2 implements Animal2 {
+    @Override
+    public void sleep() {
+        System.out.println("猫 睡觉");
+    }
+}
+class Pig2 implements Animal2 {
+    @Override
+    public void sleep() {
+        System.out.println("猪 睡觉");
+    }
+}
+public class Example04_5 {
+
+}

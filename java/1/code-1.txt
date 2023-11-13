@@ -1,0 +1,33 @@
+package com.v1;
+class Cat{
+	private int old;
+	static int counter;
+	public Cat(int old) {
+		this.old=old;
+		counter++;
+	}
+	public void nextYear() {
+		old++;
+	}
+	public void display() {
+		System.out.println("I am a "+old+" age cat");
+	}
+}
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("This is first java");
+		Cat littleCat=new Cat(1);
+		littleCat.display();
+		littleCat.nextYear();
+		littleCat.display();
+		Cat cat2=new Cat(2);
+		Cat cat3=new Cat(5);
+		cat2.display();
+		cat3.display();
+		System.out.println(Cat.counter);
+
+	}
+
+}
