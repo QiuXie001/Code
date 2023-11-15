@@ -10,6 +10,7 @@
 <h2>UserInfo--注册成功</h2>
 @using (Html.BeginForm("UserInfo", "Login", FormMethod.Get))
 {
+    <img src="@TempData["img"]">
     <div>name = @TempData["username"]</div>
     <div>password = @TempData["password"]</div>
     <div>age = @TempData["age"]</div>

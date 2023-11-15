@@ -11,6 +11,7 @@ using System.Data.Entity;
 using System.Web.Configuration;
 using db;
 using System.Diagnostics;
+using System.Data.Metadata.Edm;
 
 namespace store.Controllers
 {
@@ -74,6 +75,16 @@ namespace store.Controllers
         [HttpPost]
         public ActionResult Regist(string username, string password, string age, string city, string[] hobby, db.Account entry)
         {
+            Debug.WriteLine("输入测试"+ Request.Files.Count);
+            if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
+            {
+                Debug.WriteLine("输入测试");
+                string savepath = Server.MapPath("~/upload/") + Request.Files[0].FileName;
+                Request.Files[0].SaveAs(savepath);
+                Debug.WriteLine("存储测试"+savepath);
+                TempData["img"] = "/upload/"+ Request.Files[0].FileName;
+            }
+            
             TempData["username"] = username;
             TempData["password"] = password;
             TempData["age"] = age;
@@ -90,7 +101,7 @@ namespace store.Controllers
         }
         public ActionResult UserInfo() 
         {
-
+            
             return View();
         }
     }
