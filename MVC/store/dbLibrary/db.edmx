@@ -53,6 +53,8 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="1024" />
           <Property Name="Num" Type="int" />
+          <Property Name="BookType" Type="nvarchar" MaxLength="50" />
+          <Property Name="BookTag" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="mvcStudyModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
@@ -67,7 +69,9 @@
 [Detail].[BookCoverUrl] AS [BookCoverUrl], 
 [Detail].[OrderID] AS [OrderID], 
 [Detail].[Address] AS [Address], 
-[Detail].[Num] AS [Num]
+[Detail].[Num] AS [Num], 
+[Detail].[BookType] AS [BookType], 
+[Detail].[BookTag] AS [BookTag]
 FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -109,6 +113,8 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
           <Property Name="Num" Type="Int32" />
+          <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BookTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="mvcStudyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Books" />
@@ -160,6 +166,8 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           <EntitySetMapping Name="Detail">
             <EntityTypeMapping TypeName="mvcStudyModel.Detail">
               <MappingFragment StoreEntitySet="Detail">
+                <ScalarProperty Name="BookTag" ColumnName="BookTag" />
+                <ScalarProperty Name="BookType" ColumnName="BookType" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

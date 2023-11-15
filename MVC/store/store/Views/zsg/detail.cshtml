@@ -8,42 +8,51 @@
 
 <fieldset>
     <legend>Books</legend>
+    @using (Html.BeginForm("insertEntry", "book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.BookId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BookId)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.BookId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.BookId)
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AuthorName)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.AuthorName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AuthorName)
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Price)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Price)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Price)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.BookCoverUrl)
-    </div>
-    <div class="display-field">
-        <img src="@Html.DisplayFor(model => model.BookCoverUrl)" />
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.BookCoverUrl)
+        </div>
+        <div class="display-field">
+            <img src="@Html.DisplayFor(model => model.BookCoverUrl)" /><input type="file" name="BookCoverUrl" />
+        </div>
+        <div>
+            @Html.DropDownListFor(model => model.BookType, db.bill.Book.getBookTypes())
+        </div>
+        <div>
+            @Html.CheckBoxListFor(model => model.BookTag, db.bill.Book.getBookTags())
+        </div>
+        <div>
+            @Html.ActionLink("返回", "List", "Book")
+        </div>
+    }
 </fieldset>
-<p>
 
-</p>

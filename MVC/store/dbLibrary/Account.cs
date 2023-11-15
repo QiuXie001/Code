@@ -12,17 +12,13 @@ namespace db
     using System;
     using System.Collections.Generic;
     
-    public partial class Detail
+    public partial class Account
     {
-        public int BookId { get; set; }
-        public string AuthorName { get; set; }
-        public string Title { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public string BookCoverUrl { get; set; }
-        public int OrderID { get; set; }
-        public string Address { get; set; }
-        public Nullable<int> Num { get; set; }
-        public string BookType { get; set; }
-        public string BookTag { get; set; }
+        public int ID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Age { get; set; }
+        public string City { get; set; }
+        public string Hobby { get; set; }
     }
 }

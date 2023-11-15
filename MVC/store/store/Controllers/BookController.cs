@@ -31,6 +31,7 @@ namespace store.Controllers
             List<db.Detail> list = db.bill.Book.GetDetail();
             return View(list);
         }
+
         [HttpGet]
         public ActionResult Order(int bookid)
         {

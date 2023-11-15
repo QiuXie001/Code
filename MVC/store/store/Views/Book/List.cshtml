@@ -14,7 +14,7 @@
     <h2>Book List</h2>
 
     <p>
-        @Html.ActionLink("新增1", "insert1", "zsg")  @Html.ActionLink("新增2", "insert2", "zsg")
+        @Html.ActionLink("新增1", "insert1", "zsg")  @*@Html.ActionLink("新增2", "insert2", "zsg")*@
     </p>
 
     <table>
@@ -34,8 +34,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.BookCoverUrl)
             </th>
-            <th></th>
-            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -65,12 +63,12 @@
                 <td>
                     @Html.ActionLink("修改1", "update1", "zsg", new { bookid = item.BookId }, null)
                 </td>
-                <td>
+                @*<td>
                     @Html.ActionLink("修改2", "update2", "zsg", new { bookid = item.BookId }, null)
                 </td>
                 <td>
                     @Html.ActionLink("修改3", "update3", "zsg", new { bookid = item.BookId }, null)
-                </td>
+                </td>*@
                 <td>
                     @Html.ActionLink("删除", "delete", "zsg", new { bookid = item.BookId }, null)
                 </td>
