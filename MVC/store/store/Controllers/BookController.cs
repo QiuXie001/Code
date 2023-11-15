@@ -23,18 +23,18 @@ namespace store.Controllers
             string Timing = TimingActionFilter.Timing;
             ViewData["Timing"] = Timing;
             ViewBag.Timing = Timing;
-            List<db.Books> list = db.bill.books.GetBooks();
+            List<db.Books> list = db.bill.Book.GetBooks();
             return View(list);
         }
         public ActionResult OrderList()
         {
-            List<db.Detail> list = db.bill.books.GetDetail();
+            List<db.Detail> list = db.bill.Book.GetDetail();
             return View(list);
         }
         [HttpGet]
         public ActionResult Order(int bookid)
         {
-            db.Books entry = db.bill.books.GetEntry(bookid);
+            db.Books entry = db.bill.Book.GetEntry(bookid);
             return View(entry);
         }
         [HttpPost]

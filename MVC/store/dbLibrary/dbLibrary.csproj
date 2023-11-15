@@ -73,7 +73,7 @@
     <Compile Include="Account.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="bill\books.cs" />
+    <Compile Include="bill\Book.cs" />
     <Compile Include="bill\City.cs" />
     <Compile Include="bill\Error.cs" />
     <Compile Include="bill\Hobby.cs" />

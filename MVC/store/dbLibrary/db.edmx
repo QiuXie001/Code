@@ -26,6 +26,8 @@
           <Property Name="Title" Type="nvarchar" MaxLength="160" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
           <Property Name="BookCoverUrl" Type="nvarchar" MaxLength="1024" />
+          <Property Name="BookType" Type="nvarchar" MaxLength="50" />
+          <Property Name="BookTag" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -82,6 +84,8 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           <Property Name="Title" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="BookCoverUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BookTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -119,7 +123,7 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Hobby" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -133,6 +137,8 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="mvcStudyModel.Books">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="BookTag" ColumnName="BookTag" />
+                <ScalarProperty Name="BookType" ColumnName="BookType" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
