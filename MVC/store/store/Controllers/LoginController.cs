@@ -75,13 +75,10 @@ namespace store.Controllers
         [HttpPost]
         public ActionResult Regist(string username, string password, string age, string city, string[] hobby, db.Account entry)
         {
-            Debug.WriteLine("输入测试"+ Request.Files.Count);
             if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
             {
-                Debug.WriteLine("输入测试");
                 string savepath = Server.MapPath("~/upload/") + Request.Files[0].FileName;
                 Request.Files[0].SaveAs(savepath);
-                Debug.WriteLine("存储测试"+savepath);
                 TempData["img"] = "/upload/"+ Request.Files[0].FileName;
             }
             
@@ -91,11 +88,13 @@ namespace store.Controllers
             TempData["city"] = city;
             for (int i = 0; i < hobby.Length; i++)
                 TempData["hobby"] += hobby[i];
-            mvcStudyEntities db = new mvcStudyEntities();
+            if (username != "admin")
+            {
+                mvcStudyEntities db = new mvcStudyEntities();
 
-            db.Accounts.Add(entry);
-            db.SaveChanges();
-
+                db.Accounts.Add(entry);
+                db.SaveChanges();
+            }
 
             return Redirect("UserInfo");
         }

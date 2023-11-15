@@ -1,42 +1,46 @@
-﻿form {
-    width: 300px;
-    margin: 0 auto;
+﻿body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    margin: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
 }
 
 div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="password"],
-select,
-
-input[type="checkbox"],
-input[type="submit"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
+span {
+    margin-right: 10px;
 }
 
-    input[type="radio"] + span,
-    input[type="checkbox"] + span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        background-color: #ccc;
-        border-radius: 50%;
-    }
-
 input[type="submit"] {
-    background-color: #007bff;
-    color: white;
+    background-color: #4CAF50;
     border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
+a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+}
