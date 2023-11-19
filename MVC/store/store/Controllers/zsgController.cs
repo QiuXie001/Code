@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,12 +23,33 @@ namespace store.Controllers
         {
             return View();
         }
+        //保存新增图书数据-方法2
         [HttpPost]
-        public ActionResult insert1(db.Books books)
+        public ActionResult insert1(db.Books entry)
         {
-            db.bill.Book.insert1(books);
+            //视图中需要特殊处理的数据（多选和文件）
+            if (Request["BookTag"] != null)
+            {
+                entry.BookTag = Request["BookTag"].ToString();
+            }
+            if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
+            {
+                string savePath = Server.MapPath("~/upload/") + Request.Files[0].FileName;
+                Request.Files[0].SaveAs(savePath);
+                entry.BookCoverUrl = "/upload/" + Request.Files[0].FileName;
+            }
+
+            db.bill.Book.insert1(entry);
             return RedirectToAction("List", "Book");
         }
+
+        [HttpPost]
+        //public ActionResult insert1(db.Books books)
+        //{
+
+        //    db.bill.Book.insert1(books);
+        //    return RedirectToAction("List", "Book");
+        //}
         [HttpGet]
         public ActionResult insert2()
         {
@@ -46,12 +69,35 @@ namespace store.Controllers
             db.Books books= db.bill.Book.GetEntry(bookid);
             return View(books);
         }
+        //保存修改图书数据-方法3
         [HttpPost]
-        public ActionResult update1(db.Books books)
+        public ActionResult update1(db.Books entry)
         {
-            db.bill.Book.update1(books);
+            //视图中需要特殊处理的数据(多选和文件)
+            if (Request["BookTag"] != null)
+            {
+                entry.BookTag = Request["BookTag"].ToString();
+            }
+            Debug.WriteLine("进入测试"+ Request.Files.Count);
+            if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
+            {
+                Debug.WriteLine("文件非空");
+                string savePath = Server.MapPath("~/upload/") + Request.Files[0].FileName;
+                Request.Files[0].SaveAs(savePath);
+                entry.BookCoverUrl = "/upload/" + Request.Files[0].FileName;
+                Debug.WriteLine("上传测试完成");
+            }
+
+            db.bill.Book.update1(entry);
             return RedirectToAction("List", "Book");
         }
+
+        [HttpPost]
+        //public ActionResult update1(db.Books books)
+        //{
+        //    db.bill.Book.update1(books);
+        //    return RedirectToAction("List", "Book");
+        //}
 
         [HttpGet]
         public ActionResult update2(int bookid)

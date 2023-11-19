@@ -72,8 +72,17 @@ namespace db.bill
         public static void update1(db.Books entry)
         {
             mvcStudyEntities db = new mvcStudyEntities();
-            db.Entry<db.Books>(entry).State = System.Data.EntityState.Modified;
+            db.Entry<db.Books>(entry).State = System.Data.EntityState.Unchanged;
+            //List<String> list = System.Web.HttpContext.Current.Request.Form.AllKeys.ToList<string>();
+            List<string> list = System.Web.HttpContext.Current.Request.Form.AllKeys.ToList<string>();
+            foreach (var p in entry.GetType().GetProperties())
+            {
+                if (list.Contains(p.Name))
+                    db.Entry(entry).Property(p.Name).IsModified = true;
+            }
+            //db.Entry(entry).Property("Price").IsModified = true;
             db.SaveChanges();
+
         }
         public static void update2(db.Books entry)
         {

@@ -47,7 +47,7 @@
         @Html.DropDownListFor(model => model.BookType, db.bill.Book.getBookTypes())
     </div>
     <div class="editor-field">
-        @Html.CheckBoxListFor(model => model.BookType, db.bill.Book.getBookTags())
+        @Html.CheckBoxListFor(model => model.BookTag, db.bill.Book.getBookTags())
     </div>
     <p>
         <input type="submit" value="Create" />

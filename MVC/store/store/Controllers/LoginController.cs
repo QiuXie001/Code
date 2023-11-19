@@ -75,6 +75,7 @@ namespace store.Controllers
         [HttpPost]
         public ActionResult Regist(string username, string password, string age, string city, string[] hobby, db.Account entry)
         {
+            
             if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
             {
                 string savepath = Server.MapPath("~/upload/") + Request.Files[0].FileName;

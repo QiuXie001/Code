@@ -42,7 +42,7 @@
             @Html.DisplayNameFor(model => model.BookCoverUrl)
         </div>
         <div class="display-field">
-            <img src="@Html.DisplayFor(model => model.BookCoverUrl)" /><input type="file" name="BookCoverUrl" />
+            <img src="@Html.DisplayFor(model => model.BookCoverUrl)" />
         </div>
         <div>
             @Html.DropDownListFor(model => model.BookType, db.bill.Book.getBookTypes())
