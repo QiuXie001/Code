@@ -1,0 +1,328 @@
+package com.v1;
+
+import java.util.ArrayList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+	  ArrayList list = new ArrayList(); // 创建ArrayList集合
+      list.add("张三");                     // 向集合中添加元素
+      list.add("李四");
+      list.add("王五");
+      list.add("赵六");
+      // 获取集合中元素的个数
+      System.out.println("集合的长度：" + list.size());
+      // 取出并打印指定位置的元素
+      System.out.println("第2个元素是：" + list.get(1));
+      //删除索引为3的元素
+      list.remove(3);
+      System.out.println("删除索引为3的元素:"+list);
+      //替换索引为1的元素为李四2
+      list.set(1,"李四2");
+      System.out.println("替换索引为1的元素为李四2:"+list);
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+    LinkedList link = new LinkedList();   // 创建LinkedList集合
+    link.add("张三");
+    link.add("李四");
+    link.add("王五");
+    link.add("赵六");
+    System.out.println(link.toString()); // 获取并打印该集合中的元素
+    link.add(3, "Student");     // 向link集合中索引3处插入元素Student
+    link.addFirst("First");     // 向link集合第一个位置插入元素First
+    System.out.println(link);
+    System.out.println(link.getFirst()); // 取出link集合中第一个元素
+    link.remove(3);               // 移除link集合中指定索引位置为3的元素
+    link.removeFirst();          // 移除link集合中第一个元素
+    System.out.println(link);
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+    ArrayList list=new ArrayList();
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    System.out.println(list);
+    Iterator it=list.iterator();
+    while(it.hasNext()) {
+    	String obj=(String)it.next();
+    	System.out.print(obj);
+    }
+    System.out.println();
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+    ArrayList list = new ArrayList();    //创建ArrayList集合
+    list.add("张三");
+    list.add("李四");
+    list.add("王五");
+    Iterator it = list.iterator();       // 获得Iterator对象
+    while (it.hasNext()) {                // 判断该集合是否有下一个元素
+        Object obj = it.next();           // 获取该集合中的元素
+        if ("张三".equals(obj)) {         // 判断该集合中的元素是否为张三
+           list.remove(obj);              // 删除该集合中的元素
+            //break;
+            // it.remove();
+        }
+    }
+    System.out.println(list);
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+    ArrayList list = new ArrayList(); // 创建ArrayList集合
+    list.add("张三");			        // 向ArrayList集合中添加字符串元素
+    list.add("李四");
+    list.add("王五");
+    for (Object obj : list) {	     // 使用foreach循环遍历ArrayList对象
+        System.out.println(obj);	// 取出并打印ArrayList集合中的元素
+    }
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MainClass {
+
+public static void main(String[] arg){
+	 HashSet hset = new HashSet();   // 创建HashSet集合
+     hset.add("张三");                  // 向该Set集合中添加字符串
+     hset.add("李四");
+     hset.add("王五");
+     hset.add("李四");                  // 向该Set集合中添加重复元素
+     Iterator it = hset.iterator();  // 获取Iterator对象
+     while (it.hasNext()) {          // 通过while循环，判断集合中是否有元素
+         Object obj = it.next();// 如果有元素，就调用迭代器的next()方法获取元素
+         System.out.println(obj);
+     }
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+class Student{
+	int id;
+	String name;
+	public Student(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public String toString() {
+		return "id="+id+" name="+name;
+	}
+
+ public int hashCode() {
+return new Integer(id).hashCode();	                 // 返回id属性的哈希值
+}
+public boolean equals(Object obj) {
+if (this == obj) {                        // 判断是否是同一个对象
+   return true;	                      // 如果是，直接返回true
+}
+if (!(obj instanceof Student)) {	   // 判断对象是为Student类型
+   return false;
+}
+Student stu = (Student) obj;	        // 将对象强转为Student类型
+boolean b = new Integer(this.id).equals(new Integer(stu.id));   // 判断id值是否相同
+return	b;	                               // 返回判断结果
+}
+
+}
+public class MainClass {
+
+public static void main(String[] arg){
+	 Student student1=new Student(1,"张三");
+	 Student student2=new Student(2,"李四");
+	 Student student3=new Student(1,"王五");
+	 Student student4=new Student(1,"张三");
+	 HashSet hs=new HashSet();
+	 hs.add(student1);
+	 hs.add(student2);
+	 hs.add(student3);
+	 hs.add(student4);
+	 System.out.println(hs);
+	 
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeSet;
+
+public class MainClass {
+
+public static void main(String[] arg){
+    // 创建TreeSet集合
+    TreeSet ts = new TreeSet();
+    // 1、向TreeSet集合中添加元素
+    ts.add(3);
+    ts.add(29);
+    ts.add(101);
+    ts.add(21);
+    System.out.println("创建的TreeSet集合为："+ts);
+    // 2、获取首尾元素
+    System.out.println("TreeSet集合首元素为："+ts.first());
+    System.out.println("TreeSet集合尾部元素为："+ts.last());
+    // 3、比较并获取元素
+    System.out.println("集合中小于或等于9的最大的一个元素为："
+            +ts.floor(9));
+    System.out.println("集合中大于10的最小的一个元素为："+ts.higher(10));
+    System.out.println("集合中大于100的最小的一个元素为："
+            +ts.higher(100));
+    // 4、删除元素
+    Object first = ts.pollFirst();
+    System.out.println("删除的第一个元素是："+first);
+    System.out.println("删除第一个元素后TreeSet集合变为："+ts);
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeSet;
+class Student implements Comparable{
+  private String name;
+  private int age;
+  public Student(String name,int age) {
+     this.name = name;    
+     this.age = age;
+  }
+ public String toString() {
+      return name + ":" + age;
+ }
+ 
+  public int compareTo(Object obj) {
+      Student stu = (Student)obj;
+      //定义比较方式，先比较age，再比较name
+      if(this.age - stu.age > 0){
+         return 1;
+      }
+      if(this.age - stu.age == 0){
+          return this.name.compareTo(stu.name);
+      }
+     return -1;
+  }
+}
+public class MainClass {
+
+public static void main(String[] arg){
+  TreeSet ts = new TreeSet();
+  ts.add(new Student("Lucy",18));
+  ts.add(new Student("Tom",20));
+  ts.add(new Student("Bob",20));
+  ts.add(new Student("Tom",20));
+  ts.add(new Student("Tom",30));
+  System.out.println(ts);
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class MainClass {
+
+public static void main(String[] arg){
+	Map map = new HashMap();      // 创建HashMap集合
+    map.put("1", "张三");               // 存储键和值
+    map.put("2", "李四");
+    map.put("3", "王五");
+    Set keySet = map.keySet();         // 获取键的集合
+    Iterator it = keySet.iterator();  // 获取Iterator对象
+    while (it.hasNext()) {
+        Object key = it.next();
+        Object value = map.get(key);  // 获取每个键所对应的值
+        System.out.println(key + ":" + value);
+    }
+    
+}
+}
+
+package com.v1;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class MainClass {
+
+public static void main(String[] arg){
+	Map map = new TreeMap();      // 创建TreeMap集合
+    map.put(3, "李四");                  // 存储键和值
+    map.put(2, "王五");
+    map.put(4, "赵六");
+    map.put(3, "张三");
+    Set keySet = map.keySet();
+    Iterator it = keySet.iterator();
+    while (it.hasNext()) {
+        Object key = it.next();
+        Object value = map.get(key); // 获取每个键所对应的值
+        System.out.println(key+":"+value);
+    }
+}
+}
+
