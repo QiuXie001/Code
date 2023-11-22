@@ -40,9 +40,52 @@ namespace db.bill
 
             return list;
         }
+        public static List<SelectListItem> getBookTypes(string oldValue)
+        {
+            if (oldValue == null)
+            {
+                oldValue = "";
+            }
 
+            List<string> selectedList = oldValue.Split(',').ToList<string>();
+
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text = "计算机", Value = "computer" });
+            list.Add(new SelectListItem() { Text = "文学", Value = "literature" });
+            list.Add(new SelectListItem() { Text = "地理", Value = "geography" });
+
+            foreach (var item in list)
+            {
+                if (selectedList.Contains(item.Value))
+                    item.Selected = true;
+            }
+            return list;
+        }
+
+        public static List<SelectListItem> getBookTags(string oldValue)
+        {
+            if (oldValue == null)
+            {
+                oldValue = "";
+            }
+
+            List<string> selectedList = oldValue.Split(',').ToList<string>();
+
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text = "促销", Value = "sale" });
+            list.Add(new SelectListItem() { Text = "畅销", Value = "best" });
+            list.Add(new SelectListItem() { Text = "清仓", Value = "clear" });
+
+            foreach (var item in list)
+            {
+                if (selectedList.Contains(item.Value))
+                    item.Selected = true;
+            }
+            return list;
+        }
         public static List<SelectListItem> getBookTags()
         {
+
             List<SelectListItem> list = new List<SelectListItem>();
             list.Add(new SelectListItem() { Text = "促销", Value = "sale" });
             list.Add(new SelectListItem() { Text = "畅销", Value = "best" });
@@ -108,6 +151,24 @@ namespace db.bill
             db.Books.Remove(books);
             db.SaveChanges();
         }
+        public static void batchUpdate(
+            List<string> bookIdList,
+            List<string> priceList,
+            List<string> booktypeList,
+            Dictionary<string, string> dicTags)
+        {
+            mvcStudyEntities dc = new mvcStudyEntities();
+            for (int iIndex = 0; iIndex < bookIdList.Count; ++iIndex)
+            {
+                int bookId = Convert.ToInt32(bookIdList[iIndex]);
+                Books entry = dc.Books.SingleOrDefault(a => a.BookId == bookId);
+                entry.Price = Convert.ToDecimal(priceList[iIndex]);
+                entry.BookType = Convert.ToString(booktypeList[iIndex]);
+                entry.BookTag = dicTags[bookIdList[iIndex]];
+            }
+            dc.SaveChanges();
+        }
+
 
     }
 }

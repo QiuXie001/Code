@@ -1,0 +1,78 @@
+﻿@model IEnumerable<db.Books>
+@{
+    ViewBag.Title = "someUpdate";
+}
+
+<h2>someUpdate</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="~/css/list.css">
+</head>
+<body>
+    <h2>someUpdate List</h2>
+
+    @using (Html.BeginForm())
+    {
+
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AuthorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookCoverUrl)
+                </th>
+                <th>@Html.DisplayNameFor(model => model.BookType)</th>
+                <th>@Html.DisplayNameFor(model => model.BookTag)</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookId)
+                        @Html.Hidden("detail.BookId", item.BookId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AuthorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+
+                    <td>
+                        @Html.TextBox("detail.price", item.Price, new { style = "width:50px;" })
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.BookCoverUrl)" />
+                    </td>
+                    <td>
+                        @Html.DropDownList("detail.booktype", db.bill.Book.getBookTypes(item.BookType))
+                    </td>
+                    <td>
+                        @Html.CheckBoxList("detail.BookTag." + item.BookId, db.bill.Book.getBookTags(item.BookTag))
+                    </td>
+                </tr>
+
+            }
+        </table>
+        <input type="submit" value="批量修改" />
+    }
+
+        <p class="timing">
+            缓存中的页面加载时间：@ViewBag.Timing ms
+        </p>
+</body>
+</html>  

@@ -135,5 +135,36 @@ namespace store.Controllers
             db.Books entry = db.bill.Book.GetEntry(bookid);
             return View(entry);
         }
+        [HttpGet]
+        public ActionResult someUpdate()
+        {
+            string Timing = TimingActionFilter.Timing;
+            ViewData["Timing"] = Timing;
+            ViewBag.Timing = Timing;
+            List<db.Books> list = db.bill.Book.GetBooks();
+            return View(list);
+        }
+        [HttpPost]
+        public ActionResult someUpdate(string str)
+        {
+            string bookId = Request["detail.BookId"].ToString();
+            string price = Request["detail.price"].ToString();
+            string booktype = Request["detail.booktype"].ToString();
+
+            List<string> bookIdList = bookId.Split(',').ToList<string>();
+            List<string> priceList = price.Split(',').ToList<string>();
+            List<string> booktypeList = booktype.Split(',').ToList<string>();
+            Dictionary<string, string> dicTags = new Dictionary<string, string>();
+
+            foreach (var item in bookIdList)
+            {
+                string bookTag = Request["detail.BookTag." + item].ToString();
+                dicTags.Add(item, bookTag);
+            }
+
+            db.bill.Book.batchUpdate(bookIdList, priceList, booktypeList, dicTags);
+            return RedirectToAction("List", "Book");
+
+        }
     }
 }

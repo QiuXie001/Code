@@ -239,6 +239,7 @@
     <Content Include="Views\Book\test.cshtml" />
     <Content Include="Views\Login\Regist.cshtml" />
     <Content Include="Views\Login\UserInfo.cshtml" />
+    <Content Include="Views\zsg\someUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

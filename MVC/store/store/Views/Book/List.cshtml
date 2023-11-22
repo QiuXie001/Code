@@ -16,7 +16,9 @@
     <p>
         @Html.ActionLink("新增1", "insert1", "zsg")  @*@Html.ActionLink("新增2", "insert2", "zsg")*@
     </p>
-
+    <p>
+        @Html.ActionLink("批量修改", "someUpdate", "zsg") 
+    </p>
     <table>
         <tr>
             <th>
@@ -34,9 +36,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.BookCoverUrl)
             </th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.BookType)</th>
+            <th>@Html.DisplayNameFor(model => model.BookTag)</th>
             <th></th>
         </tr>
         @foreach (var item in Model)
@@ -58,17 +59,23 @@
                     <img src="@Html.DisplayFor(modelItem => item.BookCoverUrl)" />
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.BookType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTag)
+                </td>
+                <td>
                     @Html.ActionLink("购买", "Order", new { bookid = item.BookId })
                 </td>
                 <td>
                     @Html.ActionLink("修改1", "update1", "zsg", new { bookid = item.BookId }, null)
                 </td>
                 @*<td>
-                    @Html.ActionLink("修改2", "update2", "zsg", new { bookid = item.BookId }, null)
-                </td>
-                <td>
-                    @Html.ActionLink("修改3", "update3", "zsg", new { bookid = item.BookId }, null)
-                </td>*@
+            @Html.ActionLink("修改2", "update2", "zsg", new { bookid = item.BookId }, null)
+        </td>
+        <td>
+            @Html.ActionLink("修改3", "update3", "zsg", new { bookid = item.BookId }, null)
+        </td>*@
                 <td>
                     @Html.ActionLink("删除", "delete", "zsg", new { bookid = item.BookId }, null)
                 </td>
