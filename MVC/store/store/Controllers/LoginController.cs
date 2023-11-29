@@ -1,17 +1,12 @@
-﻿using db.bill;
+﻿using System;
 using store.Uitl.Filters;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Data.Entity;
-using System.Web.Configuration;
 using db;
+using db.bill;
 using System.Diagnostics;
-using System.Data.Metadata.Edm;
+using System.Data.Entity.Validation;
+
 
 namespace store.Controllers
 {
@@ -32,10 +27,10 @@ namespace store.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string username,string password) 
+        public ActionResult Login(int UserID,string password) 
         {
             mvcStudyEntities db = new mvcStudyEntities();
-            Account account = db.Accounts.SingleOrDefault(a => a.Username == username ) ;
+            db.Account account = db.Accounts.SingleOrDefault(a => a.UserID == UserID);
             password = password.PadRight( 10, ' ' );
             //if (account.Password == password)
             //    Debug.WriteLine("通过");
@@ -67,13 +62,14 @@ namespace store.Controllers
                 TempData.Clear();
             }
         }
+        [HttpGet]
         public ActionResult Regist()
         {
-            
-            return View();
+            db.Account entry = new db.Account();    
+            return View(entry);
         }
         [HttpPost]
-        public ActionResult Regist(string username, string password, string age, string city, string[] hobby, db.Account entry)
+        public ActionResult Regist(db.Account entry)
         {
             
             if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
@@ -82,22 +78,16 @@ namespace store.Controllers
                 Request.Files[0].SaveAs(savepath);
                 TempData["img"] = "/upload/"+ Request.Files[0].FileName;
             }
-            
-            TempData["username"] = username;
-            TempData["password"] = password;
-            TempData["age"] = age;
-            TempData["city"] = city;
-            for (int i = 0; i < hobby.Length; i++)
-                TempData["hobby"] += hobby[i];
-            if (username != "admin")
+            if (ModelState.IsValid)
             {
-                mvcStudyEntities db = new mvcStudyEntities();
-
-                db.Accounts.Add(entry);
-                db.SaveChanges();
+                TempData["userName"] = entry.Password;
+                TempData["age"] = entry.Age;
+                TempData["email"] = entry.Email;
+                TempData["identityID"] = entry.identityID;
+                TempData["telephone"] = entry.telephone;
+                return RedirectToAction("UserInfo");
             }
-
-            return Redirect("UserInfo");
+            return View(entry);
         }
         public ActionResult UserInfo() 
         {

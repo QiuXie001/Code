@@ -11,7 +11,7 @@ namespace store
             filters.Add(new HandleErrorAttribute());
             filters.Add(new Filters.LoginFilteringAttribute());
             filters.Add(new TimingActionFilter());
-            
+            filters.Add(new Filters.ErrorAttribute());  
         }
     }
 }

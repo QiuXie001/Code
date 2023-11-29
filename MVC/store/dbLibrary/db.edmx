@@ -7,15 +7,14 @@
     <Schema Namespace="mvcStudyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Age" Type="nchar" MaxLength="10" />
-          <Property Name="City" Type="nchar" MaxLength="10" />
-          <Property Name="Hobby" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="50" />
+          <Property Name="identityID" Type="nchar" MaxLength="10" />
+          <Property Name="telephone" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -124,15 +123,14 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
         </EntityContainer>
         <EntityType Name="Account">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Hobby" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="identityID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="telephone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -182,12 +180,12 @@ FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="mvcStudyModel.Account">
               <MappingFragment StoreEntitySet="Accounts">
-                <ScalarProperty Name="Hobby" ColumnName="Hobby" />
-                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="identityID" ColumnName="identityID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

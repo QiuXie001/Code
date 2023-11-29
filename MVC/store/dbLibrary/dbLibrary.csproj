@@ -73,6 +73,7 @@
     <Compile Include="Account.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="bill\Account.cs" />
     <Compile Include="bill\Book.cs" />
     <Compile Include="bill\City.cs" />
     <Compile Include="bill\Error.cs" />
@@ -100,6 +101,9 @@
     <Compile Include="Detail.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="meta\Account.cs" />
+    <Compile Include="meta\Book.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
@@ -111,15 +115,47 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="bin\Debug\dbLibrary.dll.config" />
     <None Include="db.edmx.diagram">
       <DependentUpon>db.edmx</DependentUpon>
     </None>
+    <None Include="obj\Debug\dbLibrary.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\dbLibrary.csproj.CopyComplete" />
+    <None Include="obj\Debug\dbLibrary.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\db.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\db.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\db.ssdl" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\dbLibrary.dll" />
+    <Content Include="bin\Debug\dbLibrary.pdb" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\System.Web.Helpers.dll" />
+    <Content Include="bin\Debug\System.Web.Helpers.xml" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.Razor.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Web.WebPages.resources.dll" />
     <Content Include="db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>db.edmx</DependentUpon>
@@ -130,6 +166,12 @@
       <DependentUpon>db.edmx</DependentUpon>
       <LastGenOutput>db.cs</LastGenOutput>
     </Content>
+    <Content Include="obj\Debug\dbLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\dbLibrary.dll" />
+    <Content Include="obj\Debug\dbLibrary.pdb" />
+    <Content Include="obj\Debug\TempPE\db.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\db.cs.dll" />
+    <Content Include="obj\Debug\TempPE\db.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

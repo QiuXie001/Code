@@ -1,41 +1,71 @@
 ﻿@model db.Account
+
 @{
     ViewBag.Title = "Regist";
 }
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regist</title>
-    <link rel="stylesheet" href="~/css/Regist.css">
-</head>
+
 <h2>Regist</h2>
-@using (Html.BeginForm("Regist", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Account</legend>
+
+    <div class="editor-label">
         <input type="file" name="img">
-    
-    <div>
-        用户名：@Html.TextBox("username", "", new { @class = "", id_text = "" })
     </div>
-    <div>
-        密码：@Html.TextBox("password")
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Password)
     </div>
-    <div>
-        年龄：@Html.RadioButton("age", "18")<span>18</span>
-        @Html.RadioButton("age", "19")<span>19</span>
-        @Html.RadioButton("age", "20")<span>20</span>
-        @Html.RadioButton("age", "21")<span>21</span>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
     </div>
-    <div>
-        城市：@Html.DropDownList("city", db.bill.City.GetCity())
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Age)
     </div>
-    <div>
-        爱好：<br/>@Html.CheckBoxList("hobby", db.bill.Hobby.GetHobby())
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Age)
+        @Html.ValidationMessageFor(model => model.Age)
     </div>
-    <div>
-        @Html.ActionLink("返回", "List", "Book")
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
     </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.identityID)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.identityID)
+        @Html.ValidationMessageFor(model => model.identityID)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.telephone)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.telephone)
+        @Html.ValidationMessageFor(model => model.telephone)
+    </div>
+
     <p>
-        <input type="submit" value="注册" />
+        <input type="submit" value="Create" />
     </p>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

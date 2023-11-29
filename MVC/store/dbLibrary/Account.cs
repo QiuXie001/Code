@@ -14,11 +14,12 @@ namespace db
     
     public partial class Account
     {
-        public int ID { get; set; }
-        public string Username { get; set; }
+
+        public int UserID { get; set; }
         public string Password { get; set; }
         public string Age { get; set; }
-        public string City { get; set; }
-        public string Hobby { get; set; }
+        public string Email { get; set; }
+        public string identityID { get; set; }
+        public string telephone { get; set; }
     }
 }

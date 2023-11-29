@@ -11,9 +11,12 @@
 @using (Html.BeginForm("UserInfo", "Login", FormMethod.Get))
 {
     <img src="@TempData["img"]">
-    <div>name = @TempData["username"]</div>
+    <div>UserID = @TempData["UserID"]</div>
     <div>password = @TempData["password"]</div>
     <div>age = @TempData["age"]</div>
-    <div>city = @TempData["city"]</div>
-    <div>hobby = @TempData["hobby"]</div>
+    @*<div>city = @TempData["city"]</div>
+        <div>hobby = @TempData["hobby"]</div>*@
+    <div>Email = @TempData["Email"]</div>
+    <div>identityID = @TempData["identityID"]</div>
+    <div>telephone = @TempData["telephone"]</div>
 }

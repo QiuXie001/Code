@@ -1,0 +1,76 @@
+﻿/* 设置页面背景色和字体颜色 */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 添加一个最大宽度和居中对齐 */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* 增加页面标题的样式 */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 为链接添加下划线，并改变鼠标悬停状态 */
+a {
+    text-decoration: underline;
+    color: #333;
+}
+
+    a:hover {
+        color: #000;
+    }
+
+/* 添加按钮样式 */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    .button:hover {
+        background-color: #000;
+    }
+
+/* 添加表单样式 */
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: #333;
+    }
+
+/* 添加响应式样式 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

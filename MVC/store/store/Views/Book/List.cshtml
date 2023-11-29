@@ -17,7 +17,7 @@
         @Html.ActionLink("新增1", "insert1", "zsg")  @*@Html.ActionLink("新增2", "insert2", "zsg")*@
     </p>
     <p>
-        @Html.ActionLink("批量修改", "someUpdate", "zsg") 
+        @Html.ActionLink("批量修改", "someUpdate", "zsg")
     </p>
     <table>
         <tr>
@@ -71,11 +71,11 @@
                     @Html.ActionLink("修改1", "update1", "zsg", new { bookid = item.BookId }, null)
                 </td>
                 @*<td>
-            @Html.ActionLink("修改2", "update2", "zsg", new { bookid = item.BookId }, null)
-        </td>
-        <td>
-            @Html.ActionLink("修改3", "update3", "zsg", new { bookid = item.BookId }, null)
-        </td>*@
+                        @Html.ActionLink("修改2", "update2", "zsg", new { bookid = item.BookId }, null)
+                    </td>
+                    <td>
+                        @Html.ActionLink("修改3", "update3", "zsg", new { bookid = item.BookId }, null)
+                    </td>*@
                 <td>
                     @Html.ActionLink("删除", "delete", "zsg", new { bookid = item.BookId }, null)
                 </td>
@@ -86,6 +86,9 @@
 
         }
     </table>
+    <div>
+        @Html.ActionLink("返回", "Login", "Login")
+    </div>
     <p class="timing">
         缓存中的页面加载时间：@ViewBag.Timing ms
     </p>

@@ -129,10 +129,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\Filters\ErrorAttribute.cs" />
     <Compile Include="Controllers\Filters\LoginFilteringAttribute.cs" />
     <Compile Include="Controllers\Filters\TimingActionFilter.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\zsgController.cs" />
+    <Content Include="css\Forms.css" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,9 +239,9 @@
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\zsg\test.cshtml" />
     <Content Include="Views\Book\test.cshtml" />
-    <Content Include="Views\Login\Regist.cshtml" />
     <Content Include="Views\Login\UserInfo.cshtml" />
     <Content Include="Views\zsg\someUpdate.cshtml" />
+    <Content Include="Views\Login\Regist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
