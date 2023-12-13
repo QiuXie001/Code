@@ -73,7 +73,6 @@
     <Compile Include="Account.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="bill\Account.cs" />
     <Compile Include="bill\Book.cs" />
     <Compile Include="bill\City.cs" />
     <Compile Include="bill\Error.cs" />
@@ -110,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="App.Config" />
     <EntityDeploy Include="db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -172,6 +174,11 @@
     <Content Include="obj\Debug\TempPE\db.Context.cs.dll" />
     <Content Include="obj\Debug\TempPE\db.cs.dll" />
     <Content Include="obj\Debug\TempPE\db.Designer.cs.dll" />
+    <Content Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

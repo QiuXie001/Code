@@ -20,7 +20,7 @@ namespace db
             [Range(16, 25)]
             public string Age { get; set; }
             [Display(Name = "邮箱")]
-            [DataType(DataType.EmailAddress)]
+            [DataType(DataType.EmailAddress, ErrorMessage = "请输入正确的邮箱！")]
             public string Email { get; set; }
             [Display(Name = "身份证")]
             [Required(ErrorMessage = "{0}必填")]

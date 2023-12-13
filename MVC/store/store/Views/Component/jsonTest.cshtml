@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "jsonTest";
+}
+
+<h2>jsonTest</h2>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".getJson").click(function () {
+                $.ajax({
+                    url: "/Component/jsonTest",
+                    method: "post",
+                    dataType: "html",
+                    data: {},
+                    async: true,
+                    success: function (e) {
+                        var jsonObj = $.parseJSON(e);
+                        console.info(jsonObj.name);
+                        console.info(jsonObj.parent.length);
+                        for (i = 0; i < jsonObj.parent.length; i++)
+                        {
+                            console.info(jsonObj.parent[i].name);
+                        }
+                        console.info(jsonObj.parent1.name);
+                        console.info(jsonObj);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}
+
+<h2>JSon测试</h2>
+<a class="getJson">获取json数据</a>

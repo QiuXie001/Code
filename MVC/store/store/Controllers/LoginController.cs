@@ -34,7 +34,7 @@ namespace store.Controllers
             password = password.PadRight( 10, ' ' );
             //if (account.Password == password)
             //    Debug.WriteLine("通过");
-            if (account.Password == password)
+            if (account!=null&&account.Password == password)
             {
                 Session["isLogin"] = true;
                 ClearTempData();

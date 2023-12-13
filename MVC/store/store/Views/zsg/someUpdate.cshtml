@@ -20,6 +20,7 @@
 
         <table>
             <tr>
+                <th>选中删除</th>
                 <th>
                     @Html.DisplayNameFor(model => model.BookId)
                 </th>
@@ -41,6 +42,9 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        <input type="checkbox" data-value="@item.BookId" class="rowCbx" />
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.BookId)
                         @Html.Hidden("detail.BookId", item.BookId)
@@ -68,11 +72,31 @@
 
             }
         </table>
-        <input type="submit" value="批量修改" />
-    }
+        <input type="submit" value="批量修改" class="batchDelete"/>
 
-        <p class="timing">
-            缓存中的页面加载时间：@ViewBag.Timing ms
-        </p>
+    }
+    <p class="timing">
+        缓存中的页面加载时间：@ViewBag.Timing ms
+    </p>
 </body>
-</html>  
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".batchDelete").click(function () {
+            alert("点击成功");
+            var selected = "";
+            $(".rowCbx").each(function () {
+                if ($(this).is(":checked"))
+                    selected += $(this).attr("data-value") + ",";
+            })
+            $.ajax({
+                url: "/zsg/batchDelete",
+                type: "post",
+                data: { selected: selected },
+                
+            });
+            window.location.replace("../");
+            return false;
+        })
+    })
+</script>

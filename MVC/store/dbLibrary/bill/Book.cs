@@ -168,6 +168,21 @@ namespace db.bill
             }
             dc.SaveChanges();
         }
+        public static void batchDelete(List<string> bookList)
+        {
+           mvcStudyEntities dc = new mvcStudyEntities();
+            for (int iIndex = 0; iIndex < bookList.Count; ++iIndex)
+            {
+                if (bookList[iIndex] == "")
+                {
+                    break;
+                }
+                int bookId = Convert.ToInt32(bookList[iIndex]);
+                Books entry = dc.Books.SingleOrDefault(a => a.BookId == bookId);
+                dc.Books.Remove(entry);
+            }
+            dc.SaveChanges();
+        }
 
 
     }

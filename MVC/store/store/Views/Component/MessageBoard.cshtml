@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "MessageBoard";
+}
+<h2>MessageBoard</h2>
+<div id="About">
+    @Ajax.ActionLink("click here", "Message", "Component",
+    new AjaxOptions
+    {
+        UpdateTargetId = "Message",
+
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "Get"
+    });
+</div>
+<div>============================</div>
+<div id="Message">
+</div>
+
+<div>============================</div>
+<div>ajax.beginForm的使用</div>
+
+<form id="leaveMessage" action="/Component/leaveMessageAjax">
+    <div>用户名：<input type="text" name="userName" /></div>
+    <div>留言：<textarea name="message"></textarea> </div>
+    <div><input type="file" name="headerImg" /></div>
+    <div><input type="submit" class="submitAjax" value="提交" /></div>
+</form>
+<div>============================</div>
+<div id="showMessage">
+</div>
+
+<div>============================</div>
+<div>
+    <h3>提交的留言如下：</h3>
+    <div>============================</div>
+    <div id="LastMessage"></div>
+</div>
+<div>============================</div>
+@using (Ajax.BeginForm("MessageBoard",
+    new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "LastMessage"
+    }))
+{
+    <label>标题：</label>
+    <input type="text" name="yTitle">
+    <label>Email：</label>
+    <input type="text" name="yEmail">
+    <label>QQ：</label>
+    <input type="text" name="yQQ">
+    <label>内容：</label>
+    <input type="text" name="ycontent">
+    <input type="submit" value="提交" id="submit">
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        //文档加载完毕后执行的代码
+        $(document).ready(function () {
+            alert("加载成功");
+
+        });
+        //ajax提交form
+        $(".submitAjax").click(function () {
+            ajaxForm($("#leaveMessage"), function (e) {
+                alert(e.message);
+                $("#showMessage").append(e.message);
+            })
+
+            return true;
+        });
+    </script>
+}

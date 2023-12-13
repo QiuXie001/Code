@@ -17,7 +17,8 @@ namespace store.Filters
             string actionname = filterContext.ActionDescriptor.ActionName.ToString();
             if (controllername == "store.Controllers.LoginController")
                 return;
-            
+            if (controllername == "store.Controllers.ComponentController")
+                return;
             if (filterContext.HttpContext.Session["isLogin"] == null)
             {
                 // 获取登录页面的 URL

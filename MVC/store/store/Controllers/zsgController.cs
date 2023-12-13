@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Razor.Parser.SyntaxTree;
 using db;
 using store.Controllers;
 using store.Uitl.Filters;
@@ -164,7 +165,15 @@ namespace store.Controllers
 
             db.bill.Book.batchUpdate(bookIdList, priceList, booktypeList, dicTags);
             return RedirectToAction("List", "Book");
-
         }
+        [HttpPost]
+        public ActionResult batchDelete(string selected)
+        {
+            List<string> deleteList = selected.Split(',').ToList<string>();
+            db.bill.Book.batchDelete(deleteList);
+            var result = new { result = "testOK" };
+            return Json(result);
+        }
+
     }
 }

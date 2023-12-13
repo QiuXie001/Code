@@ -15,7 +15,7 @@ int linearSearch(int* array, int len, int key);
 
 int main() {
     printf("开始测试\n");
-    // 数据安排
+    // 数据安排 
     int a[] = {22,23,24,8,9,10,33,34,35,36,37,48,49,58,59,60,86,87};
     int len = sizeof(a) / sizeof(a[0]); 
     int blockSize = len / 3; 
@@ -26,12 +26,12 @@ int main() {
     
     printf("索引表初始化成功\n");
     // 查找数据
-    int dataToFind[] = {22, 33, 86, 8, 48, 58, 100};
+    int dataToFind[] = {22, 33, 86, 8, 48, 58, 100, 14};
     for (int i = 0; i < sizeof(dataToFind) / sizeof(dataToFind[0]); i++) {
         int result = binarySearch(b, dataToFind[i], 0, 2);
         if (result == -1) {  
         printf("%d 没有对应的数据块\n", dataToFind[i]);  
-        break; 
+        continue; 
         } 
         for (int j = b[result].pos; j < b[result].pos + blockSize; j++)
         {
@@ -92,7 +92,7 @@ int binarySearch(index b[],int key, int left, int right) {
 int linearSearch(int* array, int len, int key) {
    for (int i = 0; i < len; i++) {
        if (array[i] == key) {
-           return array[i];
+           return i;
        }
    }
    return NULL;
