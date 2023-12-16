@@ -56,10 +56,13 @@ namespace store
         }
         protected void Application_EndRequest()
         {
-            var timeSpan = DateTime.Now - StartTime;
-            HttpContext.Current.Response.Write($"加载时间{timeSpan.Milliseconds}ms   <br/>" +
-                $"在线用户：{Application["OnLineUserCount"]}人<br/>" +
-                $"累计用户：{Application["UserCount"]}人<br/>");
+            if (HttpContext.Current.Request.RequestType == "GET")
+            {
+                var timeSpan = DateTime.Now - StartTime;
+                HttpContext.Current.Response.Write($"加载时间{timeSpan.Milliseconds}ms   <br/>" +
+                    $"在线用户：{Application["OnLineUserCount"]}人<br/>" +
+                    $"累计用户：{Application["UserCount"]}人<br/>");
+            }
 
         }
 

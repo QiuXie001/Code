@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "indexValidate";
+}
+
+<h2>indexValidate</h2>
+
+
+
+<form id="leaveMessage" name="leaveMessage" action="/Component/leaveMessageAjax">
+    <div>用户名：<input type="text" name="userName" /></div>
+    <div>留言：<textarea name="message"></textarea> </div>
+    <div><input type="file" name="headerImg" /></div>
+    <div><input type="submit" class="submitAjax" value="提交" /></div>
+</form>
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.form.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.metadata.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".submitAjax").click(function () {
+                var $params = {
+                    debug: true,
+                    rules: {
+                        userName: "required",
+                        message: {
+                            required: true,
+                            maxlengh: 1
+                        }
+                    },
+                    messages: {
+                        userName: "请输入姓名",
+                        password: {
+                            required: "请留言",
+                        }
+                    }
+                };
+                $("#leaveMessage").validate($params);
+            });
+            return true;
+        })
+    </script>
+}

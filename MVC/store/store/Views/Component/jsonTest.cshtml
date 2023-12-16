@@ -1,28 +1,32 @@
 ﻿@{
-    ViewBag.Title = "jsonTest";
+    ViewBag.Title = "JsonTest";
 }
 
-<h2>jsonTest</h2>
+<h2>JsonTest</h2>
 @section Scripts{
     <script type="text/javascript">
         $(document).ready(function () {
             $(".getJson").click(function () {
                 $.ajax({
-                    url: "/Component/jsonTest",
-                    method: "post",
-                    dataType: "html",
-                    data: {},
+                    url: "/Component/JsonTest",
+                    type: "post",
+                    dataType: "json",
+                    data: { name :"JsonTest"},
                     async: true,
                     success: function (e) {
-                        var jsonObj = $.parseJSON(e);
-                        console.info(jsonObj.name);
-                        console.info(jsonObj.parent.length);
-                        for (i = 0; i < jsonObj.parent.length; i++)
+                        var jsonObj = e;
+                        console.info(jsonObj.Name);
+                        console.info(jsonObj.Parent.length);
+                        for (i = 0; i < jsonObj.Parent.length; i++)
                         {
-                            console.info(jsonObj.parent[i].name);
+                            console.info(jsonObj.Parent[i].Name);
+                            console.info(jsonObj.Parent[i].Age);
                         }
-                        console.info(jsonObj.parent1.name);
                         console.info(jsonObj);
+                    },
+                    error: function (e)
+                    {
+                        alert("失败");
                     }
                 });
                 return false;

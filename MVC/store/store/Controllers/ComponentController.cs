@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Antlr.Runtime;
+using db.meta;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Xml.Linq;
 
 namespace store.Controllers
 {
@@ -45,16 +49,32 @@ namespace store.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public ActionResult jsonTest()
+        public ActionResult JsonTest()
         {
-
+            
             return View();
         }
-        //[HttpPost]
-        //public ActionResult jsonTest()
-        //{
-        //    return Json();
-        //}
+        [HttpPost]
+        public ActionResult JsonTest(string name)
+        {
+            // 创建顶层对象
+            var person = new db.meta.Person
+            {
+                Name = "SomeName",
+                Parent = new List<db.meta.Parent>
+            {
+                new Parent { Name = "ParentName1", Age = 10 },
+                new Parent { Name = "ParentName2", Age = 20 }
+            }
+            };
+
+            // 返回JSON格式的数据
+            return Json(person, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult indexValidate()
+        {
+            return View();
+        }
 
     }
 }
