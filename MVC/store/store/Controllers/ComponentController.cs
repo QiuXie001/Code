@@ -39,6 +39,14 @@ namespace store.Controllers
             ViewBag.Message = ("Ajax测试");
             return PartialView("Message");
         }
+        public ActionResult leaveMessage(string userName, string message)
+        {
+            var file = Request.Files;
+            string result = string.Format("<div>用户：{0},留言内容:{1}</div>",
+                userName, message);
+            var json = new { message = result};
+            return View();
+        }
         public JsonResult leaveMessageAjax(string userName, string message)
         {
             var file = Request.Files;

@@ -19,7 +19,7 @@ int main() {
     int a[] = {22,23,24,8,9,10,33,34,35,36,37,48,49,58,59,60,86,87};
     int len = sizeof(a) / sizeof(a[0]); 
     int blockSize = len / 3; 
-    // 创建索引表
+    // 创建索引表 
     index b[3];
     // 插入索引
     insertIndex(a, b, blockSize);

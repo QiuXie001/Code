@@ -18,13 +18,20 @@
 
 <div>============================</div>
 <div>ajax.beginForm的使用</div>
-
-<form id="leaveMessage" action="/Component/leaveMessageAjax">
+@using (Html.BeginForm("leaveMessageAjax", "Component", FormMethod.Post, new
+{
+    enctype = "multipart/form-data"
+}))
+{
     <div>用户名：<input type="text" name="userName" /></div>
     <div>留言：<textarea name="message"></textarea> </div>
     <div><input type="file" name="headerImg" /></div>
-    <div><input type="submit" class="submitAjax" value="提交" /></div>
-</form>
+    <div>
+        <input type="submit" class="submitAjax" value="提交" />
+    </div>
+
+}
+
 <div>============================</div>
 <div id="showMessage">
 </div>
@@ -56,20 +63,26 @@
 }
 
 @section Scripts{
+    <script type="text/javascript" src="/Scripts/jquery.form.js"></script>
+    <script type="text/javascript" src="/Scripts/lib.js"></script>
     <script type="text/javascript">
         //文档加载完毕后执行的代码
-        $(document).ready(function () {
-            alert("加载成功");
-
-        });
+        //$(document).ready(function () {
         //ajax提交form
         $(".submitAjax").click(function () {
-            ajaxForm($("#leaveMessage"), function (e) {
-                alert(e.message);
-                $("#showMessage").append(e.message);
-            })
-
-            return true;
+            alert("1");
+            $("form").ajaxSubmit({
+                url: '/Component/leaveMessageAjax',
+                type: 'post',
+                dataType: 'json',
+                success: function (res) {
+                    $("#showMessage").append(res.message);
+                }
+            });
+            return false;
         });
+                        /* return false;*/
+                 //});
     </script>
+
 }

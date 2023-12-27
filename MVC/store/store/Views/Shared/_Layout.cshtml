@@ -16,6 +16,7 @@
             width: 100%;
             z-index: 100000; /* 此处的图层要大于页面 */
         }
+
             #loading img {
                 width: 124px;
                 height: 124px;
@@ -29,33 +30,30 @@
 
 </head>
 <body>
-        @RenderBody()
+    @RenderBody()
     <div id="loading">
         <img src="~/images/book1.jpg" />
     </div>
 
 </body>
 
-@RenderSection("scripts", required: false)
-<script type="text/javascript">
-    //文档加载完毕后执行的代码
-    $(document).ready(function () {
-        //ajax请求开始显示loading
-        $(document).ajaxStart(function (option) {
-            $("#loading").css("height", $(document).height());
-            $("#loading").show();
-        });
 
-        //ajax请求结束隐藏loading
-        $(document).ajaxStop(function (option) {
-
-            alert("加载结束");
-            $("#loading").hide();
-        });
-    });
-
-    
-
-</script>
 
 </html>
+@RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        //文档加载完毕后执行的代码
+        $(document).ready(function () {
+            //ajax请求开始显示loading
+            $(document).ajaxStart(function (option) {
+                $("#loading").css("height", $(document).height());
+                $("#loading").show();
+            });
+
+            //ajax请求结束隐藏loading
+            $(document).ajaxStop(function (option) {
+
+                $("#loading").hide();
+            });
+        })
+    </script>
