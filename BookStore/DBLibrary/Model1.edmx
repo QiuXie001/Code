@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mvcStudyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="mvcStudyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Admin_ID" />
@@ -32,10 +32,11 @@
           <Key>
             <PropertyRef Name="Custom_ID" />
           </Key>
-          <Property Name="Custom_ID" Type="int" Nullable="false" />
+          <Property Name="Custom_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Custom_Name" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Custom_Password" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Custom_Age" Type="char" MaxLength="3" />
-          <Property Name="Custom_Telephone" Type="char" MaxLength="11" />
+          <Property Name="Custom_Telephone" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="Custom_IdentityID" Type="char" MaxLength="18" />
         </EntityType>
         <EntityType Name="Orders">
@@ -86,8 +87,7 @@
     FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="mvcStudyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -121,8 +121,9 @@
           <Property Name="Custom_ID" Type="Int32" Nullable="false" />
           <Property Name="Custom_Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Custom_Age" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="Custom_Telephone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Custom_Telephone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Custom_IdentityID" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="Custom_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -191,6 +192,7 @@
           <EntitySetMapping Name="Custom">
             <EntityTypeMapping TypeName="mvcStudyModel.Custom">
               <MappingFragment StoreEntitySet="Custom">
+                <ScalarProperty Name="Custom_Name" ColumnName="Custom_Name" />
                 <ScalarProperty Name="Custom_ID" ColumnName="Custom_ID" />
                 <ScalarProperty Name="Custom_Password" ColumnName="Custom_Password" />
                 <ScalarProperty Name="Custom_Age" ColumnName="Custom_Age" />

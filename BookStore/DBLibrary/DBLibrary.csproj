@@ -53,10 +53,11 @@
     <Compile Include="Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="bill\Custom.cs" />
+    <Compile Include="bill\Error.cs" />
     <Compile Include="Books.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Custom.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
