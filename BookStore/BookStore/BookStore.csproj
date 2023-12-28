@@ -164,6 +164,10 @@
     <Content Include="CSS\Login.min.css">
       <DependentUpon>Login.css</DependentUpon>
     </Content>
+    <Content Include="CSS\MainBoard.css" />
+    <Content Include="CSS\static\demo.css" />
+    <Content Include="CSS\static\iconfont.css" />
+    <Content Include="CSS\static\iconfont.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -173,6 +177,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="CSS\static\iconfont.json" />
+    <Content Include="CSS\static\iconfont.ttf" />
+    <Content Include="CSS\static\iconfont.woff" />
+    <Content Include="CSS\static\iconfont.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
