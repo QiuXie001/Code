@@ -8,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MainBoard</title>
     <!-- 引入字体图标 -->
-    <link rel="stylesheet" href="~/CSS/MainBoard.css">
-    <link rel="stylesheet" href="~/CSS/static/iconfont.css">
+    @section css{
+        <link rel="stylesheet" href="~/CSS/MainBoard.css">
+        <link rel="stylesheet" href="~/CSS/static/iconfont.css">
+    }
+
 </head>
 <body>
     <nav class="shell close">
@@ -28,21 +31,21 @@
             <div class="menu">
                 <ul class="menu-links" style="padding-left:0rem;">
                     <li class="nav-link">
-                        <a href="#">
+                        <a onclick="LoadPersonalInformation()">
                             <i class="iconfont icon-gerenxinxi icon"></i>
                             <span class="text  nac-text">个人信息</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a onclick="LoadShopMall()">
                             <i class="iconfont icon-shangcheng icon"></i>
                             <span class="text nac-text">图书商城</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a onclick="LoadShopCart()">
                             <i class="iconfont icon-gouwuche icon"></i>
                             <span class="text nac-text">购物车</span>
                         </a>
@@ -71,10 +74,8 @@
         </div>
     </nav>
     <div class="board">
-
-        <section>
-            <h4>分部视图</h4>
-            @Html.Action("BookList", "Main", new { title = "商品列表" })
+        <h4>分部视图</h4>
+        <section class="content">
         </section>
     </div>
 
@@ -109,8 +110,34 @@
                 $('#text').css("opacity", "1");
             }, 14);
             $('#text').css("display", "none");
-            
 
         });
+        function LoadPersonalInformation() {
+            $.ajax({
+                url: "/Book/BookList",
+                type: "GET",
+                success: function (result) {
+                    $(".content").html(result);
+                }
+            });
+        }
+        function LoadShopMall() {
+            $.ajax({
+                url: "/Book/BookList",
+                type: "GET",
+                success: function (result) {
+                    $(".content").html(result);
+                }
+            });
+        }
+        function LoadShopCart() {
+            $.ajax({
+                url: "/ControllerName/LoadPartialView",
+                type: "GET",
+                success: function (result) {
+                    $(".content").html(result);
+                }
+            });
+        }
     </script>
 }
