@@ -53,6 +53,7 @@
     <Compile Include="Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="bill\Book.cs" />
     <Compile Include="bill\Custom.cs" />
     <Compile Include="bill\Error.cs" />
     <Compile Include="Books.cs">

@@ -11,7 +11,8 @@ namespace BookStore.Controllers
         // GET: Book
         public ActionResult BookList()
         {
-            return View();
+            List<DBLibrary.Books> list = DBLibrary.bill.Book.GetBooks();
+            return View(list);
         }
     }
 }

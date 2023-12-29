@@ -92,3 +92,4 @@ D:\Code\BookStore\BookStore\bin\DBLibrary.dll.config
 D:\Code\BookStore\BookStore\bin\EntityFramework.xml
 D:\Code\BookStore\BookStore\bin\EntityFramework.SqlServer.xml
 D:\Code\BookStore\BookStore\bin\zh-Hans\EntityFramework.resources.dll
+D:\Code\BookStore\BookStore\bin\zh-Hans\EntityFramework.SqlServer.resources.dll

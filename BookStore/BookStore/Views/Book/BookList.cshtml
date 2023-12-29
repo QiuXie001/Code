@@ -1,31 +1,46 @@
-﻿
+﻿@model IEnumerable<DBLibrary.Books>
 @{
     ViewBag.Title = "BookList";
 }
 @section css{
     <link rel="stylesheet" href="~/CSS/BookList.css">
+    <link rel="stylesheet" href="~/CSS/SearchBar.css">
 }
 <h2>BookList</h2>
 
+<form id="SearchBar">
+    <input type="text" name="input" class="input" id="search-input">
+    <button type="reset" class="search" id="search-btn"></button>
+</form>
 <div class="bookshelf">
     <div class="book-grid">
-        <ul>
-            <li> <img src="https://images-na.ssl-images-amazon.com/images/I/51uLvJlKpNL._SX321_BO1,204,203,200_.jpg" /></li>
-            <li> <img src="https://damonza.com/wp-content/uploads/portfolio/fiction/The-prophecy_03.jpg" /></li>
-            <li> <img src="https://i.pinimg.com/564x/f7/c8/12/f7c812c9b0296cd9f119e33a06d9a256.jpg" /></li>
-        </ul>
+        @for (var i = 0; i < Model.Count(); i++)
+        {
+            <ul>
+                @for (int j = 0; j < 3; j++)
+                {
+                    var book = Model.ToList()[i];
+                    i++;
+                    <li><img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" /></li>
+                }
+            </ul>
+            <div class="shelf-shadows"></div>
+            <div class="shelf"></div>
+        }
     </div>
-    <div class="shelf-shadows"></div>
-    <div class="shelf"></div>
 </div>
-<div class="bookshelf">
-    <div class="book-grid">
-        <ul>
-            <li> <img src="https://images.penguinrandomhouse.com/cover/9781101931288" /></li>
-            <li> <img src="https://i.harperapps.com/covers/9780062698162/x510.jpg" /></li>
-            <li> <img src="https://www.canva.com/learn/wp-content/uploads/2015/03/draculabramstoker-tb-800x0.jpg" /></li>
-        </ul>
-    </div>
-    <div class="shelf-shadows"></div>
-    <div class="shelf"></div>
-</div>
+@section Scripts{
+    <script type="text/javascript">
+        // updated 2019
+        const input = document.getElementById("search-input");
+        const searchBtn = document.getElementById("search-btn");
+
+        const expand = () => {
+            searchBtn.classList.toggle("close");
+            input.classList.toggle("square");
+        };
+
+        searchBtn.addEventListener("click", expand);
+
+    </script>
+}

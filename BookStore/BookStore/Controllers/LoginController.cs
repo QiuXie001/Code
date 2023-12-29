@@ -34,6 +34,7 @@ namespace BookStore.Controllers
                 }
                 else
                 {
+                    TempData["identity"] = "manager";
                     return View();
                 }
             }
@@ -50,8 +51,8 @@ namespace BookStore.Controllers
                 }
                 else
                 {
+                    TempData["identity"] = "custom";
                     return View();
-
                 }
             }
         }
@@ -70,6 +71,7 @@ namespace BookStore.Controllers
                 TempData["Password"] = entry.Custom_Password;
                 TempData["Telephone"] = entry.Custom_Telephone;
                 DBLibrary.bill.Custom.regist(entry);
+                Session["isLogin"] = true;
                 return RedirectToAction("MainBoard", "Main");
             }
             return View("Login"); 

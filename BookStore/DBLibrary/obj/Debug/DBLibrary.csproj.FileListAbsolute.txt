@@ -11,3 +11,4 @@ D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.csproj.CoreCompileInputs.cache
 D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.csproj.CopyComplete
 D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.dll
 D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.pdb
+D:\Code\BookStore\DBLibrary\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

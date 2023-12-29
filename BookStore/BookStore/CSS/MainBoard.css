@@ -11,7 +11,7 @@ body {
 }
 /*全局主题*/
 :root {
-    --body-color: #E4E9F7;
+    --body-color: #ededed !important;
     --shell-color: #FFF;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
@@ -303,7 +303,10 @@ li.search-box {
 }
 /*右侧看板*/
 .board {
+    color: var(--text-color);
     height: 2000px;
     margin-left: 88px;
     padding: 50px;
+    background-color: var(--body-color);
+    transition: all 0.3s ease;
 }
