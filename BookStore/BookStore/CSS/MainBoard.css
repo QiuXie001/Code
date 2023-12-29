@@ -71,7 +71,7 @@ body {
 
 .text,
 .icon {
-    padding-right:15px;
+    padding-right:10px;
     color: var(--text-color);
     transition: all 0.3s ease;
 }
@@ -220,14 +220,17 @@ li.search-box {
     .menu-bar::-webkit-scrollbar {
         display: none;
     }
-
+    
     .menu-bar .mode {
+        width:134px;
         border-radius: 6px;
         background-color: var(--primary-color-light);
         position: relative;
         transition: all 0.3s ease;
     }
-
+.shell.close .menu-bar .mode {
+    width:55px;
+}
         .menu-bar .mode .sun-moon {
             height: 50px;
             width: 15px;
@@ -240,17 +243,24 @@ li.search-box {
     .mode .sun-moon i.sun {
         opacity: 0;
     }
-
+.shell.close .toggle-switch {
+    width: 55px;
+    transition: all 0.3s ease;
+}
+.shell.close .mode-text.text {
+    display: none;
+}
 .toggle-switch {
     position: absolute;
     right: 0;
     height: 100%;
-    min-width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6px;
     cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .switch {
