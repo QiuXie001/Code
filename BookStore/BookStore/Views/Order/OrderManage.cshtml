@@ -1,0 +1,114 @@
+﻿@model IEnumerable<DBLibrary.Orders>
+@{
+    ViewBag.Title = "OrderManage";
+}
+
+<h2>OrderManage</h2>
+
+@section css{
+    <link rel="stylesheet" href="~/CSS/UseManage.css">
+}
+<body>
+    <div class="search">
+        <ul>
+            @using (Html.BeginForm("OrderSearch", "Order", FormMethod.Post))
+            {
+                <li>
+                    <span>订单号</span>
+                    <input type="text" class="input" name="OrderID">
+                </li>
+                <li>
+                    <span>用户号</span>
+                    <input type="text" class="input" name="CustomID">
+                </li>
+                <li class="search">
+                    <button class="search" type="submit">
+                        <span>查询</span>
+                    </button>
+
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="ManageList">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.OrderID)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.OrderTime)</th>
+                    @if (Session["identity"].ToString() == "admin")
+                    {
+                    <th scope="col">@Html.DisplayNameFor(model => model.CustomID)</th>
+                    }
+                    <th scope="col">@Html.DisplayNameFor(model => model.Address)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.OrderTime)</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr class="show">
+                            <td scope="row">
+                                @Html.DisplayFor(modelItem => item.OrderID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderTime)
+                            </td>
+                            @if (Session["identity"].ToString() == "admin")
+                            {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomID)
+                            </td>
+                            }
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderTime)
+                            </td>
+                            <td>
+                                <button class="operate"> @Html.ActionLink("删除", "Delete", "Order", new { id = item.CustomID }, null)</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+}

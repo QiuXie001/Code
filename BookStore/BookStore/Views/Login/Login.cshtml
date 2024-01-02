@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    Layout = null;
+}
 @{
     ViewBag.Title = "Login";
 }
@@ -15,7 +17,7 @@
         <div class="form sign-in">
             @using (Html.BeginForm("Login", "Login", FormMethod.Post))
             {
-                <form method="post" >
+                <form method="post">
                     <h2>登录</h2>
                     <label for="ID">
                         <span>用户名</span>
@@ -29,7 +31,7 @@
                     <button type="submit" class="submit">登录</button>
                 </form>
             }
-            </div>
+        </div>
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
@@ -69,7 +71,7 @@
                         <button type="submit" class="submit">注册</button>
                     </form>
                 }
-                </div>
+            </div>
         </div>
     </div>
 
@@ -77,9 +79,9 @@
 </html>
 @section Scripts{
     <script type="text/javascript">
-    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.img__btn').addEventListener('click', function () {
             document.querySelector('.cont').classList.toggle('s--signup');
-        $('input').reset();
+            $('input').reset();
         });
     </script>
 }

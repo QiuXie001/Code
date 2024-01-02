@@ -1,8 +1,6 @@
 ﻿using DBLibrary;
-using System;
-using System.Collections.Generic;
+using DBLibrary.bill;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
@@ -20,38 +18,39 @@ namespace BookStore.Controllers
         public ActionResult Login(string ID, string Password)
         {
             mvcStudyEntities db = new mvcStudyEntities();
+            Password = Password.PadRight(10,' ');
             if (ID.Substring(0, 1) == "1")
             {
-                Admin admin = db.Admin.SingleOrDefault(a => a.Admin_ID.ToString() == ID);
-                Password = Password.PadRight(10, ' ');
+                DBLibrary.Admin admin = db.Admin.SingleOrDefault(a => a.Admin_ID.ToString() == ID);
                 //if (account.Password == password)
                 //    Debug.WriteLine("通过");
                 if (admin != null && admin.Admin_Password == Password)
                 {
                     Session["isLogin"] = true;
+                    Session["identity"] = "admin";
+                    Session["Info"] = admin.Admin_ID;
                     Response.ClearContent();
                     return RedirectToAction("MainBoard", "Main");
                 }
                 else
                 {
-                    TempData["identity"] = "manager";
                     return View();
                 }
             }
             else
             {
-                Custom custom = db.Custom.SingleOrDefault(a => a.Custom_ID.ToString() == ID);
+                DBLibrary.Custom custom = db.Custom.SingleOrDefault(a => a.Custom_ID.ToString() == ID);
                 //if (account.Password == password)
                 //    Debug.WriteLine("通过");
                 if (custom != null && custom.Custom_Password == Password)
                 {
                     Session["isLogin"] = true;
-                    Response.ClearContent();
+                    Session["identity"] = "custom";
+                    Session["Info"] = custom.Custom_ID;
                     return RedirectToAction("MainBoard", "Main");
                 }
                 else
                 {
-                    TempData["identity"] = "custom";
                     return View();
                 }
             }
@@ -72,6 +71,8 @@ namespace BookStore.Controllers
                 TempData["Telephone"] = entry.Custom_Telephone;
                 DBLibrary.bill.Custom.regist(entry);
                 Session["isLogin"] = true;
+                TempData["identity"] = "custom";
+                TempData["Info"] = entry.Custom_ID;
                 return RedirectToAction("MainBoard", "Main");
             }
             return View("Login"); 

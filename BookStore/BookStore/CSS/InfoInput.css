@@ -1,0 +1,67 @@
+﻿.board {
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    margin-left: 88px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+    .board li {
+        display: block;
+        position: relative;
+        padding-top: 30px;
+        list-style: none;
+        width: 250px;
+    }
+        .board li span{
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            pointer-events: none;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+
+        .board li input {
+            background-color: var(--shell-color);
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            outline: none;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+li input:focus ~ span {
+    color: var(--text-color);
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    padding: 0 10px;
+    background-color: var(--shell-color);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    letter-spacing: 4px;
+    transition: all 0.3s ease;
+}
+
+
+
+li span.havevalue {
+    color: var(--text-color);
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    padding: 0 10px;
+    background-color: var(--shell-color);
+    border-left: 1px solid var(--toggle-color);
+    border-right: 1px solid var(--toggle-color);
+    letter-spacing: 4px;
+    transition: all 0.3s ease;
+}

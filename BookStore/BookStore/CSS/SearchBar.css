@@ -1,13 +1,12 @@
-﻿
-
-#SearchBar {
-    position: absolute;
+﻿#SearchBar {
+    position: fixed;
     height: 50px;
     width: 300px;
     margin-left: 170px;
-    top: 15%;
+    top: 10%;
     left: 90%;
     transform: translate(-50%, -50%);
+    z-index:10;
 }
 
     #SearchBar.on {
@@ -24,7 +23,7 @@ input {
     box-sizing: border-box;
     width: 50px;
     height: 50px;
-    border: 4px solid #ff9800;
+    border: 4px solid var(--text-color);
     border-radius: 50%;
     background: none;
     color: #fff;
@@ -62,7 +61,7 @@ input {
     position: absolute;
     width: 20px;
     height: 4px;
-    background-color: #ff9800;
+    background-color: var(--text-color);
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -82,7 +81,7 @@ input {
     height: 4px;
     margin-top: -1px;
     margin-left: -13px;
-    background-color: #ff9800;
+    background-color: var(--text-color);
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -94,7 +93,7 @@ input {
     position: absolute;
     width: 27px;
     height: 4px;
-    background-color: #ff9800;
+    background-color: var(--text-color);
     margin-top: -1px;
     margin-left: -13px;
     cursor: pointer;
@@ -108,7 +107,7 @@ input {
     padding: 0 40px 0 10px;
     width: 300px;
     height: 50px;
-    border: 4px solid #ff9800;
+    border: 4px solid var(--text-color);
     border-radius: 0;
     background: none;
     color: var(--text-color);
@@ -120,4 +119,8 @@ input {
     -webkit-transform: translate(-100%, -50%);
     -ms-transform: translate(-100%, -50%);
     transform: translate(-100%, -50%);
+}
+.Dropdown{
+    position: absolute;
+    
 }

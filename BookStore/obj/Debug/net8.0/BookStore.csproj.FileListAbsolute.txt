@@ -1,0 +1,5 @@
+D:\Code\BookStore\obj\Debug\net8.0\BookStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\BookStore\obj\Debug\net8.0\BookStore.AssemblyInfoInputs.cache
+D:\Code\BookStore\obj\Debug\net8.0\BookStore.AssemblyInfo.cs
+D:\Code\BookStore\obj\Debug\net8.0\BookStore.csproj.CoreCompileInputs.cache
+D:\Code\BookStore\obj\Debug\net8.0\BookStore.sourcelink.json

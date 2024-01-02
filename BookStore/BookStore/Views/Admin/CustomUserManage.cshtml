@@ -1,0 +1,125 @@
+﻿@model IEnumerable<DBLibrary.Custom>
+@{
+    ViewBag.Title = "CustomUserManage";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/CSS/UseManage.css">
+}
+<body>
+    <h2>CustomUserManage</h2>
+
+    <div class="search">
+        <ul>
+            @using (Html.BeginForm("CustomSearch", "Admin", FormMethod.Post))
+            {
+                <li>
+                    <span>用户名</span>
+                    <input type="text" class="input" name="Custom_ID">
+                </li>
+                <li>
+                    <span>电话号码</span>
+                    <input type="text" class="input" name="Custom_Telephone">
+                </li>
+                <li class="search">
+                    <button class="search" type="submit">
+                        <span>查询</span>
+                    </button>
+
+                </li>
+            }
+            <li class="search">
+                @using (Html.BeginForm("CustomAddView", "Admin", FormMethod.Get))
+                {
+                    <button class="search">
+                        <span>@Html.ActionLink("新增", "CustomAddView", "Admin")</span>
+                    </button>
+                }
+            </li>
+            <li class="search">
+                @using (Html.BeginForm("AdminUserManage", "Admin", FormMethod.Get))
+                {
+                    <button class="search" type="submit">
+                        <span>切换管理员列表</span>
+                    </button>
+                }
+            </li>
+        </ul>
+    </div>
+
+    <div class="ManageList">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_ID)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_Name)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_Password)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_Age)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_Telephone)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_IdentityID)</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr class="show">
+                            <td scope="row">
+                                @Html.DisplayFor(modelItem => item.Custom_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Custom_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Custom_Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Custom_Age)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Custom_Telephone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Custom_IdentityID)
+                            </td>
+                            <td>
+                                <button class="operate">@Html.ActionLink("修改", "CustomUpdateView", "Admin", new { id = item.Custom_ID }, null)</button>
+                                <button class="operate"> @Html.ActionLink("删除", "CustomDelete", "Admin", new { id = item.Custom_ID }, null)</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+}

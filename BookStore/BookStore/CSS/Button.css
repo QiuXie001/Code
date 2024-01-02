@@ -1,0 +1,63 @@
+﻿
+button {
+    padding: 5px 50px;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    background: none;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-left: 13%;
+    border-radius: 5px;
+}
+
+    button:hover span {
+        color: var(--button-color);
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /* Button 1 */
+    button:nth-child(1):after {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        left: -215%;
+        top: 0;
+        background-color: var(--shell-color);
+        transform: skew(45deg);
+        -webkit-transform: skew(45deg);
+        transition: 0.45s;
+        -webkit-transition: 0.45s;
+    }
+
+    button:nth-child(1):hover:after {
+        left: -15%;
+    }
+
+
+
+    button span {
+        position: relative;
+        z-index: 3;
+        font-size: 17pt;
+        color: var(--text-color);
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+    }
+    button.search {
+        height: 40px;
+        border: 1px solid var(--text-color);
+        cursor: pointer;
+        background: none;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }

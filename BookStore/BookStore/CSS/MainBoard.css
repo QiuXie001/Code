@@ -13,10 +13,12 @@ body {
 :root {
     --body-color: #ededed !important;
     --shell-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: #3a3b3c;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --border-color: black;
+    --button-color:black;
 }
 
 /* 深色主题变量 */
@@ -28,6 +30,8 @@ body {
     --toggle-color: #fff;
     --text-color: #ccc;
     --font-color: #ccc;
+    --border-color: white;
+    --button-color:white;
 }
 /*侧边栏*/
 .shell {
@@ -304,9 +308,10 @@ li.search-box {
 /*右侧看板*/
 .board {
     color: var(--text-color);
-    height: 2000px;
+    height: 100%;
+    padding-top:150px;
     margin-left: 88px;
-    padding: 50px;
+    padding-left: 50px;
     background-color: var(--body-color);
     transition: all 0.3s ease;
 }

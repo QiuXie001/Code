@@ -5,9 +5,24 @@
 @section css{
     <link rel="stylesheet" href="~/CSS/BookList.css">
     <link rel="stylesheet" href="~/CSS/SearchBar.css">
+    <link rel="stylesheet" href="~/CSS/SelectList.css">
 }
-<h2>BookList</h2>
+<ul id="select">
+    <li>
+        <div class="select-head">
+            <i class="iconfont icon-xiangyoujiantou select-icon" ></i>
+            <span class="select-head-cont"></span>
+        </div>
+        <ul class="option">
+            <li class="option-item" hidden>请选择图书类别</li>
+            <li class="option-item">safari</li>
+            <li class="option-item">Edge</li>
+            <li class="option-item">firefox</li>
+            <li class="option-item">ie8</li>
+        </ul>
 
+    </li>
+</ul>
 <form id="SearchBar">
     <input type="text" name="input" class="input" id="search-input">
     <button type="reset" class="search" id="search-btn"></button>
@@ -17,7 +32,7 @@
         @for (var i = 0; i < Model.Count(); i++)
         {
             <ul>
-                @for (int j = 0; j < 3; j++)
+                @for (int j = 0; j < 3 && i < Model.Count(); j++)
                 {
                     var book = Model.ToList()[i];
                     i++;
@@ -31,16 +46,49 @@
 </div>
 @section Scripts{
     <script type="text/javascript">
-        // updated 2019
-        const input = document.getElementById("search-input");
-        const searchBtn = document.getElementById("search-btn");
+        $(document).ready(function () {
+            // updated 2019
+            var $input = $("#search-input");
+            var $searchBtn = $("#search-btn");
 
-        const expand = () => {
-            searchBtn.classList.toggle("close");
-            input.classList.toggle("square");
-        };
+            $searchBtn.on("click", function () {
+                $searchBtn.toggleClass("close");
+                $input.toggleClass("square");
+            });
 
-        searchBtn.addEventListener("click", expand);
+            //int
+            var $selectHead = $('ul#select');
+            var selectHeadCont = document.getElementsByClassName('select-head-cont');
+            var Option = document.getElementsByClassName('option')[0];
+            var optionItem = document.getElementsByClassName('option-item');
+
+            /*默认是第一个选项*/
+            selectHeadCont[0].innerHTML = optionItem[0].innerHTML;
+
+            /*点击后出现下拉框*/
+            $selectHead.click(function () {
+                $('.option').css("display", "block");
+                $('.select-head-cont').css("display", "block");
+                $('.select-icon').css("transform", "rotate(90deg)");
+            });
+            $('.option-item').click(function () {
+                $('.select-head-cont').text($(this).text());
+                $('.option').hide();
+            });
+            $(document).click(function (e) {
+                var _con = $('ul'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('.option').css("display", "none");
+                    $('ul#select').css("width", "60px");
+                    $('.select-head-cont').css("display", "none");
+                    $('.select-icon').css("transform", "rotate(0deg)");
+                }
+            })
+            $('ul#select').click(function () {
+                $(this).css("width", "250px");
+            });
+        });
 
     </script>
 }

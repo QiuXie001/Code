@@ -2,5 +2,9 @@
   {
     "outputFile": "CSS/Login.css",
     "inputFile": "CSS/Login.scss"
+  },
+  {
+    "outputFile": "CSS/SelectList.css",
+    "inputFile": "CSS/SelectList.scss"
   }
 ]

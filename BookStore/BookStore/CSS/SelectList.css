@@ -1,0 +1,80 @@
+﻿ul#select{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position:fixed;
+    top: 3.2%;
+    transition: all 0.3s ease;
+    z-index: 10;
+    height:50px;
+}
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+    /*下拉框样式*/
+#select {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: 4px var(--text-color) solid;
+    border-radius: 1.4rem;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    text-decoration: none;
+    padding-left: 60px;
+    z-index: 5;
+}
+
+.select-head {
+    overflow: hidden;
+    width: 249px;
+    height: 40px;
+    box-sizing: border-box;
+    padding-top:3px;
+    padding-left: 12px;
+    line-height: 40px;
+}
+
+    .select-head .select-head-cont {
+        display: none;
+        padding-left: 40px;
+        float: left;
+    }
+
+    .select-head .select-icon {
+        float: right;
+    }
+
+.option {
+    border-radius: 0.8rem;
+    padding-left: 0;
+    text-indent: 10px;
+    margin-top: 6px;
+    background-color: var(--body-color);
+    line-height: 25px;
+    border: 1px var(--text-color) solid;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.option-item {
+    border-radius: 1.4rem;
+    padding-left: 30px;
+}
+
+    .option-item:hover {
+        background-color: var(--shell-color);
+    }
+
+.select-icon {
+    font-size: 30px !important;
+    position: absolute;
+    transition: all 0.3s ease;
+}

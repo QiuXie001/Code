@@ -126,10 +126,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PersonalInformationController.cs" />
     <Compile Include="Filters\LoginActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,6 +163,8 @@
     </None>
     <None Include="CSS\Login.scss" />
     <Content Include="CSS\BookList.css" />
+    <Content Include="CSS\Button.css" />
+    <Content Include="CSS\InfoInput.css" />
     <Content Include="CSS\Login.css">
       <DependentUpon>Login.scss</DependentUpon>
     </Content>
@@ -167,9 +173,11 @@
     </Content>
     <Content Include="CSS\MainBoard.css" />
     <Content Include="CSS\SearchBar.css" />
+    <Content Include="CSS\SelectList.css" />
     <Content Include="CSS\static\demo.css" />
     <Content Include="CSS\static\iconfont.css" />
     <Content Include="CSS\static\iconfont.js" />
+    <Content Include="CSS\UseManage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -208,11 +216,21 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Main\MainBoard.cshtml" />
     <Content Include="Views\Book\BookList.cshtml" />
+    <Content Include="Views\PersonalInformation\CustomInformation.cshtml" />
+    <Content Include="Views\PersonalInformation\AdminInformation.cshtml" />
+    <Content Include="Views\Admin\CustomUserManage.cshtml" />
+    <Content Include="Views\Admin\CustomUpdateView.cshtml" />
+    <Content Include="Views\Admin\CustomAddView.cshtml" />
+    <Content Include="Views\Order\OrderManage.cshtml" />
+    <Content Include="Views\Admin\AdminAddView.cshtml" />
+    <Content Include="Views\Admin\AdminUpdateView.cshtml" />
+    <Content Include="Views\Admin\AdminUserManage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="uploads\" />
+    <Folder Include="Views\Custom\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

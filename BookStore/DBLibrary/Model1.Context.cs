@@ -27,8 +27,10 @@ namespace DBLibrary
     
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<BookTypes> BookTypes { get; set; }
         public virtual DbSet<Custom> Custom { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Purchases> Purchases { get; set; }
         public virtual DbSet<Detail> Detail { get; set; }
     }
 }

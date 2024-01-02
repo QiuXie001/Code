@@ -1,0 +1,78 @@
+﻿@model DBLibrary.Admin
+
+@{
+    ViewBag.Title = "AdminAddView";
+}
+@section css{
+    <link rel="stylesheet" href="~/CSS/InfoInput.css">
+    <link rel="stylesheet" href="~/CSS/Button.css">
+}
+
+@using (Html.BeginForm("AdminAdd", "Admin", FormMethod.Post))
+{
+
+    <ul>
+        <li>
+            <label for="Name">
+                <span>昵称</span>
+                <input type="text" name="Admin_Name" value="@Html.DisplayFor(model => model.Admin_Name)" />
+            </label>
+        </li>
+        <li>
+            <label for="Password">
+                <span>密码</span>
+                <input type="text" name="Admin_Password" value="@Html.DisplayFor(model => model.Admin_Password)" />
+            </label>
+        </li>
+        <li>
+            <label for="Age">
+                <span>年龄</span>
+                <input type="text" name="Admin_Age" value="@Html.DisplayFor(model => model.Admin_Age)" />
+            </label>
+        </li>
+        <li>
+            <label for="Telephone">
+                <span>电话</span>
+                <input type="text" name="Admin_Telephone" value="@Html.DisplayFor(model => model.Admin_Telephone)" />
+            </label>
+        </li>
+        <li>
+            <label for="IdentityID">
+                <span>身份证号</span>
+                <input type="text" name="Admin_IdentityID" value="@Html.DisplayFor(model => model.Admin_IdentityID)" />
+            </label>
+        </li>
+    </ul>
+    <button type="submit" value="Add">
+        <span>提交</span>
+    </button>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+}

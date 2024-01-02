@@ -13,14 +13,9 @@ namespace BookStore.Controllers
         // GET: Main
         public ActionResult MainBoard()
         {
+            Session["search"] = "false";
             return View();
         }
 
-        public ActionResult BookList(string title)
-        {
-            List<Books> book = new List<Books>();
-            ViewBag.Data = title;
-            return PartialView("~/Views/Book/BookList.cshtml", book); ;
-        }
     }
 }

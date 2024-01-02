@@ -19,7 +19,9 @@ namespace DBLibrary
         public string Title { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string BookCoverUrl { get; set; }
-        public string BookType { get; set; }
+        public int BookTypeID { get; set; }
         public string BookTag { get; set; }
+    
+        public virtual BookTypes BookTypes { get; set; }
     }
 }

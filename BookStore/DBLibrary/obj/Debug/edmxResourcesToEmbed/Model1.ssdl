@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Admin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Admin_Name" Type="char" MaxLength="20" />
-    <Property Name="Admin_Password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Admin_Password" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Admin_Age" Type="char" MaxLength="3" />
     <Property Name="Admin_Telephone" Type="char" MaxLength="11" />
     <Property Name="Admin_IdentityID" Type="char" MaxLength="18" />
@@ -17,32 +17,58 @@
     </Key>
     <Property Name="Book_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="AuthorName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Title" Type="nvarchar" MaxLength="160" />
+    <Property Name="Title" Type="nvarchar" MaxLength="160" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
     <Property Name="BookCoverUrl" Type="nvarchar" MaxLength="1024" />
-    <Property Name="BookType" Type="nvarchar" MaxLength="50" />
+    <Property Name="BookTypeID" Type="int" Nullable="false" />
     <Property Name="BookTag" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BookTypes">
+    <Key>
+      <PropertyRef Name="BookTypeID" />
+    </Key>
+    <Property Name="BookTypeID" Type="int" Nullable="false" />
+    <Property Name="BookType" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Custom">
     <Key>
       <PropertyRef Name="Custom_ID" />
     </Key>
     <Property Name="Custom_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Custom_Name" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="Custom_Password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Custom_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Custom_Password" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Custom_Age" Type="char" MaxLength="3" />
     <Property Name="Custom_Telephone" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="Custom_IdentityID" Type="char" MaxLength="18" />
   </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“mvcStudy.dbo.Orders”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="Orders">
     <Key>
-      <PropertyRef Name="Order_ID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="BookID" />
+      <PropertyRef Name="CustomID" />
     </Key>
-    <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="1024" />
-    <Property Name="BookId" Type="nvarchar" MaxLength="1024" />
+    <Property Name="BookID" Type="nvarchar" MaxLength="1024" Nullable="false" />
     <Property Name="Num" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CustomID" Type="int" Nullable="false" />
+    <Property Name="OrderTime" Type="datetime" />
+    <Property Name="ClearOrNot" Type="bit" />
+    <Property Name="ReceiptOrNot" Type="bit" />
+  </EntityType>
+  <EntityType Name="Purchases">
+    <Key>
+      <PropertyRef Name="Purchase_ID" />
+    </Key>
+    <Property Name="Purchase_ID" Type="int" Nullable="false" />
+    <Property Name="Admin_ID" Type="int" Nullable="false" />
+    <Property Name="Book_ID" Type="nvarchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Purchase_Time" Type="datetime" />
   </EntityType>
   <!--生成过程中发现错误:
 警告 6002: 表/视图“mvcStudy.dbo.Detail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -62,11 +88,61 @@
     <Property Name="BookType" Type="nvarchar" MaxLength="50" />
     <Property Name="BookTag" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_Books_BookTypes">
+    <End Role="BookTypes" Type="Self.BookTypes" Multiplicity="1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookTypes">
+        <PropertyRef Name="BookTypeID" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="BookTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchases_Admin">
+    <End Role="Purchases" Type="Self.Purchases" Multiplicity="1" />
+    <End Role="Purchases1" Type="Self.Purchases" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Purchases">
+        <PropertyRef Name="Purchase_ID" />
+      </Principal>
+      <Dependent Role="Purchases1">
+        <PropertyRef Name="Purchase_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchases_Books">
+    <End Role="Purchases" Type="Self.Purchases" Multiplicity="1" />
+    <End Role="Purchases1" Type="Self.Purchases" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Purchases">
+        <PropertyRef Name="Purchase_ID" />
+      </Principal>
+      <Dependent Role="Purchases1">
+        <PropertyRef Name="Purchase_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="mvcStudyModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookTypes" EntityType="Self.BookTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Custom" EntityType="Self.Custom" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Orders].[OrderID] AS [OrderID], 
+    [Orders].[Address] AS [Address], 
+    [Orders].[BookID] AS [BookID], 
+    [Orders].[Num] AS [Num], 
+    [Orders].[Price] AS [Price], 
+    [Orders].[CustomID] AS [CustomID], 
+    [Orders].[OrderTime] AS [OrderTime], 
+    [Orders].[ClearOrNot] AS [ClearOrNot], 
+    [Orders].[ReceiptOrNot] AS [ReceiptOrNot]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Detail" EntityType="Self.Detail" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Detail].[BookId] AS [BookId], 
@@ -81,5 +157,17 @@
     [Detail].[BookTag] AS [BookTag]
     FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_Books_BookTypes" Association="Self.FK_Books_BookTypes">
+      <End Role="BookTypes" EntitySet="BookTypes" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchases_Admin" Association="Self.FK_Purchases_Admin">
+      <End Role="Purchases" EntitySet="Purchases" />
+      <End Role="Purchases1" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchases_Books" Association="Self.FK_Purchases_Books">
+      <End Role="Purchases" EntitySet="Purchases" />
+      <End Role="Purchases1" EntitySet="Purchases" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

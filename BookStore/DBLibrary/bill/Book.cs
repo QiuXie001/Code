@@ -15,5 +15,9 @@ namespace DBLibrary.bill
             List<Books> books = db.Books.ToList<Books>();
             return books;
         }
+        public static void Update(Books entry)
+        {
+            
+        }
     }
 }

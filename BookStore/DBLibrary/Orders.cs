@@ -14,10 +14,14 @@ namespace DBLibrary
     
     public partial class Orders
     {
-        public int Order_ID { get; set; }
         public string Address { get; set; }
-        public string BookId { get; set; }
         public Nullable<int> Num { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<bool> ClearOrNot { get; set; }
+        public Nullable<bool> ReceiptOrNot { get; set; }
+        public int OrderID { get; set; }
+        public string BookID { get; set; }
+        public int CustomID { get; set; }
+        public Nullable<System.DateTime> OrderTime { get; set; }
     }
 }

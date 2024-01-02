@@ -18,7 +18,7 @@ namespace DBLibrary
         public string Custom_Password { get; set; }
         public string Custom_Age { get; set; }
         public string Custom_Telephone { get; set; }
-        public string Custom_IdentityID { get; set; }
         public string Custom_Name { get; set; }
+        public string Custom_IdentityID { get; set; }
     }
 }
