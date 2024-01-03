@@ -9,9 +9,11 @@ namespace BookStore.Controllers
     public class CustomController : Controller
     {
         // GET: Custom
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult InsertShopCart(int id)
         {
-            return View();
+            Session["ShopCart_BookID"] = id;
+            return RedirectToAction("ShopCart","Custom");
         }
     }
 }

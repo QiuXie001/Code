@@ -15,9 +15,16 @@ namespace DBLibrary.bill
             List<Books> books = db.Books.ToList<Books>();
             return books;
         }
+        public static List<BookTypes> GetTypes()
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            List<BookTypes> types = db.BookTypes.ToList<BookTypes>();
+            return types;
+        }
         public static void Update(Books entry)
         {
             
         }
+
     }
 }

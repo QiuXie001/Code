@@ -1,4 +1,5 @@
 ﻿using DBLibrary;
+using DBLibrary.bill;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,24 +32,29 @@ namespace BookStore.Controllers
         public ActionResult CustomUpdateView(int id)
         { 
             var custom = DBLibrary.bill.Custom.GetCustom(id);
+            Session["Custom_ID"] = id;
             return View(custom);
         }
 
         [HttpPost]
-        public ActionResult CustomUpdate(Custom custom) 
+        public ActionResult CustomUpdate(DBLibrary.Custom custom) 
         {
+            custom.Custom_ID = int.Parse(Session["Custom_ID"].ToString());
             DBLibrary.bill.Custom.Update(custom);
                 return RedirectToAction("CustomUserManage", "Admin");
         }
-        public ActionResult AdminUpdateView()
+        public ActionResult AdminUpdateView(int id)
         {
-            return View();
+            var admin = DBLibrary.bill.Admin.GetAdmin(id);
+            Session["Admin_ID"] = id;
+            return View(admin);
         }
         [HttpPost]
-        public ActionResult AdminUpdate(Admin admin)
+        public ActionResult AdminUpdate(DBLibrary.Admin admin)
         {
+            admin.Admin_ID = int.Parse(Session["Admin_ID"].ToString());
             DBLibrary.bill.Admin.Update(admin);
-                return RedirectToAction("AdminUserManage", "Admin");
+            return RedirectToAction("AdminUserManage", "Admin");
 
         }
         public ActionResult AdminSearch(int Admin_ID, string Admin_Telephone)
@@ -58,9 +64,9 @@ namespace BookStore.Controllers
             TempData["list"] = list;
             return RedirectToAction("AdminUserManage", "Admin");
         }
-        public ActionResult AdminUserManage(List<Admin> data)
+        public ActionResult AdminUserManage(List<DBLibrary.Admin> data)
         {
-            List<Admin> list = data;
+            List<DBLibrary.Admin> list = data;
             if (Session["search"].ToString() == "false")
             {
                 var entry = DBLibrary.bill.Admin.GetAllAdmin();
@@ -75,7 +81,7 @@ namespace BookStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CustomAdd(Custom custom)
+        public ActionResult CustomAdd(DBLibrary.Custom custom)
         {
             DBLibrary.bill.Custom.regist(custom);
             return RedirectToAction("CustomUserManage", "Admin");
@@ -85,7 +91,7 @@ namespace BookStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AdminAdd(Admin admin)
+        public ActionResult AdminAdd(DBLibrary.Admin admin)
         {
             DBLibrary.bill.Admin.regist(admin);
             return RedirectToAction("AdminUserManage", "Admin");

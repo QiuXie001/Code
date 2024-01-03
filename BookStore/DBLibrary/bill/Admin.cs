@@ -33,12 +33,10 @@ namespace DBLibrary.bill
         public static void Update(DBLibrary.Admin entry)
         {
             mvcStudyEntities db = new mvcStudyEntities();
-            var custom = db.Admin.FirstOrDefault(b => b.Admin_ID == entry.Admin_ID);
-            if (custom != null)
-            {
-                custom = entry;
-                db.SaveChanges();
-            }
+            db.Admin.Attach(entry);
+            db.Entry(entry).State = EntityState.Modified;
+            db.SaveChanges();
+            
         }
         public static List<DBLibrary.Admin> Search(int id, string telephone)
         {

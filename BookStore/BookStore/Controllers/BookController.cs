@@ -12,7 +12,10 @@ namespace BookStore.Controllers
         public ActionResult BookList()
         {
             List<DBLibrary.Books> list = DBLibrary.bill.Book.GetBooks();
+            var type = DBLibrary.bill.Book.GetTypes();
+            ViewBag.types = type;
             return View(list);
         }
+
     }
 }

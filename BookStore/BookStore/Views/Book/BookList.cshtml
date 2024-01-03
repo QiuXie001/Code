@@ -10,15 +10,16 @@
 <ul id="select">
     <li>
         <div class="select-head">
-            <i class="iconfont icon-xiangyoujiantou select-icon" ></i>
+            <i class="iconfont icon-xiangyoujiantou select-icon"></i>
             <span class="select-head-cont"></span>
         </div>
         <ul class="option">
             <li class="option-item" hidden>请选择图书类别</li>
-            <li class="option-item">safari</li>
-            <li class="option-item">Edge</li>
-            <li class="option-item">firefox</li>
-            <li class="option-item">ie8</li>
+            @foreach (var i in ViewBag.types)
+            {
+
+                <li class="option-item">@i.BookType</li>
+            }
         </ul>
 
     </li>
@@ -29,14 +30,26 @@
 </form>
 <div class="bookshelf">
     <div class="book-grid">
-        @for (var i = 0; i < Model.Count(); i++)
+        @for (var i = 0; i < Model.Count();)
         {
             <ul>
                 @for (int j = 0; j < 3 && i < Model.Count(); j++)
                 {
                     var book = Model.ToList()[i];
-                    i++;
-                    <li><img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" /></li>
+                    @using (Html.BeginForm("InsertShopCart", "Custom", FormMethod.Post))
+                    {
+                        <li>
+                            <img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" />
+
+                            <button onclick="InsertShopCart()" type="submit">
+                                <i class="iconfont icon-jiarugouwuche icon"></i>
+                            </button>
+                            <button onclick="ShowDetail()">
+                                <i class="iconfont icon-xiangqing icon"></i>
+                            </button>
+                        </li>
+                        i++;
+                    }
                 }
             </ul>
             <div class="shelf-shadows"></div>
@@ -59,7 +72,6 @@
             //int
             var $selectHead = $('ul#select');
             var selectHeadCont = document.getElementsByClassName('select-head-cont');
-            var Option = document.getElementsByClassName('option')[0];
             var optionItem = document.getElementsByClassName('option-item');
 
             /*默认是第一个选项*/
@@ -88,7 +100,13 @@
             $('ul#select').click(function () {
                 $(this).css("width", "250px");
             });
+            
         });
-
+        function InsertShopCart() {
+            alert("添加成功");
+        }
+        function ShowDetail() {
+            window.location.href = '../Book/Detail';
+        }
     </script>
 }

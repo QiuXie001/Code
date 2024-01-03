@@ -33,12 +33,9 @@ namespace DBLibrary.bill
         public static void Update(DBLibrary.Custom entry)
         {
             mvcStudyEntities db = new mvcStudyEntities();
-            var custom = db.Custom.FirstOrDefault(b => b.Custom_ID == entry.Custom_ID);
-            if (custom != null)
-            {
-                custom = entry;
-                db.SaveChanges();
-            }
+            db.Custom.Attach(entry);
+            db.Entry(entry).State = EntityState.Modified;
+            db.SaveChanges();
         }
         public static List<DBLibrary.Custom> Search(int id , string telephone)
         {
