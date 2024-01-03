@@ -1,56 +1,56 @@
-﻿@model DBLibrary.Admin
+﻿@model DBLibrary.Books
+
 @{
-    ViewBag.Title = "AdminInformation";
+    ViewBag.Title = "BookAddView";
 }
+
 @section css{
     <link rel="stylesheet" href="~/CSS/InfoInput.css">
     <link rel="stylesheet" href="~/CSS/Button.css">
 }
-<h2>AdminInformation</h2>
 
-@using (Html.BeginForm("AdminInformation", "PersonalInformation", FormMethod.Post))
+@using (Html.BeginForm("BookAdd", "Book", FormMethod.Post))
 {
     <ul>
         <li>
-            <label for="ID">
-                <span>@Html.DisplayNameFor(model => model.Admin_Name)</span>
-                <input type="text" name="Admin_ID" value="@Html.DisplayFor(model => model.Admin_Name)" />
+            <label for="Title">
+                <span>@Html.DisplayNameFor(model => model.Title)</span>
+                <input type="text" name="Title"  />
             </label>
         </li>
         <li>
-            <label for="IdentityID">
-                <span>@Html.DisplayNameFor(model => model.Admin_IdentityID)</span>
-                <input type="text" name="Admin_IdentityID" value="@Html.DisplayFor(model => model.Admin_IdentityID)" />
+            <label for="AuthorName">
+                <span>@Html.DisplayNameFor(model => model.AuthorName)</span>
+                <input type="text" name="AuthorName" />
             </label>
         </li>
         <li>
-            <label for="Name">
-                <span>@Html.DisplayNameFor(model => model.Admin_Name)</span>
-                <input type="text" name="Admin_Name" value="@Html.DisplayFor(model => model.Admin_Name)" />
+            <label for="Price">
+                <span>@Html.DisplayNameFor(model => model.Price)</span>
+                <input type="text" name="Price"  />
             </label>
         </li>
         <li>
-            <label for="Password">
-                <span>@Html.DisplayNameFor(model => model.Admin_Password)</span>
-                <input type="text" name="Admin_Password" value="@Html.DisplayFor(model => model.Admin_Password)" />
+            <label for="BookCoverUrl">
+                <span>@Html.DisplayNameFor(model => model.BookCoverUrl)</span>
+                <input type="text" name="BookCoverUrl"  />
             </label>
         </li>
         <li>
-            <label for="Age">
-                <span>@Html.DisplayNameFor(model => model.Admin_Age)</span>
-                <input type="text" name="Admin_Age" value="@Html.DisplayFor(model => model.Admin_Age)" />
+            <label for="BookTypeID">
+                <span>@Html.DisplayNameFor(model => model.BookTypeID)</span>
+                <input type="text" name="BookTypeID"  />
             </label>
         </li>
         <li>
-            <label for="Telephone">
-                <span>@Html.DisplayNameFor(model => model.Admin_Telephone)</span>
-                <input type="text" name="Admin_Telephone" value="@Html.DisplayFor(model => model.Admin_Telephone)" />
+            <label for="BookTag">
+                <span>@Html.DisplayNameFor(model => model.BookTag)</span>
+                <input type="text" name="BookTag" />
             </label>
         </li>
-
     </ul>
-    <button>
-        <span>Button</span>
+    <button type="submit" value="Add">
+        <span>提交</span>
     </button>
 }
 @section Scripts{

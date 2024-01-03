@@ -1,5 +1,6 @@
 ﻿using DBLibrary;
 using DBLibrary.bill;
+using System.Data;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,45 +16,44 @@ namespace BookStore.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string ID, string Password)
+        public ActionResult Login(DBLibrary.Admin entry)
         {
-            mvcStudyEntities db = new mvcStudyEntities();
-            Password = Password.PadRight(10,' ');
-            if (ID.Substring(0, 1) == "1")
+            if (entry.Admin_ID!=0)
             {
-                DBLibrary.Admin admin = db.Admin.SingleOrDefault(a => a.Admin_ID.ToString() == ID);
-                //if (account.Password == password)
-                //    Debug.WriteLine("通过");
-                if (admin != null && admin.Admin_Password == Password)
+                mvcStudyEntities db = new mvcStudyEntities();
+                string Password = entry.Admin_Password.PadRight(10, ' ');
+                if (entry.Admin_Password.Substring(0, 1) == "1")
                 {
-                    Session["isLogin"] = true;
-                    Session["identity"] = "admin";
-                    Session["Info"] = admin.Admin_ID;
-                    Response.ClearContent();
-                    return RedirectToAction("MainBoard", "Main");
-                }
-                else
-                {
-                    return View();
+                    DBLibrary.Admin admin = db.Admin.SingleOrDefault(a => a.Admin_ID == entry.Admin_ID);
+                    //if (account.Password == password)
+                    //    Debug.WriteLine("通过");
+                    if (admin != null && admin.Admin_Password == Password)
+                    {
+                        Session["isLogin"] = true;
+                        Session["identity"] = "admin";
+                        Session["Info"] = admin.Admin_ID;
+                        Session["Operational"] = false;
+                        Response.ClearContent();
+                        return RedirectToAction("MainBoard", "Main");
+                    }
+                    else
+                    {
+                        DBLibrary.Custom custom = db.Custom.SingleOrDefault(a => a.Custom_ID == entry.Admin_ID);
+                        //if (account.Password == password)
+                        //    Debug.WriteLine("通过");
+                        if (custom != null && custom.Custom_Password == Password)
+                        {
+                            Session["isLogin"] = true;
+                            Session["identity"] = "custom";
+                            Session["Info"] = custom.Custom_ID;
+                            return RedirectToAction("MainBoard", "Main");
+                        }
+                        return Content(" <script>alert( '用户名或密码错误！' );" +
+                            "window.location.href = '../../Login/Login'; </script> "); ;
+                    }
                 }
             }
-            else
-            {
-                DBLibrary.Custom custom = db.Custom.SingleOrDefault(a => a.Custom_ID.ToString() == ID);
-                //if (account.Password == password)
-                //    Debug.WriteLine("通过");
-                if (custom != null && custom.Custom_Password == Password)
-                {
-                    Session["isLogin"] = true;
-                    Session["identity"] = "custom";
-                    Session["Info"] = custom.Custom_ID;
-                    return RedirectToAction("MainBoard", "Main");
-                }
-                else
-                {
-                    return View();
-                }
-            }
+            return View(entry);
         }
         [HttpPost]
         public ActionResult Regist(DBLibrary.Custom entry)

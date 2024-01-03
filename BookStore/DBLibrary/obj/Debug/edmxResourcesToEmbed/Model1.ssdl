@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Admin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Admin_Name" Type="char" MaxLength="20" />
-    <Property Name="Admin_Password" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Admin_Password" Type="char" MaxLength="10" />
     <Property Name="Admin_Age" Type="char" MaxLength="3" />
     <Property Name="Admin_Telephone" Type="char" MaxLength="11" />
     <Property Name="Admin_IdentityID" Type="char" MaxLength="18" />
@@ -55,6 +55,7 @@
     <Property Name="Num" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
     <Property Name="CustomID" Type="int" Nullable="false" />
+    <Property Name="Custom_Telephone" Type="char" MaxLength="11" />
     <Property Name="OrderTime" Type="datetime" />
     <Property Name="ClearOrNot" Type="bit" />
     <Property Name="ReceiptOrNot" Type="bit" />
@@ -138,6 +139,7 @@
     [Orders].[Num] AS [Num], 
     [Orders].[Price] AS [Price], 
     [Orders].[CustomID] AS [CustomID], 
+    [Orders].[Custom_Telephone] AS [Custom_Telephone], 
     [Orders].[OrderTime] AS [OrderTime], 
     [Orders].[ClearOrNot] AS [ClearOrNot], 
     [Orders].[ReceiptOrNot] AS [ReceiptOrNot]

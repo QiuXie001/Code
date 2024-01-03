@@ -59,27 +59,27 @@
         function LoadPersonalInformation() {
         var identity = "@Session["identity"].ToString()";
             if (identity == "custom") {
-                window.location.href = '../PersonalInformation/CustomInformation';
+                window.location.href = '../../PersonalInformation/CustomInformation';
             }
             else if (identity == "admin") {
-                window.location.href = '../PersonalInformation/AdminInformation';
+                window.location.href = '../../PersonalInformation/AdminInformation';
             }
             else alert("非法操作");
         }
         function LoadShopMall() {
-            window.location.href = '../Book/BookList';
+            window.location.href = '../../Book/BookList';
         }
         function LoadShopCart() {
-            window.location.href = '../Custom/LoadPartialView';
+            window.location.href = '../../Custom/LoadPartialView';
         }
         function LoadOrderManage() {
-            window.location.href = '../Order/OrderManage';
+            window.location.href = '../../Order/OrderManage';
         }
         function LoadBookManage() {
-            window.location.href = '../Book/BookManage';
+            window.location.href = '../../Book/BookManage';
         }
         function LoadUserManage() {
-            window.location.href = '../Admin/CustomUserManage';
+            window.location.href = '../../Admin/CustomUserManage';
         }
     </script>
 </head>
@@ -106,7 +106,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    <li class="nav-link OnlyCustom">
                         <a onclick="LoadShopMall()">
                             <i class="iconfont icon-shangcheng icon"></i>
                             <span class="text nac-text">图书商城</span>

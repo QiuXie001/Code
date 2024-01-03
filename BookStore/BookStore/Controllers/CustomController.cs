@@ -13,7 +13,7 @@ namespace BookStore.Controllers
         public ActionResult InsertShopCart(int id)
         {
             Session["ShopCart_BookID"] = id;
-            return RedirectToAction("ShopCart","Custom");
+            return RedirectToAction("BookList","Book");
         }
     }
 }

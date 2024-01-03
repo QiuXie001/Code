@@ -226,6 +226,9 @@
     <Content Include="Views\Admin\AdminUpdateView.cshtml" />
     <Content Include="Views\Admin\AdminUserManage.cshtml" />
     <Content Include="Views\Book\BookManage.cshtml" />
+    <Content Include="Views\Book\BookAddView.cshtml" />
+    <Content Include="Views\Book\BookUpdateView.cshtml" />
+    <Content Include="Views\Book\BookDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

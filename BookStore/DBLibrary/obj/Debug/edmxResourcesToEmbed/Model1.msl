@@ -49,6 +49,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="mvcStudyModel.Orders">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Custom_Telephone" ColumnName="Custom_Telephone" />
           <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
           <ScalarProperty Name="CustomID" ColumnName="CustomID" />
           <ScalarProperty Name="BookID" ColumnName="BookID" />

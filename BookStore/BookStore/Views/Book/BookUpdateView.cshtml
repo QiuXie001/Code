@@ -1,52 +1,51 @@
-﻿@model DBLibrary.Custom
+﻿@model DBLibrary.Books
+
 @{
-    ViewBag.Title = "CustomInformation";
+    ViewBag.Title = "BookUpdateView";
 }
 
-<h2>CustomInformation</h2>
 
 @section css{
     <link rel="stylesheet" href="~/CSS/InfoInput.css">
-    <link rel="stylesheet" href="~/CSS/Button.css">
 }
 
-@using (Html.BeginForm("CustomInformation", "PersonalInformation", FormMethod.Post))
+@using (Html.BeginForm("BookUpdate", "Book", FormMethod.Post))
 {
 
-    <ul> 
+    <ul>
         <li>
-            <label for="Name">
-                <span>@Html.DisplayNameFor(model => model.Custom_Name)</span>
-                <input type="text" name="Custom_Name" value="@Html.DisplayFor(model => model.Custom_Name)" />
+            <label for="Title">
+                <span>@Html.DisplayNameFor(model => model.Title)</span>
+                <input type="text" name="Title" value="@Html.DisplayFor(model => model.Title)" />
             </label>
         </li>
         <li>
-            <label for="Password">
-                <span>@Html.DisplayNameFor(model => model.Custom_Password)</span>
-                <input type="text" name="Custom_Password" value="@Html.DisplayFor(model => model.Custom_Password)" />
+            <label for="AuthorName">
+                <span>@Html.DisplayNameFor(model => model.AuthorName)</span>
+                <input type="text" name="AuthorName" value="@Html.DisplayFor(model => model.AuthorName)" />
             </label>
         </li>
         <li>
-            <label for="Age">
-                <span>@Html.DisplayNameFor(model => model.Custom_Age)</span>
-                <input type="text" name="Custom_Age" value="@Html.DisplayFor(model => model.Custom_Age)" />
+            <label for="Price">
+                <span>@Html.DisplayNameFor(model => model.Price)</span>
+                <input type="text" name="Price" value="@Html.DisplayFor(model => model.Price)" />
             </label>
         </li>
         <li>
-            <label for="Telephone">
-                <span>@Html.DisplayNameFor(model => model.Custom_Telephone)</span>
-                <input type="text" name="Custom_Telephone" value="@Html.DisplayFor(model => model.Custom_Telephone)" />
+            <label for="BookTypeID">
+                <span>@Html.DisplayNameFor(model => model.BookTypeID)</span>
+                <input type="text" name="BookTypeID" value="@Html.DisplayFor(model => model.BookTypeID)" />
             </label>
         </li>
         <li>
-            <label for="IdentityID">
-                <span>@Html.DisplayNameFor(model => model.Custom_IdentityID)</span>
-                <input type="text" name="Custom_IdentityID" value="@Html.DisplayFor(model => model.Custom_IdentityID)" />
+            <label for="BookTag">
+                <span>@Html.DisplayNameFor(model => model.BookTag)</span>
+                <input type="text" name="BookTag" value="@Html.DisplayFor(model => model.BookTag)" />
             </label>
         </li>
     </ul>
     <button type="submit" value="Update">
-        <span>Button</span>
+        <span>提交</span>
     </button>
 }
 @section Scripts{

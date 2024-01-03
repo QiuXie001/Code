@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="mvcStudyModel.BookTypes" Width="1.5" PointX="4.75" PointY="1.375" />
         <EntityTypeShape EntityType="mvcStudyModel.Custom" Width="1.5" PointX="0.75" PointY="5.75" />
         <EntityTypeShape EntityType="mvcStudyModel.Orders" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="mvcStudyModel.Purchases" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="mvcStudyModel.Purchases" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="mvcStudyModel.Detail" Width="1.5" PointX="6.75" PointY="4.75" />
         <AssociationConnector Association="mvcStudyModel.FK_Books_BookTypes" />
       </Diagram>

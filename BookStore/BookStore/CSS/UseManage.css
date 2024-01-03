@@ -140,6 +140,10 @@ a:-webkit-any-link {
     color: var(--text-color);
     text-decoration: none;
 }
+a :link{
+    color: var(--text-color);
+    text-decoration: none;
+}
 button.search span {
     text-decoration: none;
     position: relative;

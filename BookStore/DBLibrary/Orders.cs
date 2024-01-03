@@ -23,5 +23,6 @@ namespace DBLibrary
         public string BookID { get; set; }
         public int CustomID { get; set; }
         public Nullable<System.DateTime> OrderTime { get; set; }
+        public string Custom_Telephone { get; set; }
     }
 }

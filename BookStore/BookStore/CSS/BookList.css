@@ -1,7 +1,6 @@
 ﻿.bookshelf {
     width:auto;
     margin-left: 5rem auto;
-    text-align: center;
     position: relative;
 }
 
@@ -54,10 +53,16 @@
     border-radius: 2px;
     z-index: 3;
 }
+div.board {
+    padding-left:100px;
+}
 div.book-grid i {
     padding-right:88px;
     display:inline;
 }
 div.book-grid button {
-    border-color :var(--body-color);
+    display:contents;
+}
+a{
+   text-decoration:none;
 }

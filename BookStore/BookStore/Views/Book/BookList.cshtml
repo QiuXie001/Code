@@ -36,20 +36,22 @@
                 @for (int j = 0; j < 3 && i < Model.Count(); j++)
                 {
                     var book = Model.ToList()[i];
-                    @using (Html.BeginForm("InsertShopCart", "Custom", FormMethod.Post))
-                    {
-                        <li>
-                            <img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" />
 
-                            <button onclick="InsertShopCart()" type="submit">
-                                <i class="iconfont icon-jiarugouwuche icon"></i>
-                            </button>
-                            <button onclick="ShowDetail()">
-                                <i class="iconfont icon-xiangqing icon"></i>
-                            </button>
-                        </li>
-                        i++;
-                    }
+                    <li>
+                        <img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" />
+
+                        <!-- 添加到购物车的按钮 -->
+                        <button data-action="add-to-cart" data-id="@book.Book_ID" type="submit">
+                            <i class="iconfont icon-jiarugouwuche icon"></i>
+                        </button>
+
+                        <!-- 查看详细信息的按钮 -->
+                        <button data-action="details" data-id="@book.Book_ID" type="submit">
+                            <i class="iconfont icon-xiangqing icon"></i>
+                        </button>
+                    </li>
+                    i++;
+
                 }
             </ul>
             <div class="shelf-shadows"></div>
@@ -96,17 +98,47 @@
                     $('.select-head-cont').css("display", "none");
                     $('.select-icon').css("transform", "rotate(0deg)");
                 }
-            })
+            });
             $('ul#select').click(function () {
                 $(this).css("width", "250px");
             });
-            
+
         });
-        function InsertShopCart() {
-            alert("添加成功");
-        }
-        function ShowDetail() {
-            window.location.href = '../Book/Detail';
-        }
+        // 处理添加到购物车的按钮点击事件
+        $(document).on('click', '[data-action="add-to-cart"]', function () {
+            var id = $(this).data('id');
+            // 可以使用Ajax调用Controller的AddToCart动作方法
+             $.ajax({
+                 url: '/Book/AddToCart/' + id,
+                 type: 'GET',
+                 success: function(response) {
+                     alert("添加成功");
+                 },
+                 error: function() {
+                     // 处理错误
+                 }
+             });
+        });
+
+        // 处理查看详细信息的按钮点击事件
+        $(document).on('click', '[data-action="details"]', function () {
+            var id = $(this).data('id');
+             //可以使用Ajax调用Controller的Details动作方法
+             $.ajax({
+                 url: '/Book/BookDetail/' + id,
+                 type: 'GET',
+                 dataType:'html',
+                 success: function(response) {
+                     // 处理成功的响应
+                     alert("获取成功");
+                     const board = document.getElementsByClassName('board')[0];
+                     board.innerHTML = response;
+
+                 },
+                 error: function() {
+                     // 处理错误
+                 }
+             });
+        });
     </script>
 }

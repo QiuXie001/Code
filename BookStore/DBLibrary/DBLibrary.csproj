@@ -70,6 +70,8 @@
     <Compile Include="Detail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="meta\Admin.cs" />
+    <Compile Include="meta\Book.cs" />
     <Compile Include="meta\Custom.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DBLibrary.Admin
+@{
     Layout = null;
 }
 @{
@@ -9,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="~/CSS/Login.min.css">
+    <link rel="stylesheet" href="~/CSS/Login.css">
 </head>
 <body>
     <p class="tip"></p>
@@ -19,16 +20,17 @@
             {
                 <form method="post">
                     <h2>登录</h2>
-                    <label for="ID">
+                    <label for="Admin_ID">
                         <span>用户名</span>
-                        <input type="text" name="ID" />
+                        <input type="text" name="Admin_ID" />
+                        @Html.ValidationMessageFor(model => model.Admin_ID, "", new { @class = "text-danger" })
                     </label>
-                    <label for="password">
+                    <label for="Admin_Password">
                         <span>密码</span>
-                        <input type="password" name="Password" />
+                        <input type="password" name="Admin_Password" />
+                        @Html.ValidationMessageFor(model => model.Admin_Password, "", new { @class = "text-danger" })
                     </label>
-                    <p class="forgot-pass">忘记密码？</p>
-                    <button type="submit" class="submit">登录</button>
+                    <button type="submit" class="submit" value="Login">登录</button>
                 </form>
             }
         </div>
@@ -77,11 +79,10 @@
 
 </body>
 </html>
-@section Scripts{
-    <script type="text/javascript">
-        document.querySelector('.img__btn').addEventListener('click', function () {
-            document.querySelector('.cont').classList.toggle('s--signup');
-            $('input').reset();
-        });
-    </script>
-}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s--signup');
+        $('input').reset();
+    });
+</script>

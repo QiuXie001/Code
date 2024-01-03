@@ -7,28 +7,37 @@
 
 
 @section css{
+
     <link rel="stylesheet" href="~/CSS/UseManage.css">
 }
 <body>
     <div class="search">
         <ul>
-            @using (Html.BeginForm("BooksSearch", "Books", FormMethod.Post))
+            @using (Html.BeginForm("BookSearch", "Book", FormMethod.Post))
             {
                 <li>
                     <span>图书编号</span>
                     <input type="text" class="input" name="Book_ID">
                 </li>
                 <li>
-                    <span>图书类别</span>
-                    <input type="text" class="input" name="BookTypeID">
+                    <span>图书名称</span>
+                    <input type="text" class="input" name="Title">
                 </li>
                 <li class="search">
                     <button class="search" type="submit">
                         <span>查询</span>
                     </button>
-
                 </li>
             }
+            <li class="search">
+                @using (Html.BeginForm("BookAddView", "Book", FormMethod.Get))
+                {
+                    <button class="search">
+                        <span>@Html.ActionLink("新增", "BookAddView", "Book")</span>
+                    </button>
+                }
+            </li>
+
         </ul>
     </div>
 
@@ -65,9 +74,10 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.BookTag)
                             </td>
+
                             <td>
-                                <button class="operate"> @Html.ActionLink("修改", "Update", "Book", new { id = item.Book_ID }, null)</button>
-                                <button class="operate"> @Html.ActionLink("删除", "Delete", "Book", new { id = item.Book_ID }, null)</button>
+                                <button class="operate"> @Html.ActionLink("修改", "BookUpdateView", "Book", new { id = item.Book_ID }, null)</button>
+                                <button class="operate"> @Html.ActionLink("删除", "BookDelete", "Book", new { id = item.Book_ID }, null)</button>
                             </td>
                         </tr>
                     }

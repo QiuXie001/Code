@@ -1,0 +1,72 @@
+﻿@model DBLibrary.Books
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "BookDetail";
+}
+
+<h2>图书详情</h2>
+
+    <link rel="stylesheet" href="~/CSS/InfoInput.css">
+    <link rel="stylesheet" href="~/CSS/Button.css">
+
+
+@using (Html.BeginForm("CustomInformation", "Book", FormMethod.Post))
+{
+
+    <ul>
+        <li>
+            <label for="Title">
+                <span>@Html.DisplayNameFor(model => model.Title)</span>
+                <label type="text" name="Title" value="@Html.DisplayFor(model => model.Title)" />
+            </label>
+        </li>
+        <li>
+            <label for="AuthorName">
+                <span>@Html.DisplayNameFor(model => model.AuthorName)</span>
+                <label type="text" name="AuthorName" value="@Html.DisplayFor(model => model.AuthorName)" />
+            </label>
+        </li>
+        <li>
+            <label for="Price">
+                <span>@Html.DisplayNameFor(model => model.Price)</span>
+                <label type="text" name="Price" value="@Html.DisplayFor(model => model.Price)" />
+            </label>
+        </li>
+    </ul>
+    <button type="submit" value="Buy">
+        <span>购买</span>
+    </button>
+}
+<button type="submit" value="InsertShopCart">
+    <span>加入购物车</span>
+</button>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+
+
