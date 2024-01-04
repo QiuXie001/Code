@@ -10,6 +10,7 @@
     <Property Name="Admin_Age" Type="char" MaxLength="3" />
     <Property Name="Admin_Telephone" Type="char" MaxLength="11" />
     <Property Name="Admin_IdentityID" Type="char" MaxLength="18" />
+    <Property Name="Admin_HeadShotUrl" Type="nchar" MaxLength="1024" />
   </EntityType>
   <EntityType Name="Books">
     <Key>
@@ -41,15 +42,12 @@
     <Property Name="Custom_Telephone" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="Custom_IdentityID" Type="char" MaxLength="18" />
   </EntityType>
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“mvcStudy.dbo.Orders”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="Orders">
     <Key>
-      <PropertyRef Name="OrderID" />
-      <PropertyRef Name="BookID" />
-      <PropertyRef Name="CustomID" />
+      <PropertyRef Name="serialnumber" />
     </Key>
-    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serialnumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="bigint" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="1024" />
     <Property Name="BookID" Type="nvarchar" MaxLength="1024" Nullable="false" />
     <Property Name="Num" Type="int" />
@@ -70,24 +68,6 @@
     <Property Name="Num" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Purchase_Time" Type="datetime" />
-  </EntityType>
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“mvcStudy.dbo.Detail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
-  <EntityType Name="Detail">
-    <Key>
-      <PropertyRef Name="BookId" />
-      <PropertyRef Name="OrderID" />
-    </Key>
-    <Property Name="BookId" Type="int" Nullable="false" />
-    <Property Name="AuthorName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Title" Type="nvarchar" MaxLength="160" />
-    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="BookCoverUrl" Type="nvarchar" MaxLength="1024" />
-    <Property Name="OrderID" Type="int" Nullable="false" />
-    <Property Name="Address" Type="nvarchar" MaxLength="1024" />
-    <Property Name="Num" Type="int" />
-    <Property Name="BookType" Type="nvarchar" MaxLength="50" />
-    <Property Name="BookTag" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Books_BookTypes">
     <End Role="BookTypes" Type="Self.BookTypes" Multiplicity="1" />
@@ -130,35 +110,8 @@
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BookTypes" EntityType="Self.BookTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Custom" EntityType="Self.Custom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Purchases" EntityType="Self.Purchases" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Orders].[OrderID] AS [OrderID], 
-    [Orders].[Address] AS [Address], 
-    [Orders].[BookID] AS [BookID], 
-    [Orders].[Num] AS [Num], 
-    [Orders].[Price] AS [Price], 
-    [Orders].[CustomID] AS [CustomID], 
-    [Orders].[Custom_Telephone] AS [Custom_Telephone], 
-    [Orders].[OrderTime] AS [OrderTime], 
-    [Orders].[ClearOrNot] AS [ClearOrNot], 
-    [Orders].[ReceiptOrNot] AS [ReceiptOrNot]
-    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Detail" EntityType="Self.Detail" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Detail].[BookId] AS [BookId], 
-    [Detail].[AuthorName] AS [AuthorName], 
-    [Detail].[Title] AS [Title], 
-    [Detail].[Price] AS [Price], 
-    [Detail].[BookCoverUrl] AS [BookCoverUrl], 
-    [Detail].[OrderID] AS [OrderID], 
-    [Detail].[Address] AS [Address], 
-    [Detail].[Num] AS [Num], 
-    [Detail].[BookType] AS [BookType], 
-    [Detail].[BookTag] AS [BookTag]
-    FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_Books_BookTypes" Association="Self.FK_Books_BookTypes">
       <End Role="BookTypes" EntitySet="BookTypes" />
       <End Role="Books" EntitySet="Books" />

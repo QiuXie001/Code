@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DBLibrary.bill;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         // GET: Order
         public ActionResult OrderManage()
@@ -43,5 +45,78 @@ namespace BookStore.Controllers
             }
             
         }
+        public ActionResult OrderSubmit()
+        {
+            if (Session["Orders"] != null) 
+            {
+                List<DBLibrary.Orders> orders = (List<DBLibrary.Orders>)Session["Orders"];
+                return View(orders);
+            }
+            return View();
+        }
+        [HttpGet]
+        public ActionResult OrderSubmitMultiple()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult OrderSubmitMultiple(List<DBLibrary.Orders> orders)
+        {
+            Session["Orders"] = orders;
+            return RedirectToAction("OrderSubmit", "Order", orders);
+        }
+        [HttpPost]
+        public ActionResult OrderSubmit(int bookid ,int num)
+        {
+            DBLibrary.Books book = Book.GetBooks(bookid);
+            DBLibrary.Orders order = new DBLibrary.Orders();
+            order.BookID = bookid.ToString();
+            order.Num = num;
+            order.Price = book.Price;
+            List<DBLibrary.Orders> list = new List<DBLibrary.Orders>();
+            list.Add(order);
+            return View(list);
+        }
+        [HttpPost]
+        public ActionResult OrderSave(List<DBLibrary.Orders>orders)
+        {
+            Session["price"] = 0;
+            long OrderID = long.Parse(DateTime.Now.Ticks.ToString()); ;
+            DateTime OrderTime = DateTime.Now;
+            foreach (var i in orders)
+            {
+                i.CustomID = int.Parse(Session["info"].ToString());
+                i.OrderID = OrderID;
+                i.OrderTime = OrderTime;
+                Session["price"] = decimal.Parse(Session["price"].ToString()) + (i.Price * i.Num);
+                i.Price *= i.Num;
+                i.ClearOrNot = false;
+                i.ReceiptOrNot = false;
+            }
+            foreach (var i in orders)
+            {
+                Debug.WriteLine(decimal.Parse(Session["price"].ToString()));
+                i.Price = decimal.Parse(Session["price"].ToString());
+            }
+            DBLibrary.bill.Order.InsertOrder(orders);
+            return RedirectToAction("OrderManage", "Order");
+        }
+        public ActionResult Delete(long id)
+        {
+            Order.Delete(id);
+            return RedirectToAction("OrderManage", "Order");
+        }
+        public ActionResult Clear(long id)
+        {
+            Order.Clear(id);
+            return RedirectToAction("OrderManage", "Order");
+        }
+        public ActionResult Receipt(long id)
+        {
+            Order.Receipt(id);
+            return RedirectToAction("OrderManage", "Order");
+        }
+
     }
 }

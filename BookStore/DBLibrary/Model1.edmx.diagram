@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8debe31806324ce59e948aa94f97eee0" Name="Diagram1">
-        <EntityTypeShape EntityType="mvcStudyModel.Admin" Width="1.5" PointX="4.75" PointY="4.75" />
-        <EntityTypeShape EntityType="mvcStudyModel.Books" Width="1.5" PointX="7" PointY="1" />
-        <EntityTypeShape EntityType="mvcStudyModel.BookTypes" Width="1.5" PointX="4.75" PointY="1.375" />
-        <EntityTypeShape EntityType="mvcStudyModel.Custom" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="mvcStudyModel.Orders" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="mvcStudyModel.Purchases" Width="1.5" PointX="0.75" PointY="1" />
-        <EntityTypeShape EntityType="mvcStudyModel.Detail" Width="1.5" PointX="6.75" PointY="4.75" />
-        <AssociationConnector Association="mvcStudyModel.FK_Books_BookTypes" />
+      <Diagram DiagramId="faff475969124fc0b01740bde874ffb2" Name="Diagram1">
+        <EntityTypeShape EntityType="mvcStudyModel.Admin" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mvcStudyModel.Books" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="mvcStudyModel.BookTypes" Width="1.5" PointX="2.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mvcStudyModel.Custom" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mvcStudyModel.Orders" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mvcStudyModel.Purchases" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="mvcStudyModel.FK_Books_BookTypes" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

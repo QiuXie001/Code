@@ -15,10 +15,11 @@ namespace DBLibrary
     public partial class Custom
     {
         public int Custom_ID { get; set; }
+        public string Custom_Name { get; set; }
         public string Custom_Password { get; set; }
         public string Custom_Age { get; set; }
         public string Custom_Telephone { get; set; }
-        public string Custom_Name { get; set; }
         public string Custom_IdentityID { get; set; }
+        public string Custom_HeadShotUrl { get; set; }
     }
 }

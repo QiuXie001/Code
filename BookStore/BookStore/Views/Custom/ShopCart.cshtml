@@ -1,0 +1,117 @@
+﻿@model IEnumerable<DBLibrary.Books>
+@{
+    ViewBag.Title = "ShopCart";
+}
+
+<h2>ShopCart</h2>
+
+
+
+@section css{
+
+    <link rel="stylesheet" href="~/CSS/UseManage.css">
+    <link rel="stylesheet" href="~/CSS/Button.css">
+    <link rel="stylesheet" href="~/CSS/CheckBox.css">
+}
+<body>
+
+
+    <div class="ManageList">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">选中</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Book_ID)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Title)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.AuthorName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+                    <th scope="col">数量</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr class="show">
+                            <td scope="row">
+                                <div class="container">
+                                    <input type="checkbox" class="switch" id="checkbox" />
+                                </div>
+                            </td>
+                            <td class="BookID">@Html.DisplayFor(modelItem => item.Book_ID)</td>
+                            <td >@Html.DisplayFor(modelItem => item.Title)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AuthorName)</td>
+                            <td class="Price">@Html.DisplayFor(modelItem => item.Price)</td>
+                            <td>
+                                <input type="number" class="Num" name="num" value="1">
+                            </td>
+                            <td>
+                                <button class="operate" data-action="delete-to-cart" data-id="@item.Book_ID"> 删除</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <button type="submit" class="submitbtn">
+            提交订单
+        </button>
+    </div>
+</body>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).on('click', '[data-action="delete-to-cart"]', function () {
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/Custom/DeleteShopCart/' + id,
+                type: 'Post',
+                success: function (response) {
+                    alert("删除成功");
+                    window.location.href = '../../Custom/ShopCart';
+                },
+                error: function () {
+                    // 处理错误
+                }
+            });
+        })
+        $(document).ready(function () {
+            $('.submitbtn').click(function () {
+                var Orders = [];
+                var address = $('.Address').val();
+                var telephone = $('.Telephone').val();
+                // 遍历表格中的每一行
+                $('tr.show').each(function () {
+                    var $checkbox = $(this).find('.switch');
+                    if ($checkbox.is(':checked')) {
+                        var bookId = $(this).find('.BookID').text();
+                        var price = $(this).find('.Price').text();
+                        var num = $(this).find('.Num').val();
+
+                        Orders.push({
+                            Address: address,
+                            BookID: bookId,
+                            Price: price,
+                            Custom_Telephone: telephone,
+                            Num: num,
+                        })
+                    };
+                });
+                // 发送AJAX请求
+                $.ajax({
+                    url: '/Order/OrderSubmitMultiple',
+                    type: 'POST',
+                    data: JSON.stringify(Orders),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        window.location.href = '../../Order/OrderSubmit';
+                    },
+                    error: function () {
+                        // 处理错误响应
+                    }
+                });
+            });
+        });
+    </script>
+}

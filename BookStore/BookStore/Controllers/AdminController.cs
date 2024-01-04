@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         public ActionResult CustomSearch(int Custom_ID,string Custom_Telephone)
         {

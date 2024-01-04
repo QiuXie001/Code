@@ -1,0 +1,31 @@
+﻿.DetailBox {
+    position: absolute;
+    top: 10%;
+    left:40%;
+}
+.DetailBox img {
+    display: block;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+button {
+    width:250px;
+    margin-top:50px;
+}
+.DetailBox li span {
+    position: inherit;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+.DetailBox li input {
+    width: 150px;
+    transform: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    transition: none;
+}

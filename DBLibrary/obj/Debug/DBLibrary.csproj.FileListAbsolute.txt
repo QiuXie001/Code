@@ -1,0 +1,14 @@
+D:\Code\BookStore\DBLibrary\bin\Debug\DBLibrary.dll.config
+D:\Code\BookStore\DBLibrary\bin\Debug\DBLibrary.dll
+D:\Code\BookStore\DBLibrary\bin\Debug\DBLibrary.pdb
+D:\Code\BookStore\DBLibrary\bin\Debug\EntityFramework.dll
+D:\Code\BookStore\DBLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\BookStore\DBLibrary\bin\Debug\EntityFramework.xml
+D:\Code\BookStore\DBLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\BookStore\DBLibrary\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.csproj.AssemblyReference.cache
+D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.csproj.CoreCompileInputs.cache
+D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.csproj.CopyComplete
+D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.dll
+D:\Code\BookStore\DBLibrary\obj\Debug\DBLibrary.pdb
+D:\Code\BookStore\DBLibrary\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

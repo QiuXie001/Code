@@ -5,43 +5,57 @@
 @{
     ViewBag.Title = "BookDetail";
 }
-
-<h2>图书详情</h2>
-
-    <link rel="stylesheet" href="~/CSS/InfoInput.css">
+<div class="DetailBox">
+    <h2>图书详情</h2>
     <link rel="stylesheet" href="~/CSS/Button.css">
+    <link rel="stylesheet" href="~/CSS/DetailBox.css">
 
 
-@using (Html.BeginForm("CustomInformation", "Book", FormMethod.Post))
-{
+    @using (Html.BeginForm("OrderSubmit", "Order", FormMethod.Post))
+    {
 
-    <ul>
-        <li>
-            <label for="Title">
-                <span>@Html.DisplayNameFor(model => model.Title)</span>
-                <label type="text" name="Title" value="@Html.DisplayFor(model => model.Title)" />
-            </label>
-        </li>
-        <li>
-            <label for="AuthorName">
-                <span>@Html.DisplayNameFor(model => model.AuthorName)</span>
-                <label type="text" name="AuthorName" value="@Html.DisplayFor(model => model.AuthorName)" />
-            </label>
-        </li>
-        <li>
-            <label for="Price">
-                <span>@Html.DisplayNameFor(model => model.Price)</span>
-                <label type="text" name="Price" value="@Html.DisplayFor(model => model.Price)" />
-            </label>
-        </li>
-    </ul>
-    <button type="submit" value="Buy">
-        <span>购买</span>
+        <ul>
+            <li>
+                <input type="text" name="bookid"value="@Model.Book_ID" style="display:none">
+            </li>
+            <li>
+                <label for="Image">
+                    <img name="Title" src="@Html.DisplayFor(model => model.BookCoverUrl)" />
+                </label>
+            </li>
+            <li>
+                <label for="Title">
+                    <span>@Html.DisplayNameFor(model => model.Title)</span>
+                    <span>@Html.DisplayFor(model => model.Title)</span>
+                </label>
+            </li>
+            <li>
+                <label for="AuthorName">
+                    <span>@Html.DisplayNameFor(model => model.AuthorName)</span>
+                    <span>@Html.DisplayFor(model => model.AuthorName)</span>
+                </label>
+            </li>
+            <li>
+                <label for="Price">
+                    <span>@Html.DisplayNameFor(model => model.Price)</span>
+                    <span>@Html.DisplayFor(model => model.Price)</span>
+                </label>
+            </li>
+            <li>
+                <label for="Num">
+                    <span>数量</span>
+                    <input type="number" name="num" value="1">
+                </label>
+            </li>
+        </ul>
+        <button type="submit" value="Buy">
+            <span>购买</span>
+        </button>
+    }
+    <button data-action="add-to-cart" data-id="@Model.Book_ID" type="submit">
+        <span>加入购物车</span>
     </button>
-}
-<button type="submit" value="InsertShopCart">
-    <span>加入购物车</span>
-</button>
+</div>
     <script type="text/javascript">
         $(document).ready(function () {
             $('input').each(function () {
@@ -67,6 +81,22 @@
                 $(this).parent().find('span').addClass('havevalue')
             })
         })
+        $(document).on('click', '[data-action="add-to-cart"]', function () {
+            var id = $(this).data('id');
+            // 可以使用Ajax调用Controller的AddToCart动作方法
+            $.ajax({
+                url: '/Custom/InsertShopCart/' + id,
+                type: 'Post',
+                success: function (response) {
+                    alert("添加成功");
+
+                },
+                error: function () {
+                    // 处理错误
+                }
+            });
+        });
+
     </script>
 
 

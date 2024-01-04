@@ -15,6 +15,38 @@ namespace DBLibrary.bill
             List<Books> books = db.Books.ToList<Books>();
             return books;
         }
+        public static List<Books> SearchBooks(string str)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            List<Books> books = new List<Books>();
+            var entry = db.Books.Where(b => b.Title.Contains(str) );
+            foreach (var i in entry)
+            { 
+                if(i.Title.Contains(str))
+                books.Add(i);
+            }
+            return books;
+        }
+        public static List<Books> SelectBooks(string TypeName)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            List<Books> books = new List<Books>();
+            var types = db.BookTypes.ToList();
+            foreach(var i in types)
+            {
+                if (i.BookType == TypeName)
+                {
+                    var entry = db.Books.Where(b => b.BookTypeID == i.BookTypeID);
+                    foreach (var j in entry)
+                    { 
+                        books.Add(j);
+                    }
+                    break;
+                }
+            }
+            
+            return books;
+        }
         public static List<BookTypes> GetTypes()
         {
             mvcStudyEntities db = new mvcStudyEntities();
@@ -47,6 +79,7 @@ namespace DBLibrary.bill
             db.SaveChanges();
         }
 
+        //选取
         public static List<Books> Search(int id, string title)
         {
             mvcStudyEntities db = new mvcStudyEntities();

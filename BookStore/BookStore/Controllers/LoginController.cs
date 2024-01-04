@@ -13,12 +13,14 @@ namespace BookStore.Controllers
         // GET: Login
         public ActionResult Login()
         {
+            Session.RemoveAll();
             return View();
         }
         [HttpPost]
         public ActionResult Login(DBLibrary.Admin entry)
         {
-            if (entry.Admin_ID!=0)
+            Session.RemoveAll();
+            if (entry.Admin_ID!=0&&entry.Admin_Password!=null)
             {
                 mvcStudyEntities db = new mvcStudyEntities();
                 string Password = entry.Admin_Password.PadRight(10, ' ');
@@ -33,6 +35,7 @@ namespace BookStore.Controllers
                         Session["identity"] = "admin";
                         Session["Info"] = admin.Admin_ID;
                         Session["Operational"] = false;
+                        ViewBag.HeadShot = admin.Admin_HeadShotUrl;
                         Response.ClearContent();
                         return RedirectToAction("MainBoard", "Main");
                     }

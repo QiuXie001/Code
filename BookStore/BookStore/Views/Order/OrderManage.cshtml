@@ -36,14 +36,16 @@
             <thead>
                 <tr>
                     <th scope="col">@Html.DisplayNameFor(model => model.OrderID)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.OrderTime)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Custom_Telephone)</th>
                     @if (Session["identity"].ToString() == "admin")
                     {
-                    <th scope="col">@Html.DisplayNameFor(model => model.CustomID)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.CustomID)</th>
                     }
                     <th scope="col">@Html.DisplayNameFor(model => model.Address)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.OrderTime)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.ClearOrNot)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.ReceiptOrNot)</th>
                     <th scope="col">操作</th>
                 </tr>
             </thead>
@@ -57,13 +59,13 @@
                                 @Html.DisplayFor(modelItem => item.OrderID)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.OrderTime)
+                                @Html.DisplayFor(modelItem => item.Custom_Telephone)
                             </td>
                             @if (Session["identity"].ToString() == "admin")
                             {
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CustomID)
-                            </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CustomID)
+                                </td>
                             }
                             <td>
                                 @Html.DisplayFor(modelItem => item.Address)
@@ -75,7 +77,15 @@
                                 @Html.DisplayFor(modelItem => item.OrderTime)
                             </td>
                             <td>
-                                <button class="operate"> @Html.ActionLink("删除", "Delete", "Order", new { id = item.CustomID }, null)</button>
+                                @item.ClearOrNot
+                            </td>
+                            <td>
+                                @item.ReceiptOrNot
+                            </td>
+                            <td>
+                                <button class="operate"> @Html.ActionLink("删除", "Delete", "Order", new { id = item.OrderID }, null)</button>
+                                <button class="operate"> @Html.ActionLink("付款", "Clear", "Order", new { id = item.OrderID }, null)</button>
+                                <button class="operate"> @Html.ActionLink("签收", "Receipt", "Order", new { id = item.OrderID }, null)</button>
                             </td>
                         </tr>
                     }

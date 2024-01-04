@@ -4,89 +4,75 @@
     <EntitySetMapping Name="Admin">
       <EntityTypeMapping TypeName="mvcStudyModel.Admin">
         <MappingFragment StoreEntitySet="Admin">
-          <ScalarProperty Name="Admin_IdentityID" ColumnName="Admin_IdentityID" />
-          <ScalarProperty Name="Admin_Telephone" ColumnName="Admin_Telephone" />
-          <ScalarProperty Name="Admin_Age" ColumnName="Admin_Age" />
-          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
-          <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+          <ScalarProperty Name="Admin_HeadShotUrl" ColumnName="Admin_HeadShotUrl" />
           <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Age" ColumnName="Admin_Age" />
+          <ScalarProperty Name="Admin_Telephone" ColumnName="Admin_Telephone" />
+          <ScalarProperty Name="Admin_IdentityID" ColumnName="Admin_IdentityID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Books">
       <EntityTypeMapping TypeName="mvcStudyModel.Books">
         <MappingFragment StoreEntitySet="Books">
-          <ScalarProperty Name="BookTag" ColumnName="BookTag" />
-          <ScalarProperty Name="BookTypeID" ColumnName="BookTypeID" />
-          <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
           <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
+          <ScalarProperty Name="BookTypeID" ColumnName="BookTypeID" />
+          <ScalarProperty Name="BookTag" ColumnName="BookTag" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BookTypes">
       <EntityTypeMapping TypeName="mvcStudyModel.BookTypes">
         <MappingFragment StoreEntitySet="BookTypes">
-          <ScalarProperty Name="BookType" ColumnName="BookType" />
           <ScalarProperty Name="BookTypeID" ColumnName="BookTypeID" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Custom">
       <EntityTypeMapping TypeName="mvcStudyModel.Custom">
         <MappingFragment StoreEntitySet="Custom">
-          <ScalarProperty Name="Custom_IdentityID" ColumnName="Custom_IdentityID" />
-          <ScalarProperty Name="Custom_Name" ColumnName="Custom_Name" />
-          <ScalarProperty Name="Custom_Telephone" ColumnName="Custom_Telephone" />
-          <ScalarProperty Name="Custom_Age" ColumnName="Custom_Age" />
-          <ScalarProperty Name="Custom_Password" ColumnName="Custom_Password" />
           <ScalarProperty Name="Custom_ID" ColumnName="Custom_ID" />
+          <ScalarProperty Name="Custom_Name" ColumnName="Custom_Name" />
+          <ScalarProperty Name="Custom_Password" ColumnName="Custom_Password" />
+          <ScalarProperty Name="Custom_Age" ColumnName="Custom_Age" />
+          <ScalarProperty Name="Custom_Telephone" ColumnName="Custom_Telephone" />
+          <ScalarProperty Name="Custom_IdentityID" ColumnName="Custom_IdentityID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="mvcStudyModel.Orders">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="serialnumber" ColumnName="serialnumber" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CustomID" ColumnName="CustomID" />
           <ScalarProperty Name="Custom_Telephone" ColumnName="Custom_Telephone" />
           <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
-          <ScalarProperty Name="CustomID" ColumnName="CustomID" />
-          <ScalarProperty Name="BookID" ColumnName="BookID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ReceiptOrNot" ColumnName="ReceiptOrNot" />
           <ScalarProperty Name="ClearOrNot" ColumnName="ClearOrNot" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ReceiptOrNot" ColumnName="ReceiptOrNot" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Purchases">
       <EntityTypeMapping TypeName="mvcStudyModel.Purchases">
         <MappingFragment StoreEntitySet="Purchases">
-          <ScalarProperty Name="Purchase_Time" ColumnName="Purchase_Time" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
-          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
           <ScalarProperty Name="Purchase_ID" ColumnName="Purchase_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Detail">
-      <EntityTypeMapping TypeName="mvcStudyModel.Detail">
-        <MappingFragment StoreEntitySet="Detail">
-          <ScalarProperty Name="BookTag" ColumnName="BookTag" />
-          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
           <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
           <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
-          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Purchase_Time" ColumnName="Purchase_Time" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

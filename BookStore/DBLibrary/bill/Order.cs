@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace DBLibrary.bill
@@ -146,6 +147,49 @@ namespace DBLibrary.bill
 
                 return list;
             }
+        }
+        public static void InsertOrder(List<DBLibrary.Orders> Orders)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            foreach (var i in Orders)
+            {
+                db.Orders.Add(i);
+            }
+            db.SaveChanges();
+        }
+        public static void Clear(long id)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            var entry = db.Orders.Where(b => b.OrderID == id);
+            foreach (var i in entry)
+            {
+                i.ClearOrNot = true;
+                db.Orders.Attach(i);
+                db.Entry(i).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+        }
+        public static void Receipt(long id)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            var entry = db.Orders.Where(b => b.OrderID == id);
+            foreach (var i in entry)
+            {
+                i.ReceiptOrNot = true;
+                db.Orders.Attach(i);
+                db.Entry(i).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+        }
+        public static void Delete(long id)
+        {
+            mvcStudyEntities db = new mvcStudyEntities();
+            var entry = db.Orders.Where(b => b.OrderID == id);
+            foreach (var i in entry)
+            {
+                db.Orders.Remove(i);
+            }
+            db.SaveChanges();
         }
     }
 }

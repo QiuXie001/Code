@@ -1,0 +1,7 @@
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\BookStore.Domain.dll
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\BookStore.Domain.deps.json
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\BookStore.Domain.pdb
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\EntityFramework.SqlServer.dll
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\EntityFramework.dll
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\BookStore.DBStandard.dll
+D:\Code\BookStore_New\BookStore.Domain\bin\Debug\net7.0\publish\BookStore.DBStandard.pdb

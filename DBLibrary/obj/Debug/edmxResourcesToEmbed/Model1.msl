@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mvcStudyModelStoreContainer" CdmEntityContainer="mvcStudyEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="mvcStudyModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Age" ColumnName="Admin_Age" />
+          <ScalarProperty Name="Admin_Telephone" ColumnName="Admin_Telephone" />
+          <ScalarProperty Name="Admin_IdentityID" ColumnName="Admin_IdentityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="mvcStudyModel.Books">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="BookTag" ColumnName="BookTag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Custom">
+      <EntityTypeMapping TypeName="mvcStudyModel.Custom">
+        <MappingFragment StoreEntitySet="Custom">
+          <ScalarProperty Name="Custom_Name" ColumnName="Custom_Name" />
+          <ScalarProperty Name="Custom_ID" ColumnName="Custom_ID" />
+          <ScalarProperty Name="Custom_Password" ColumnName="Custom_Password" />
+          <ScalarProperty Name="Custom_Age" ColumnName="Custom_Age" />
+          <ScalarProperty Name="Custom_Telephone" ColumnName="Custom_Telephone" />
+          <ScalarProperty Name="Custom_IdentityID" ColumnName="Custom_IdentityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="mvcStudyModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detail">
+      <EntityTypeMapping TypeName="mvcStudyModel.Detail">
+        <MappingFragment StoreEntitySet="Detail">
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="BookTag" ColumnName="BookTag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

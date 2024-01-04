@@ -20,5 +20,6 @@ namespace DBLibrary
         public string Admin_Age { get; set; }
         public string Admin_Telephone { get; set; }
         public string Admin_IdentityID { get; set; }
+        public string Admin_HeadShotUrl { get; set; }
     }
 }

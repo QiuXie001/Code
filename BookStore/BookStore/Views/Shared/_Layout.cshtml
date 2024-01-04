@@ -70,7 +70,7 @@
             window.location.href = '../../Book/BookList';
         }
         function LoadShopCart() {
-            window.location.href = '../../Custom/LoadPartialView';
+            window.location.href = '../../Custom/ShopCart';
         }
         function LoadOrderManage() {
             window.location.href = '../../Order/OrderManage';
@@ -81,6 +81,9 @@
         function LoadUserManage() {
             window.location.href = '../../Admin/CustomUserManage';
         }
+        function Exit() {
+            window.location.href = '../../Login/Login';
+        }
     </script>
 </head>
 <body>
@@ -88,7 +91,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="./1.jpg" alt="">
+                    <img src="@ViewBag.HeadShot" alt="">
                 </span>
                 <div class="username logo-text">
                     <span class="name">Qiu</span>
@@ -141,7 +144,7 @@
             </div>
             <div class="bottom-content">
                 <li class="">
-                    <a href="~/Login/Login">
+                    <a onclick="Exit()">
                         <i class="iconfont icon-zhuxiao icon"></i>
                         <span class="text nac-text">注销账号</span>
                     </a>

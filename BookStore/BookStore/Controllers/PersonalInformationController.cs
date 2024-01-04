@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
-    public class PersonalInformationController : Controller
+    public class PersonalInformationController : BaseController
     {
         // GET: PersonalInformation
         public ActionResult CustomInformation()

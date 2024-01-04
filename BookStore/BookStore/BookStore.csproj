@@ -164,6 +164,8 @@
     <None Include="CSS\Login.scss" />
     <Content Include="CSS\BookList.css" />
     <Content Include="CSS\Button.css" />
+    <Content Include="CSS\CheckBox.css" />
+    <Content Include="CSS\DetailBox.css" />
     <Content Include="CSS\InfoInput.css" />
     <Content Include="CSS\Login.css">
       <DependentUpon>Login.scss</DependentUpon>
@@ -229,13 +231,14 @@
     <Content Include="Views\Book\BookAddView.cshtml" />
     <Content Include="Views\Book\BookUpdateView.cshtml" />
     <Content Include="Views\Book\BookDetail.cshtml" />
+    <Content Include="Views\Custom\ShopCart.cshtml" />
+    <Content Include="Views\Order\OrderSubmit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
     <Folder Include="Models\" />
     <Folder Include="uploads\" />
-    <Folder Include="Views\Custom\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

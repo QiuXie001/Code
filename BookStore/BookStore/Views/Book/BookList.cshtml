@@ -11,51 +11,57 @@
     <li>
         <div class="select-head">
             <i class="iconfont icon-xiangyoujiantou select-icon"></i>
-            <span class="select-head-cont"></span>
+            <span class="select-head-cont TypeName"></span>
         </div>
         <ul class="option">
             <li class="option-item" hidden>请选择图书类别</li>
             @foreach (var i in ViewBag.types)
             {
-
                 <li class="option-item">@i.BookType</li>
             }
         </ul>
 
     </li>
 </ul>
-<form id="SearchBar">
-    <input type="text" name="input" class="input" id="search-input">
+<form id="SearchBar" method="post" action="../../Book/BookList">
+    <input type="text" name="str" class="input" id="search-input">
     <button type="reset" class="search" id="search-btn"></button>
 </form>
 <div class="bookshelf">
     <div class="book-grid">
-        @for (var i = 0; i < Model.Count();)
+        @if (Model != null)
         {
-            <ul>
-                @for (int j = 0; j < 3 && i < Model.Count(); j++)
-                {
-                    var book = Model.ToList()[i];
+            for (var i = 0; i < Model.Count();)
+            {
+                <ul>
+                    @for (int j = 0; j < 3 && i < Model.Count(); j++)
+                    {
+                        var book = Model.ToList()[i];
+                        if (book.BookTag == "下架")
+                        {
+                            i++;
+                            continue;
+                        }
+                        <li>
+                            <img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" />
 
-                    <li>
-                        <img src="@Html.DisplayFor(modelItem => book.BookCoverUrl)" />
+                            <!-- 添加到购物车的按钮 -->
+                            <button data-action="add-to-cart" data-id="@book.Book_ID" type="submit">
+                                <i class="iconfont icon-jiarugouwuche icon"></i>
+                            </button>
 
-                        <!-- 添加到购物车的按钮 -->
-                        <button data-action="add-to-cart" data-id="@book.Book_ID" type="submit">
-                            <i class="iconfont icon-jiarugouwuche icon"></i>
-                        </button>
+                            <!-- 查看详细信息的按钮 -->
+                            <button data-action="details" data-id="@book.Book_ID" type="submit">
+                                <i class="iconfont icon-xiangqing icon"></i>
+                            </button>
+                        </li>
+                        i++;
 
-                        <!-- 查看详细信息的按钮 -->
-                        <button data-action="details" data-id="@book.Book_ID" type="submit">
-                            <i class="iconfont icon-xiangqing icon"></i>
-                        </button>
-                    </li>
-                    i++;
-
-                }
-            </ul>
-            <div class="shelf-shadows"></div>
-            <div class="shelf"></div>
+                    }
+                </ul>
+                <div class="shelf-shadows"></div>
+                <div class="shelf"></div>
+            }
         }
     </div>
 </div>
@@ -88,6 +94,16 @@
             $('.option-item').click(function () {
                 $('.select-head-cont').text($(this).text());
                 $('.option').hide();
+                var BookType = $(this).text();
+                $.ajax({
+                    url: '/Book/BookSelect',
+                    type: 'Get',
+                    dataType: 'json',
+                    data: { BookType: BookType },
+                    success: function (res) {
+                    }
+                });
+                return false;
             });
             $(document).click(function (e) {
                 var _con = $('ul'); // 设置目标区域
@@ -108,37 +124,36 @@
         $(document).on('click', '[data-action="add-to-cart"]', function () {
             var id = $(this).data('id');
             // 可以使用Ajax调用Controller的AddToCart动作方法
-             $.ajax({
-                 url: '/Book/AddToCart/' + id,
-                 type: 'GET',
-                 success: function(response) {
-                     alert("添加成功");
-                 },
-                 error: function() {
-                     // 处理错误
-                 }
-             });
+            $.ajax({
+                url: '/Custom/InsertShopCart/' + id,
+                type: 'Post',
+                success: function (response) {
+                    alert("添加成功");
+                },
+                error: function () {
+                    // 处理错误
+                }
+            });
         });
 
         // 处理查看详细信息的按钮点击事件
         $(document).on('click', '[data-action="details"]', function () {
             var id = $(this).data('id');
-             //可以使用Ajax调用Controller的Details动作方法
-             $.ajax({
-                 url: '/Book/BookDetail/' + id,
-                 type: 'GET',
-                 dataType:'html',
-                 success: function(response) {
-                     // 处理成功的响应
-                     alert("获取成功");
-                     const board = document.getElementsByClassName('board')[0];
-                     board.innerHTML = response;
+            //可以使用Ajax调用Controller的Details动作方法
+            $.ajax({
+                url: '/Book/BookDetail/' + id,
+                type: 'GET',
+                dataType: 'html',
+                success: function (response) {
+                    // 处理成功的响应
+                    const board = document.getElementsByClassName('board')[0];
+                    board.innerHTML = response;
 
-                 },
-                 error: function() {
-                     // 处理错误
-                 }
-             });
+                },
+                error: function () {
+                    // 处理错误
+                }
+            });
         });
     </script>
 }
