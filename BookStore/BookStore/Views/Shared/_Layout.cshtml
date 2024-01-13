@@ -1,176 +1,19 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title </title>
-    <!-- 引入字体图标 -->
-    <link rel="stylesheet" href="~/CSS/MainBoard.css">
-    <link rel="stylesheet" href="~/CSS/static/iconfont.css">
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("css", required: false)
-    @RenderSection("scripts", required: false)
-    <script type="text/javascript">
-        window.onload = function () {
-                body = document.querySelector('body'),
-                shell = body.querySelector('nav'),
-                toggle = body.querySelector(".toggle"),
-                modeSwitch = body.querySelector(".toggle-switch"),
-                modeText = body.querySelector(".mode-text");
-            // 点击toggle元素时触发事件
-            toggle.addEventListener("click", () => {
-                // 切换shell元素的close类
-                shell.classList.toggle("close");
-            })
-            // 点击modeSwitch元素时触发事件
-            modeSwitch.addEventListener("click", () => {
-                // 切换body元素的dark类
-                body.classList.toggle("dark");
-                // 如果body元素包含dark类
-                if (body.classList.contains("dark")) {
-                    modeText.innerText = "白日模式";
-                } else {
-                    modeText.innerText = "夜间模式";
-                }
-            });
-            var btn2 = $("#btn_close");
-            btn2.on('click', function (e) {
-                setTimeout(function () {
-                    $('#text').css("opacity", "1");
-                }, 14);
-                $('#text').css("display", "none");
-
-            });
-            var identity = "@Session["identity"].ToString()";
-            if (identity == "admin") {
-                $('.OnlyCustom').each(function () {
-                    $(this).hide();
-                });
-            }
-            else if (identity == "custom") {
-                $('.OnlyAdmin').each(function () {
-                    $(this).hide();
-                });
-            }
-            else $('ul').hide();
-        }
-        function LoadPersonalInformation() {
-        var identity = "@Session["identity"].ToString()";
-            if (identity == "custom") {
-                window.location.href = '../../PersonalInformation/CustomInformation';
-            }
-            else if (identity == "admin") {
-                window.location.href = '../../PersonalInformation/AdminInformation';
-            }
-            else alert("非法操作");
-        }
-        function LoadShopMall() {
-            window.location.href = '../../Book/BookList';
-        }
-        function LoadShopCart() {
-            window.location.href = '../../Custom/ShopCart';
-        }
-        function LoadOrderManage() {
-            window.location.href = '../../Order/OrderManage';
-        }
-        function LoadBookManage() {
-            window.location.href = '../../Book/BookManage';
-        }
-        function LoadUserManage() {
-            window.location.href = '../../Admin/CustomUserManage';
-        }
-        function Exit() {
-            window.location.href = '../../Login/Login';
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookStore</title>
+    @await RenderSectionAsync("css", required: false)
 </head>
+
 <body>
-    <nav class="shell close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="@ViewBag.HeadShot" alt="">
-                </span>
-                <div class="username logo-text">
-                    <span class="name">Qiu</span>
-                </div>
-            </div>
-            <i class="iconfont icon-xiangyoujiantou toggle" id="btn_close"></i>
-        </header>
-        <div class="menu-bar">
-            <div class="menu">
-                <ul class="menu-links" style="padding-left:0rem;">
-                    <li class="nav-link">
-                        <a onclick="LoadPersonalInformation()">
-                            <i class="iconfont icon-gerenxinxi icon"></i>
-                            <span class="text  nac-text">个人信息</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link OnlyCustom">
-                        <a onclick="LoadShopMall()">
-                            <i class="iconfont icon-shangcheng icon"></i>
-                            <span class="text nac-text">图书商城</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link OnlyCustom">
-                        <a onclick="LoadShopCart()">
-                            <i class="iconfont icon-gouwuche icon"></i>
-                            <span class="text nac-text">购物车</span>
-                        </a>
-                    </li>
-                    <li class="nav-link ">
-                        <a onclick="LoadOrderManage()">
-                            <i class="iconfont icon-dingdanguanli icon"></i>
-                            <span class="text nac-text">订单管理</span>
-                        </a>
-                    </li>
-                    <li class="nav-link OnlyAdmin">
-                        <a onclick="LoadBookManage()">
-                            <i class="iconfont icon-zidianguanli icon"></i>
-                            <span class="text nac-text">图书管理</span>
-                        </a>
-                    </li>
-                    <li class="nav-link OnlyAdmin">
-                        <a onclick="LoadUserManage()">
-                            <i class="iconfont icon-yonghuguanli icon"></i>
-                            <span class="text nac-text">用户管理</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="bottom-content">
-                <li class="">
-                    <a onclick="Exit()">
-                        <i class="iconfont icon-zhuxiao icon"></i>
-                        <span class="text nac-text">注销账号</span>
-                    </a>
-                </li>
-                <li class="mode">
-                    <div class="sun-moon">
-                        <i class="iconfont icon-rijian icon sun"></i>
-                        <i class="iconfont icon-yejian icon moon"></i>
-                    </div>
-
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
-                    </div>
-                    <span class="mode-text text">夜间模式</span>
-                </li>
-            </div>
-        </div>
-    </nav>
-    <div class="board">
-        <section class="content">
-            @RenderBody()
-        </section>
-    </div>
-
+    @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
-
-
 
 </html>

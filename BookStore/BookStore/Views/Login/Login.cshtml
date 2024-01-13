@@ -1,7 +1,4 @@
-﻿@model DBLibrary.Admin
-@{
-    Layout = null;
-}
+﻿
 @{
     ViewBag.Title = "Login";
 }
@@ -10,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="~/CSS/Login.css">
+    <link rel="stylesheet" href="~/CSS/Login.min.css">
 </head>
 <body>
     <p class="tip"></p>
@@ -18,22 +15,21 @@
         <div class="form sign-in">
             @using (Html.BeginForm("Login", "Login", FormMethod.Post))
             {
-                <form method="post">
+                <form method="post" >
                     <h2>登录</h2>
-                    <label for="Admin_ID">
+                    <label for="ID">
                         <span>用户名</span>
-                        <input type="text" name="Admin_ID" />
-                        @Html.ValidationMessageFor(model => model.Admin_ID, "", new { @class = "text-danger" })
+                        <input type="text" name="ID" />
                     </label>
-                    <label for="Admin_Password">
+                    <label for="password">
                         <span>密码</span>
-                        <input type="password" name="Admin_Password" />
-                        @Html.ValidationMessageFor(model => model.Admin_Password, "", new { @class = "text-danger" })
+                        <input type="password" name="Password" />
                     </label>
-                    <button type="submit" class="submit" value="Login">登录</button>
+                    <p class="forgot-pass">忘记密码？</p>
+                    <button type="submit" class="submit">登录</button>
                 </form>
             }
-        </div>
+            </div>
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
@@ -73,16 +69,17 @@
                         <button type="submit" class="submit">注册</button>
                     </form>
                 }
-            </div>
+                </div>
         </div>
     </div>
 
 </body>
 </html>
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     document.querySelector('.img__btn').addEventListener('click', function () {
-        document.querySelector('.cont').classList.toggle('s--signup');
+            document.querySelector('.cont').classList.toggle('s--signup');
         $('input').reset();
-    });
-</script>
+        });
+    </script>
+}

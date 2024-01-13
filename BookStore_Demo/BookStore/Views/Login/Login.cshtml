@@ -1,0 +1,87 @@
+﻿@model DBLibrary.Admin
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Login";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="~/CSS/Login.css">
+</head>
+<body>
+    <p class="tip"></p>
+    <div class="cont">
+        <div class="form sign-in">
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                <form method="post">
+                    <h2>登录</h2>
+                    <label for="ID">
+                        <span>用户名</span>
+                        <input type="text" name="ID" />
+                        @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                    </label>
+                    <label for="Password">
+                        <span>密码</span>
+                        <input type="password" name="Password" />
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </label>
+                    <button type="submit" class="submit" value="Login">登录</button>
+                </form>
+            }
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h2>没有账号？</h2>
+                    <p>请点击下方注册按钮体验我们的服务</p>
+                </div>
+                <div class="img__text m--in">
+                    <h2>已有账号？</h2>
+                    <p>请点击下方按钮返回登录</p>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">注册</span>
+                    <span class="m--in">登录</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                @using (Html.BeginForm("Regist", "Login", FormMethod.Post))
+                {
+                    <form method="post" action="Login/Regist">
+                        <h2>注册</h2>
+                        <label>
+                            <span>昵称</span>
+                            <input type="text" name="Custom_Name" />
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </label>
+                        <label>
+                            <span>手机号</span>
+                            <input type="text" name="Custom_Telephone" />
+                            @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+                        </label>
+                        <label>
+                            <span>密码</span>
+                            <input type="password" name="Custom_Password" />
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </label>
+                        <button type="submit" class="submit">注册</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s--signup');
+        $('input').reset();
+    });
+</script>

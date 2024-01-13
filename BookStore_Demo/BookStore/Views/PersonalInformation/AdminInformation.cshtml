@@ -1,0 +1,96 @@
+﻿@model DBLibrary.Admin
+@{
+    ViewBag.Title = "AdminInformation";
+}
+@section css{
+    <link rel="stylesheet" href="~/CSS/InfoInput.css">
+    <link rel="stylesheet" href="~/CSS/Button.css">
+    <link rel="stylesheet" href="~/CSS/ImageInput.css">
+}
+<h2>AdminInformation</h2>
+
+@using (Html.BeginForm("AdminInformation", "PersonalInformation", FormMethod.Post, new
+{
+    enctype = "multipart/form-data"
+}))
+{
+    <ul>
+        <li>
+            <input id="img_input2" type="file" name="img" />
+            <label for="img_input2" id="img_label2">
+                选择文件
+                <i class="fa fa-plus fa-lg"></i>
+            </label>
+            <div id="preview_box2"></div>
+
+        </li>
+        <li>
+            <label for="ID">
+                <span>@Html.DisplayNameFor(model => model.Name)</span>
+                <input type="text" name="ID" value="@Html.DisplayFor(model => model.Name)" />
+            </label>
+        </li>
+        <li>
+            <label for="IdentityID">
+                <span>@Html.DisplayNameFor(model => model.IdentityID)</span>
+                <input type="text" name="IdentityID" value="@Html.DisplayFor(model => model.IdentityID)" />
+            </label>
+        </li>
+        <li>
+            <label for="Name">
+                <span>@Html.DisplayNameFor(model => model.Name)</span>
+                <input type="text" name="Name" value="@Html.DisplayFor(model => model.Name)" />
+            </label>
+        </li>
+        <li>
+            <label for="Password">
+                <span>@Html.DisplayNameFor(model => model.Password)</span>
+                <input type="text" name="Password" value="@Html.DisplayFor(model => model.Password)" />
+            </label>
+        </li>
+        <li>
+            <label for="Age">
+                <span>@Html.DisplayNameFor(model => model.Age)</span>
+                <input type="text" name="Age" value="@Html.DisplayFor(model => model.Age)" />
+            </label>
+        </li>
+        <li>
+            <label for="Telephone">
+                <span>@Html.DisplayNameFor(model => model.Telephone)</span>
+                <input type="text" name="Telephone" value="@Html.DisplayFor(model => model.Telephone)" />
+            </label>
+        </li>
+
+    </ul>
+    <button>
+        <span>Button</span>
+    </button>
+}
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+}

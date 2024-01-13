@@ -1,0 +1,93 @@
+﻿@model DBLibrary.Custom
+@{
+    ViewBag.Title = "CustomInformation";
+}
+
+<h2>CustomInformation</h2>
+
+@section css{
+    <link rel="stylesheet" href="~/CSS/InfoInput.css">
+    <link rel="stylesheet" href="~/CSS/Button.css">
+    <link rel="stylesheet" href="~/CSS/ImageInput.css">
+
+}
+
+@using (Html.BeginForm("CustomInformation", "PersonalInformation", FormMethod.Post, new
+{
+    enctype = "multipart/form-data"
+}))
+{
+
+    <ul>
+        <li>
+            <input id="img_input2" type="file" name="img" />
+            <label for="img_input2" id="img_label2">
+                选择文件
+                <i class="fa fa-plus fa-lg"></i>
+            </label>
+            <div id="preview_box2"></div>
+
+        </li>
+        <li>
+            <label for="Name">
+                <span>@Html.DisplayNameFor(model => model.Custom_Name)</span>
+                <input type="text" name="Custom_Name" value="@Html.DisplayFor(model => model.Custom_Name)" />
+            </label>
+        </li>
+        <li>
+            <label for="Password">
+                <span>@Html.DisplayNameFor(model => model.Custom_Password)</span>
+                <input type="text" name="Custom_Password" value="@Html.DisplayFor(model => model.Custom_Password)" />
+            </label>
+        </li>
+        <li>
+            <label for="Age">
+                <span>@Html.DisplayNameFor(model => model.Custom_Age)</span>
+                <input type="text" name="Custom_Age" value="@Html.DisplayFor(model => model.Custom_Age)" />
+            </label>
+        </li>
+        <li>
+            <label for="Telephone">
+                <span>@Html.DisplayNameFor(model => model.Custom_Telephone)</span>
+                <input type="text" name="Custom_Telephone" value="@Html.DisplayFor(model => model.Custom_Telephone)" />
+            </label>
+        </li>
+        <li>
+            <label for="IdentityID">
+                <span>@Html.DisplayNameFor(model => model.Custom_IdentityID)</span>
+                <input type="text" name="Custom_IdentityID" value="@Html.DisplayFor(model => model.Custom_IdentityID)" />
+            </label>
+        </li>
+    </ul>
+    <button type="submit" value="Update">
+        <span>Button</span>
+    </button>
+}
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').each(function () {
+                if ($(this).val() != null && $(this).val() != "")
+                    $(this).parent().find('span').addClass('havevalue')
+                else
+                    $(this).parent().find('span').removeClass('havevalue')
+            })
+            $(document).click(function (e) {
+
+                var _con = $('input'); // 设置目标区域
+                var i = 0;
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+                    $('input').each(function () {
+                        if ($(this).val() != null && $(this).val() != "")
+                            $(this).parent().find('span').addClass('havevalue')
+                        else
+                            $(this).parent().find('span').removeClass('havevalue')
+                    })
+                }
+            })
+            $('input').click(function (e) {
+                $(this).parent().find('span').addClass('havevalue')
+            })
+        })
+    </script>
+}

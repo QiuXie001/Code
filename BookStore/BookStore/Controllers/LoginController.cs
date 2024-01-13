@@ -1,84 +1,74 @@
-﻿using DBLibrary;
-using DBLibrary.bill;
-using System.Data;
-using System.Linq;
-using System.Web.Mvc;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using System.Web;
+using BookStore.DBStandard.Models;
 
 namespace BookStore.Controllers
 {
-
-    public class LoginController : BaseController
+    public class LoginController : Controller
     {
         [HttpGet]
         // GET: Login
         public ActionResult Login()
         {
-            Session.RemoveAll();
             return View();
         }
         [HttpPost]
-        public ActionResult Login(DBLibrary.Admin entry)
+        public ActionResult Login(string ID, string Password)
         {
-            Session.RemoveAll();
-            if (entry.Admin_ID!=0&&entry.Admin_Password!=null)
+            MvcStudyContext db = new MvcStudyContext();
+            if (ID[..1] == "1")
             {
-                mvcStudyEntities db = new mvcStudyEntities();
-                string Password = entry.Admin_Password.PadRight(10, ' ');
-                if (entry.Admin_Password.Substring(0, 1) == "1")
+                Admin admin = db.Admins.SingleOrDefault(a => a.AdminId.ToString() == ID);
+                //if (account.Password == password)
+                //    Debug.WriteLine("ͨ��");
+                if (admin != null && admin.AdminPassword == Password)
                 {
-                    DBLibrary.Admin admin = db.Admin.SingleOrDefault(a => a.Admin_ID == entry.Admin_ID);
-                    //if (account.Password == password)
-                    //    Debug.WriteLine("通过");
-                    if (admin != null && admin.Admin_Password == Password)
-                    {
-                        Session["isLogin"] = true;
-                        Session["identity"] = "admin";
-                        Session["Info"] = admin.Admin_ID;
-                        Session["Operational"] = false;
-                        ViewBag.HeadShot = admin.Admin_HeadShotUrl;
-                        Response.ClearContent();
-                        return RedirectToAction("MainBoard", "Main");
-                    }
-                    else
-                    {
-                        DBLibrary.Custom custom = db.Custom.SingleOrDefault(a => a.Custom_ID == entry.Admin_ID);
-                        //if (account.Password == password)
-                        //    Debug.WriteLine("通过");
-                        if (custom != null && custom.Custom_Password == Password)
-                        {
-                            Session["isLogin"] = true;
-                            Session["identity"] = "custom";
-                            Session["Info"] = custom.Custom_ID;
-                            return RedirectToAction("MainBoard", "Main");
-                        }
-                        return Content(" <script>alert( '用户名或密码错误！' );" +
-                            "window.location.href = '../../Login/Login'; </script> "); ;
-                    }
+                    HttpContext.Session.SetString("isLogin", "true");
+                    Response.Clear();
+                    return RedirectToAction("MainBoard", "Main");
+                }
+                else
+                {
+                    TempData["identity"] = "manager";
+                    return View();
                 }
             }
-            return View(entry);
+            else
+            {
+                Custom custom = db.Customs.SingleOrDefault(a => a.CustomId.ToString() == ID);
+                //if (account.Password == password)
+                //    Debug.WriteLine("ͨ��");
+                if (custom != null && custom.CustomPassword == Password)
+                {
+                    HttpContext.Session.SetString("isLogin", "true");
+                    Response.Clear();
+                    return View("MainBoard", "Main");
+                }
+                else
+                {
+                    TempData["identity"] = "custom";
+                    return View();
+                }
+            }
         }
         [HttpPost]
-        public ActionResult Regist(DBLibrary.Custom entry)
+        public ActionResult Regist(Custom entry)
         {
-            if (Request.Files.Count > 0 && Request.Files[0].FileName != "")
-            {
-                string savepath = Server.MapPath("~/upload/") + Request.Files[0].FileName;
-                Request.Files[0].SaveAs(savepath);
-                TempData["img"] = "/upload/" + Request.Files[0].FileName;
-            }
             if (ModelState.IsValid)
             {
-                TempData["Name"] = entry.Custom_Name;
-                TempData["Password"] = entry.Custom_Password;
-                TempData["Telephone"] = entry.Custom_Telephone;
-                DBLibrary.bill.Custom.regist(entry);
-                Session["isLogin"] = true;
-                TempData["identity"] = "custom";
-                TempData["Info"] = entry.Custom_ID;
+                var dbContext = new MvcStudyContext();
+                var customService = new BookStore.Domain.Service.CustomService(dbContext);
+
+                TempData["Name"] = entry.CustomName;
+                TempData["Password"] = entry.CustomPassword;
+                TempData["Telephone"] = entry.CustomTelephone;
+
+                customService.Register(entry);
+                HttpContext.Session.SetString("isLogin", "true");
                 return RedirectToAction("MainBoard", "Main");
             }
-            return View("Login"); 
+            return View("Login");
         }
     }
 }

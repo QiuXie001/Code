@@ -1,0 +1,14 @@
+﻿#img_input2 {
+    display: none;
+}
+
+#img_label2 {
+    background-color: var(--shell-color);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+}
+
+#preview_box2 img {
+    width: 200px;
+}

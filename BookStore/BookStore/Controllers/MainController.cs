@@ -1,21 +1,26 @@
-﻿using DBLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using System.Web;
-using System.Web.Mvc;
+using BookStore.DBStandard;
+using BookStore.DBStandard.Models;
 
-namespace BookStore.Controllers
+namespace BookStore.Controllers;
+
+public class MainController : Controller
 {
-    public class MainController : BaseController
+    // GET: Main
+    public ActionResult MainBoard()
     {
-
-        // GET: Main
-        public ActionResult MainBoard()
-        {
-            Session["search"] = "false";
-            return View();
-        }
-
+        return View();
     }
+
+    public ActionResult BookList(string title)
+    {
+        var dbContext = new MvcStudyContext();
+        List<Book> books = new List<Book>();
+        ViewBag.Data = title;
+        return PartialView("~/Views/Book/BookList.cshtml", books); ;
+    }
+
+
 }
