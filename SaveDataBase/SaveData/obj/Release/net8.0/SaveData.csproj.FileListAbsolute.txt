@@ -1,0 +1,15 @@
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\SaveData.exe
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\SaveData.deps.json
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\SaveData.runtimeconfig.json
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\SaveData.dll
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\SaveData.pdb
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.GeneratedMSBuildEditorConfig.editorconfig
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.AssemblyInfoInputs.cache
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.AssemblyInfo.cs
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.csproj.CoreCompileInputs.cache
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.sourcelink.json
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.dll
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\refint\SaveData.dll
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.pdb
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\SaveData.genruntimeconfig.cache
+d:\Code\SaveDataBase\SaveData\obj\Release\net8.0\ref\SaveData.dll

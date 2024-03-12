@@ -172,8 +172,6 @@ D:\Code\BookStore_demo\BookStore\bin\System.Web.WebPages.Razor.xml
 D:\Code\BookStore_demo\BookStore\bin\Newtonsoft.Json.xml
 D:\Code\BookStore_demo\BookStore\bin\Antlr3.Runtime.pdb
 D:\Code\BookStore_demo\BookStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Code\BookStore_demo\BookStore\bin\zh-Hans\EntityFramework.resources.dll
-D:\Code\BookStore_demo\BookStore\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
 D:\Code\BookStore_demo\BookStore\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\Code\BookStore_demo\BookStore\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\Code\BookStore_demo\BookStore\bin\zh-Hans\System.Web.Optimization.resources.dll

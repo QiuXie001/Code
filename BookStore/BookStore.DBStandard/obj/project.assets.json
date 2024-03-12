@@ -4464,11 +4464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Code\\BookStore\\BookStore.DBStandard\\BookStore.DBStandard.csproj",
+      "projectUniqueName": "D:\\Code\\BookStore\\BookStore.DBStandard\\BookStore.DBStandard.csproj",
       "projectName": "BookStore.DBStandard",
-      "projectPath": "d:\\Code\\BookStore\\BookStore.DBStandard\\BookStore.DBStandard.csproj",
+      "projectPath": "D:\\Code\\BookStore\\BookStore.DBStandard\\BookStore.DBStandard.csproj",
       "packagesPath": "C:\\Users\\13579\\.nuget\\packages\\",
-      "outputPath": "d:\\Code\\BookStore\\BookStore.DBStandard\\obj\\",
+      "outputPath": "D:\\Code\\BookStore\\BookStore.DBStandard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4496,6 +4496,9 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
       }
     },
     "frameworks": {

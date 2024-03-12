@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\store",
-    "\\store\\dbLibrary",
-    "\\store\\dbLibrary\\meta"
+    ""
   ],
-  "SelectedNode": "\\store\\store.sln",
+  "SelectedNode": "\\BookStore.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,5 @@
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\publish\SaveData.exe
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\publish\SaveData.dll
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\publish\SaveData.deps.json
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\publish\SaveData.runtimeconfig.json
+d:\Code\SaveDataBase\SaveData\bin\Release\net8.0\publish\SaveData.pdb
