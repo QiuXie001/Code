@@ -37,11 +37,27 @@
         <url-pattern>/ReadServlet</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>GetRequestLineInfoServlet</servlet-name>
+        <servlet-class>com.example.GetRequestLineInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetRequestLineInfoServlet</servlet-name>
+        <url-pattern>/GetRequestLineInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>/demo/src/main/webapp/Login.html</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>IndexServlet</servlet-name>
         <servlet-class>com.example.IndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/IndexServlet</url-pattern>
     </servlet-mapping>
 </web-app>

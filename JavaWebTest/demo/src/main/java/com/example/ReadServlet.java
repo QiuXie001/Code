@@ -22,13 +22,13 @@ public class ReadServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.println(initStr);
 
-        //ÅäÖÃ<context-param>²ÎÊı£¬È»ºóÀûÓÃServletContext½Ó¿Ú½øĞĞÌáÈ¡ÊµÏÖ
+        //é…ç½®<context-param>å‚æ•°ï¼Œç„¶ååˆ©ç”¨ServletContextæ¥å£è¿›è¡Œæå–å®ç°
         ServletContext context = this.getServletContext();
         String id = context.getInitParameter("id");
         String password = context.getInitParameter("password");
         System.out.println("form context id=" + id + ",password=" + password);
         writer.println("form context id=" + id + ",password=" + password);
-        //ServletContext½Ó¿Ú¶ÁÈ¡×ÊÔ´
+        //ServletContextæ¥å£è¯»å–èµ„æº
         InputStream stream = this.getServletContext().getResourceAsStream("/resources/static/document/12021051010.properties");
         Properties pro = new Properties();
 
@@ -36,7 +36,7 @@ public class ReadServlet extends HttpServlet {
         Set<Map.Entry<Object, Object>> set = pro.entrySet();
         for (Map.Entry<Object, Object> entry : set)
         {
-            //Êä³öµ½¿ØÖÆÌ¨ºÍÒ³Ãæ
+            //è¾“å‡ºåˆ°æ§åˆ¶å°å’Œé¡µé¢
             writer.print("form resource "+ entry.getKey() + "=" + entry.getValue());
             System.out.println("form resource "+ entry.getKey() + "=" + entry.getValue());
         }
@@ -46,8 +46,8 @@ public class ReadServlet extends HttpServlet {
     public void init(ServletConfig servletConfig) throws ServletException {
         super.init(servletConfig);
 
-        //ÅäÖÃ<init-param>²ÎÊı£¬È»ºóÀûÓÃServletConfig½Ó¿Ú½øĞĞÌáÈ¡ÊµÏÖ
-        String id = servletConfig.getInitParameter("id"); // »ñÈ¡Ö¸¶¨µÄÒ»¸öÊı¾İ
+        //é…ç½®<init-param>å‚æ•°ï¼Œç„¶ååˆ©ç”¨ServletConfigæ¥å£è¿›è¡Œæå–å®ç°
+        String id = servletConfig.getInitParameter("id"); // è·å–æŒ‡å®šçš„ä¸€ä¸ªæ•°æ®
         String password = servletConfig.getInitParameter("password");
         initStr = "form init id=" + id + ",password=" + password;
         System.out.println("form init id=" + id + ",password=" + password);

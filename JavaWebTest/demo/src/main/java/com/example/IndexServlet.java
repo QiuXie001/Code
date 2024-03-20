@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class IndexServlet extends HttpServlet{
-    private long visits = 0; // ´æ´¢·ÃÎÊ´ÎÊı
+    private long visits = 0; // å­˜å‚¨è®¿é—®æ¬¡æ•°
      @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        visits++; // ·ÃÎÊ´ÎÊı¼Ó1
-        // ±àĞ´HTML´úÂë
+        visits++; // è®¿é—®æ¬¡æ•°åŠ 1
+        // ç¼–å†™HTMLä»£ç 
         String html = "<html>"
                 + "<head>"
                 + "</head>"
@@ -22,7 +22,7 @@ public class IndexServlet extends HttpServlet{
                 + "</body>"
                 + "</html>";
 
-        // ½«HTML´úÂë·¢ËÍµ½¿Í»§¶Ë
+        // å°†HTMLä»£ç å‘é€åˆ°å®¢æˆ·ç«¯
         response.setContentType("text/html");
         response.getWriter().write(html);
     }
