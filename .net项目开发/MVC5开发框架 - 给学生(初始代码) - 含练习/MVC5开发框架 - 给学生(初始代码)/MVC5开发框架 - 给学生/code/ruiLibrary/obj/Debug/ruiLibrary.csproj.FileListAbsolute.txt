@@ -1,0 +1,52 @@
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.pdb
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\BarcodeLib.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\IntelliLock.Licensing.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\itextsharp.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\LitJSON.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\NLog.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.xml
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.xml
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.xml
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.xml
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csprojResolveAssemblyReference.cache
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.dll
+F:\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.pdb
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.pdb
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\BarcodeLib.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\IntelliLock.Licensing.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\itextsharp.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\LitJSON.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\NLog.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.xml
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.xml
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.xml
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.xml
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csprojResolveAssemblyReference.cache
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.dll
+F:\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.pdb

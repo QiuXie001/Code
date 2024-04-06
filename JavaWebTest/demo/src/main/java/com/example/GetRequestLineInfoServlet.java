@@ -24,7 +24,7 @@ public class GetRequestLineInfoServlet extends HttpServlet{
         // 获取服务器端端口
         int serverPort = request.getLocalPort();
         // 获取字符集编码
-        var characterEncoding = request.getCharacterEncoding();
+        String characterEncoding = request.getCharacterEncoding();
 
          // 使用StringBuilder代替StringBuffer
          StringBuilder sb = new StringBuilder();

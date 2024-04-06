@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>jq04</title>
+    <script src="/Content/scripts/jquery-1.12.4.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".imgLarge").hide();
+            $(".imgSmall").mouseover(function (e) {
+                $(".imgLarge").css({ "top": e.pageY+1, "left": e.pageX+1 }).show();
+                console.info("mouseOver");
+            });
+            $(".imgSmall").mousemove(function (e) {
+                $(".imgLarge").css({ "top": e.pageY + 1, "left": e.pageX + 1 })
+            })
+            $(".imgSmall").mouseout(function (e) {
+                $(".imgLarge").hide();
+                console.info("mouseOut");
+            });
+        });
+    </script>
+    <style>
+        .imgSmall{width:100px;}
+        .imgLarge{width:300px; position:absolute;}
+    </style>
+</head>
+<body>
+    <div> 
+        <img class="imgSmall" src="/ex/images-16/adv.jpg" />
+        <img class="imgLarge" src="/ex/images-16/adv.jpg" />
+    </div>
+</body>
+</html>

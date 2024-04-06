@@ -1,5 +1,8 @@
 com\example\IndexServlet.class
 com\example\LoginServlet.class
+com\example\JspIncludeServlet.class
 com\example\ReadServlet.class
 com\example\GetRequestLineInfoServlet.class
+com\example\JspTestServlet.class
 com\example\TestServlet.class
+com\example\JspForwardServlet.class

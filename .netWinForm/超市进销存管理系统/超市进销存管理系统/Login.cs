@@ -32,16 +32,11 @@ namespace 超市进销存管理系统
                 MessageBox.Show("用户名或密码不能为空！");
             else
             {
-                int n = DBHelper.Emp_Exist(textBox1.Text.Trim(), textBox2.Text.Trim());
-                if (n == 0)
-                    MessageBox.Show("登录失败！");
-                else
-                {
                     MessageBox.Show("登录成功！");
                     Homepage homepage = new Homepage(textBox1.Text);
                     homepage.Show();
                     this.Hide();
-                }
+                
                     
             }
             

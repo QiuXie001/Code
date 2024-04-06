@@ -1,0 +1,91 @@
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.dll.config
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.pdb
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Dapper.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.SqlServer.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\LitJson.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Newtonsoft.Json.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\NLog.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ruiLibrary.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.Mvc.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\IntelliLock.Licensing.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\itextsharp.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\BarcodeLib.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ruiLibrary.pdb
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Dapper.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.SqlServer.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Newtonsoft.Json.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.Mvc.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.csprojResolveAssemblyReference.cache
+F:\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.dll
+F:\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.csproj.AssemblyReference.cache
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.csproj.CoreCompileInputs.cache
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.dll.config
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\dbLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Dapper.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\LitJson.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\NLog.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ruiLibrary.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.Mvc.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\IntelliLock.Licensing.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\itextsharp.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\BarcodeLib.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\ruiLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Dapper.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Newtonsoft.Json.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.Mvc.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\obj\Debug\dbLibrary.csproj.Up2Date
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\JWT.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Buffers.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Memory.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Numerics.Vectors.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Text.Encodings.Web.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Text.Json.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.ValueTuple.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\JWT.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\JWT.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Buffers.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Memory.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Numerics.Vectors.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Text.Encodings.Web.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Text.Json.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\dbLibrary\bin\Debug\System.ValueTuple.xml

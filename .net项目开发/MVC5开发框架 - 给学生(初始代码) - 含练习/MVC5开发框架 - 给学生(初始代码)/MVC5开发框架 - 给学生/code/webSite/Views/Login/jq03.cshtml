@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>jq03</title>
+    <script src="/Content/scripts/jquery-1.12.4.js" type="text/javascript"></script>
+    <style type="text/css">
+        * {  padding: 0px;  margin: 0px; }
+        .jq03 {
+            width: 200px;
+            height: 200px;
+            border: 1pt solid black;
+        }
+        ul:after{
+            display:block;
+            clear:both;
+            content:"";
+            visibility:hidden;
+            height:0;
+        }
+
+            .jq03 li {
+                float: left;
+                width:50px;
+                margin-right: 5px;
+                list-style-type: none;
+                height: 35px;
+                margin-left: 10px;
+            }
+
+            .jq03 div {
+                border: 1pt solid black;
+                width:100px;
+                height:100px;
+            }
+
+        .active {
+            color: red;
+            font-weight: 800;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".jq03 li div").hide();
+            $("li").mouseover(function () {
+                $(this).children("div").show();
+            });
+            $("li").mouseout(function () {
+                $(this).children("div").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="jq03">
+        <ul>
+            <li>栏目1
+                <div>
+                    栏目1的内容
+                </div>
+            </li>
+            <li>栏目2
+                <div>
+                    栏目2的内容
+                </div>
+            </li>
+            <li>栏目3
+                <div>
+                    栏目3的内容
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

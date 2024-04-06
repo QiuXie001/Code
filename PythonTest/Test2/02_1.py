@@ -42,6 +42,11 @@ print("Value of 'age':", my_dict["age"])
 
 my_dict["job"] = "Engineer"
 print("Updated dictionary:", my_dict)
+del my_dict["age"]
+print("Deleted dictionary:", my_dict)
+my_dict["age"] = 40
+print("Added dictionary:", my_dict)
+
 
 my_set = {1, 2, 3, 4, 5}
 print("My set:", my_set)
