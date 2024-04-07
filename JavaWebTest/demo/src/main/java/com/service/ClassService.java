@@ -1,32 +1,25 @@
-package dao.impl;
+package com.service;
 
+import com.model.Class;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.ClassDao;
-import model.ClassModel;
-
-public class ClassDaoImpl implements ClassDao {
-
-	// Õı³£´ÓÊı¾İ¿âÖĞÌáÈ¡£¬ÕâÀïÄ£Äâ¸ø¶¨7¸ö°à¼¶
-	public static List<ClassModel> list = new ArrayList<ClassModel>();
+public class ClassService {
+    public static List<Class> list = new ArrayList<Class>();
 	static {
 		for (int i = 1; i < 8; i++) {
-			ClassModel tmp = new ClassModel();
+			Class tmp = new Class();
 			tmp.setClassId(i);
-			tmp.setClassName(i + "°à");
+			tmp.setClassName(i + "ç­");
 			list.add(tmp);
 		}
 	}
 
-	@Override
-	public List<ClassModel> getAllClass() {
+    public static List<Class> getAllClass() {
 		// TODO Auto-generated method stub
 
 		return list;
 	}
-
-	@Override
 	public String getClassNameByClassId(int id) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < list.size(); i++) {

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加员工</title>
+</head>
+<body>
+    <form action="addStaffServlet" method="post">
+        <label for="staffId">员工ID：</label>
+        <input type="text" id="staffId" name="staffId" readonly>
+        <br>
+        <label for="staffName">员工姓名：</label>
+        <input type="text" id="staffName" name="staffName">
+        <br>
+        <label for="staffAge">员工年龄：</label>
+        <input type="text" id="staffAge" name="staffAge">
+        <br>
+        <label for="staffGender">员工性别：</label>
+        <input type="radio" id="male" name="staffGender" value="Male">
+        <label for="male">男</label>
+        <input type="radio" id="female" name="staffGender" value="Female">
+        <label for="female">女</label>
+        <br>
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

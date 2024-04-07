@@ -1,42 +1,36 @@
-package dao.impl;
+package com.service;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.model.*;
+import com.model.Class;
+
+import java.util.*;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import dao.StudentDao;
-import model.Student;
 
-public class StudentDaoImp implements StudentDao {
-
-	// ´´½¨¼¯ºÏ£¬Ä£ÄâÊı¾İ¿âÖĞµÄÊı¾İ
-	public static List<Student> studentList = new ArrayList<Student>();
-	static {
+public class StudentService {
+    Student Stu = new Student();
+    Class Class = new Class();
+    public static List<Student> studentList = new ArrayList<Student>();
+    static {
 		try {
 			Student tmp1 = new Student();
 			Map<String, Object> curInfo1 = new HashMap<String, Object>();
 			curInfo1.put("stuCode", "10001");
-			curInfo1.put("stuName", "ÍõĞ¡ÁÁ");
+			curInfo1.put("stuName", "ç‹å°äº®");
 			curInfo1.put("age", 19);
-			curInfo1.put("sex", 1); // 0±íÊ¾ÄĞ£¬1±íÊ¾Å®
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			curInfo1.put("birthday", sdf.parse("2004-11-11"));
+			curInfo1.put("sex", 1); // 0è¡¨ç¤ºç”·ï¼Œ1è¡¨ç¤ºå¥³
 			curInfo1.put("belongClass", 8);
-			curInfo1.put("belongClassName", "8°à");
+			curInfo1.put("belongClassName", "8ç­");
 
 			Student tmp2 = new Student();
 			Map<String, Object> curInfo2 = new HashMap<String, Object>();
 			curInfo2.put("stuCode", "10002");
-			curInfo2.put("stuName", "ÀîĞ¡Ã÷");
+			curInfo2.put("stuName", "æå°æ˜");
 			curInfo2.put("age", 20);
-			curInfo2.put("sex", 0); // 0±íÊ¾ÄĞ£¬1±íÊ¾Å®
-			curInfo2.put("birthday", sdf.parse("2004-03-11"));
+			curInfo2.put("sex", 0); // 0è¡¨ç¤ºç”·ï¼Œ1è¡¨ç¤ºå¥³
 			curInfo2.put("belongClass", 2);
-			curInfo2.put("belongClassName", "2°à");
+			curInfo2.put("belongClassName", "2ç­");
 
 			BeanUtils.populate(tmp1, curInfo1);
 			BeanUtils.populate(tmp2, curInfo2);
@@ -46,30 +40,16 @@ public class StudentDaoImp implements StudentDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		/*
-		 * //ÅúÁ¿Éú³ÉĞÅÏ¢ for(int i=0;i<20;i++) { Student tmp = new Student();
-		 * tmp.setStuCode(Integer.toString(10000+i)); tmp.setStuName("xuesheng" +
-		 * Integer.toString(10000+i)); tmp.setAge(22); tmp.setSex(1);
-		 * studentList.add(tmp); }
-		 */
-	}
-
-	@Override
-	public List<Student> selectAllStudent() {
-
+    }
+    public static List<Student> getAllStudent() {
 		// TODO Auto-generated method stub
 		return studentList;
 	}
-
-	@Override
-	public boolean insertStudentInfo(Student curStudent) {
+    public boolean insertStudentInfo(Student curStudent) {
 		// TODO Auto-generated method stub
 		studentList.add(curStudent);
 		return true;
 	}
-
-	@Override
 	public boolean updateStudentInfo(Student curStudent) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
@@ -80,11 +60,8 @@ public class StudentDaoImp implements StudentDao {
 		}
 		return true;
 	}
-
-	@Override
 	public boolean deleteStudentInfo(String curStudentId) {
 		// TODO Auto-generated method stub
-
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(curStudentId)) {
 				studentList.remove(studentList.get(i));
@@ -92,9 +69,7 @@ public class StudentDaoImp implements StudentDao {
 		}
 		return true;
 	}
-
-	@Override
-	public Student selectOneStudent(String id) {
+	public static Student selectOneStudent(String id) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(id)) {
@@ -103,5 +78,5 @@ public class StudentDaoImp implements StudentDao {
 		}
 		return null;
 	}
-
+	
 }
