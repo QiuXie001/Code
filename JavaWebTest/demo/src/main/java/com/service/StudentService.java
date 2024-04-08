@@ -45,12 +45,12 @@ public class StudentService {
 		// TODO Auto-generated method stub
 		return studentList;
 	}
-    public boolean insertStudentInfo(Student curStudent) {
+    public static boolean insertStudentInfo(Student curStudent) {
 		// TODO Auto-generated method stub
 		studentList.add(curStudent);
 		return true;
 	}
-	public boolean updateStudentInfo(Student curStudent) {
+	public static boolean updateStudentInfo(Student curStudent) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(curStudent.getStuCode())) {
@@ -60,7 +60,7 @@ public class StudentService {
 		}
 		return true;
 	}
-	public boolean deleteStudentInfo(String curStudentId) {
+	public static boolean deleteStudentInfo(String curStudentId) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(curStudentId)) {
