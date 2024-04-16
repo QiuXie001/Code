@@ -22,6 +22,8 @@ public class StudentService {
 			curInfo1.put("sex", 1); // 0表示男，1表示女
 			curInfo1.put("belongClass", 8);
 			curInfo1.put("belongClassName", "8班");
+			curInfo1.put("telephone", "12345678901");
+			curInfo1.put("address", "中国");
 
 			Student tmp2 = new Student();
 			Map<String, Object> curInfo2 = new HashMap<String, Object>();
@@ -31,6 +33,8 @@ public class StudentService {
 			curInfo2.put("sex", 0); // 0表示男，1表示女
 			curInfo2.put("belongClass", 2);
 			curInfo2.put("belongClassName", "2班");
+			curInfo2.put("telephone", "12345670000");
+			curInfo2.put("address", "中国second");
 
 			BeanUtils.populate(tmp1, curInfo1);
 			BeanUtils.populate(tmp2, curInfo2);

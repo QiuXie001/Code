@@ -16,8 +16,8 @@
 </head>
 <body>
   <table border="1" width="75%">
-  <tr><td colspan="8" align="center"><b>学生管理系统</b></tr>
-  <tr><th>#</th><th>学号</th><th>姓名</th><th>性别</th><th>年龄</th><th>所在班级</th><th>操作</th></tr>
+  <tr><td colspan="9" align="center"><b>员工管理系统</b></tr>
+  <tr><th>#</th><th>学号</th><th>姓名</th><th>性别</th><th>年龄</th><th>所在班级</th><th>手机号</th><th>住址</th><th>操作</th></tr>
   <% 
 			out.println("<tr>");  
 			   for(int col = 1;col<= studentList.size();col++){
@@ -37,6 +37,8 @@
            out.print("<td>" + sex + "</td>"); 
            out.print("<td>" + student.getAge() + "</td>"); 
            out.print("<td>" + student.getBelongClassName() + "</td>"); 
+           out.print("<td>" + student.getTelephone() + "</td>"); 
+           out.print("<td>" + student.getAddress() + "</td>"); 
            out.println("<td><a href=\"demo/WorkManageServlet/update?id="+student.getStuCode()+"\">修改</a> <a href=\"demo/WorkManageServlet/delete?id="+student.getStuCode()+"\" onclick=\"return confirm('确定删除该学生吗')\">删除</a></td></tr>");
  		     }    
          out.println("<tr><td colspan=\"6\" align=\"center\"><a href=\"demo/WorkManageServlet/add\">添加员工</a> </td></tr>");     

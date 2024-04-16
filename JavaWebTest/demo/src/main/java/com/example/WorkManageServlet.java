@@ -4,8 +4,6 @@ import com.model.*;
 import com.model.Class;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -52,6 +50,8 @@ public class WorkManageServlet extends HttpServlet{
 				nowData.setStuName(request.getParameter("stuName"));
 				nowData.setAge(Integer.parseInt(request.getParameter("age")));
 				nowData.setSex(Integer.parseInt(request.getParameter("sex")));
+				nowData.setTelephone(request.getParameter("telephone"));
+				nowData.setAddress(request.getParameter("address"));
 
 				int curClassId = Integer.parseInt(request.getParameter("curClassId"));
 				nowData.setBelongClass(curClassId);
@@ -82,6 +82,8 @@ public class WorkManageServlet extends HttpServlet{
 				nowData.setStuName(request.getParameter("stuName"));
 				nowData.setAge(Integer.parseInt(request.getParameter("age")));
 				nowData.setSex(Integer.parseInt(request.getParameter("sex")));
+				nowData.setTelephone(request.getParameter("telephone"));
+				nowData.setAddress(request.getParameter("address"));
 
 				int curClassId = Integer.parseInt(request.getParameter("curClassId"));
 				nowData.setBelongClass(curClassId);

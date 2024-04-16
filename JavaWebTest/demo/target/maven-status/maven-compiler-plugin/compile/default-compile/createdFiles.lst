@@ -6,6 +6,7 @@ com\example\LoginServlet.class
 com\service\StudentService.class
 com\example\JspIncludeServlet.class
 com\example\GetRequestLineInfoServlet.class
+com\example\UrlRewriteServlet.class
 com\example\WorkManageServlet.class
 com\service\ClassService.class
 com\example\JspTestServlet.class

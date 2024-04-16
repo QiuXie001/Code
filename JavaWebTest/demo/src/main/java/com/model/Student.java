@@ -1,12 +1,17 @@
 package com.model;
 
+import java.util.Date;
+
 public class Student {
     private String stuCode; // 学号
 	private String stuName; // 姓名
 	private int age; // 年龄
 	private int sex; // 性别 0：男，1：女
+	private String telephone; // 电话
+	private Date birthday;// 出生日期
 	private int belongClass;// 所属班级
 	private String belongClassName;// 所属班级
+	private String address; // 住址
 
 	public String getStuCode() {
 		return stuCode;
@@ -22,6 +27,13 @@ public class Student {
 
 	public void setStuName(String stuName) {
 		this.stuName = stuName;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public int getAge() {
@@ -54,5 +66,18 @@ public class Student {
 
 	public void setBelongClassName(String belongClassName) {
 		this.belongClassName = belongClassName;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getAddress() {
+		return address;
 	}
 }
