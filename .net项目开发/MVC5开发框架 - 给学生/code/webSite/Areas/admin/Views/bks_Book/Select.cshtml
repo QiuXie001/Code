@@ -17,15 +17,37 @@
         $(function () {
             $("#container").pager();
         });
+        $(document).ready(function () {
+            //联动获取图书下拉框的值
+            $(".bookTypeCode,.Press").change(function () {
+                var bookTypeCode = $(".bookTypeCode").val();
+                var pressCode = $(".Press").val();
+                if (isNotNull(bookTypeCode) || isNotNull(pressCode)) {
+                    ajaxPost("/admin/bks_Book/getBookCodeDdl", { bookTypeCode: bookTypeCode, pressCode: pressCode }, function (data) {
+                        console.info(data.bookList);
+                        console.info(parseJSON(data.bookList));
+                        showJsonResult(data, function () {
+                            updateDdl($(".bookCodeDdl"), parseJSON(data.bookList), false);
+                        });
+                    })
+                }
+            })
+            //页面加载后代码触发图书类型的change事件
+            $(".bookTypeCode").trigger("change");
+        })
     </script>
 }
 @{ string ctrl = ViewContext.RouteData.Values["controller"].ToString(); }
 <div class="container" id="container" data-width="@Model.PageWidth" data-url="/admin/bks_Book/select">
     <div class="search">
-        <span>图书类型：@Html.TextBoxFor(a => a.bookTypeCode)</span>
-        <span>出版社：@Html.TextBoxFor(a => a.pressCode)</span>
+        @*<span>图书类型：@Html.DropDownListMulFor(a => a.bookTypeCode, db.bll.bks_bookType.bindDdl(true), new { @class = "inputSelect", style = "width:200px" })</span>*@
+        <span>图书类型：@Html.DropDownListFor(a => a.bookTypeCode, db.bll.bks_bookType.bindDdl(true), new { @class = "inputSelect bookTypeCode" })</span>
+        <span>出版社：@Html.DropDownListFor(a => a.pressCode, db.bll.bks_Press.bindDdl(true), new { @class = "Press" })</span>
+        <span>图书下拉框：@Html.DropDownListFor(a => a.bookCode, db.bll.bks_book.bindDdl(true),new { @class = "bookCodeDdl" })</span>
         <span>图书名称：@Html.TextBoxFor(a => a.bookName)</span>
         <span>出版日期：@Html.TextBoxDateFor(a => a.pressDateStart)~@Html.TextBoxDateFor(a => a.pressDateEnd)</span>
+        <span>是否在售：@Html.DropDownListFor(a => a.isSell, db.bll.bks_bookType.bindYesOrNot(true))</span>
+
     </div>
     <div class="toolbar">
         <a class="opSearch">查询</a>

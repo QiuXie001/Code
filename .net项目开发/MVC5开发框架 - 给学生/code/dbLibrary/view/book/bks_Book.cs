@@ -9,6 +9,7 @@ namespace db.view
     public class bks_Book : rui.pagerBase
     {
         //定义需要的搜索条件
+        public string bookCode { get; set; }
         public string bookTypeCode { get; set; }
         public string pressCode { get; set; }
         public string bookName { get; set; }
@@ -22,6 +23,7 @@ namespace db.view
 
             //拼接搜索语句,改这边，下面不需要修改
             string querySql = " select * from sv_bks_Book where 1=1 ";
+            querySql += rui.dbTools.searchDdl("bookCode", this.bookCode, this.cmdPara);
             querySql += rui.dbTools.searchDdl("bookTypeCode", this.bookTypeCode, this.cmdPara);
             querySql += rui.dbTools.searchDdl("pressCode", this.pressCode, this.cmdPara);
             querySql += rui.dbTools.searchTbx("bookName", this.bookName, this.cmdPara);

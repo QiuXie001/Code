@@ -83,7 +83,7 @@ namespace rui
         /// <param name="has请选择">是否包含请选择</param>
         /// <param name="values">多个值:合格,不合格</param>
         /// <param name="selectedValues">默认值</param>
-        private static List<SelectListItem> bindValues(string values, bool has请选择 = false, string selectedValues = "")
+        public static List<SelectListItem> bindValues(string values, bool has请选择 = false, string selectedValues = "")
         {
             List<SelectListItem> list = new List<SelectListItem>();
             rui.listHelper.add请选择(list, has请选择);

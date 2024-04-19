@@ -138,5 +138,22 @@ namespace web.Areas.admin.Controllers
             }
             return Json(result.data);
         }
+        //获取联动的图书列表
+        public JsonResult getBookCodeDdl(string bookTypeCode, string PressCode = "")
+        {
+            rui.jsonResult result = new rui.jsonResult();
+            try
+            {
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add("bookList", db.bll.bks_book.getJsonBookDdl(bookTypeCode, PressCode));
+                result.data = rui.jsonResult.getAJAXResult("获取成功", true, dic);
+            }
+            catch (Exception ex)
+            {
+                rui.logHelper.log(ex);
+                result.data = rui.jsonResult.getAJAXResult(ex.Message, false);
+            }
+            return Json(result.data);
+        }
     }
 }

@@ -76,3 +76,30 @@ E:\test\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\
 E:\test\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csproj.Up2Date
 E:\test\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.dll
 E:\test\MVC5开发框架 - 给学生(初始代码)\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ruiLibrary.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\BarcodeLib.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Gma.QrCodeNet.Encoding.Net35.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\IntelliLock.Licensing.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\itextsharp.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\LitJSON.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\NLog.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Dapper.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\Newtonsoft.Json.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.Mvc.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csproj.AssemblyReference.cache
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csproj.CoreCompileInputs.cache
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.csproj.Up2Date
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\ruiLibrary\obj\Debug\ruiLibrary.pdb

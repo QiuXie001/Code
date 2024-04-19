@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace db.bll
 {
@@ -194,6 +195,25 @@ namespace db.bll
                 }
             }
             return rui.dbTools.getBatchMsg("批量变更图书类型", KeyFieldList.Count, errorDic);
+        }
+        //返回出版社下拉框绑定项目
+        public static List<SelectListItem> bindDdl(bool has请选择 = false, string selectedValue = "", string bookTypeCode = "", string PressCode = "")
+        {
+            efHelper ef = new efHelper();
+            string sql = " SELECT bookCode AS code,bookName AS name FROM dbo.bks_Book where 1=1 ";
+            if (rui.typeHelper.isNotNullOrEmpty(bookTypeCode))
+                sql += " and bookTypeCode='" + bookTypeCode + "' "; 
+            if (rui.typeHelper.isNotNullOrEmpty(PressCode))
+                sql += " and PressCode='" + PressCode + "' ";
+            sql += " ORDER BY bookCode ASC ";
+            DataTable table = ef.ExecuteDataTable(sql);
+            List<SelectListItem> list = rui.listHelper.dataTableToDdlList(table, has请选择, selectedValue);
+            return list;
+        }
+        //获取联动的图书列表Json数据
+        public static string getJsonBookDdl(string bookTypeCode = "", string PressCode = "")
+        {
+            return rui.jsonResult.SelectListToJsonStr(bindDdl(false, "", bookTypeCode,PressCode));
         }
     }
 }
