@@ -1,4 +1,5 @@
 d:\Code\JavaWebTest\demo\src\main\java\com\model\Class.java
+d:\Code\JavaWebTest\demo\src\main\java\com\example\CheckServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\service\ClassService.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\LoginServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\IndexServlet.java
@@ -8,6 +9,7 @@ d:\Code\JavaWebTest\demo\src\main\java\com\example\WorkManageServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\JspForwardServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\model\Student.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\ReadServlet.java
+d:\Code\JavaWebTest\demo\src\main\java\com\example\UrlRewriteServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\JspTestServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\example\TestServlet.java
 d:\Code\JavaWebTest\demo\src\main\java\com\service\StudentService.java

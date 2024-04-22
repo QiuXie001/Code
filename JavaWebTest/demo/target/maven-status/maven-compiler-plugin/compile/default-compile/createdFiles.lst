@@ -1,6 +1,7 @@
 com\example\IndexServlet.class
 com\example\ReadServlet.class
 com\model\Student.class
+com\example\CheckServlet.class
 com\example\JspForwardServlet.class
 com\example\LoginServlet.class
 com\service\StudentService.class

@@ -59,6 +59,7 @@ public class LoginServlet extends HttpServlet {
         String username;
         String password;
         boolean LoginCheck = false;
+        boolean CodeCheck = false;
         boolean rememberPassword = false;
             // 获取表单提交的用户名和密码
         username = request.getParameter("name");
@@ -76,11 +77,14 @@ public class LoginServlet extends HttpServlet {
         // 获取配置文件中的值//xiexin//12021051010
         String UNameFrompProp = properties.getProperty("id");
         String PWDFromProp = properties.getProperty("password");
+        String checkCode = request.getParameter("check_code");                                       
+        String savedCode = (String) request.getSession().getAttribute("check_code");          
         // System.out.println(UNameFrompProp + "/" + PWDFromProp);
         // System.out.println(username + "/" + password);
 
-        if (UNameFrompProp.equals(username) && PWDFromProp.equals(password)) {
+        if (UNameFrompProp.equals(username) && PWDFromProp.equals(password)&& checkCode.equals(savedCode)) {
             LoginCheck = true;
+            CodeCheck = true;
             SuccessLogin = true;
             if (rememberPassword) {
                 Cookie usernameCookie = new Cookie("username", username);
@@ -102,9 +106,15 @@ public class LoginServlet extends HttpServlet {
                 response.addCookie(usernameCookie);
                 response.addCookie(passwordCookie);
             }
+        }else if (checkCode.equals(savedCode)) {                                                    
+            CodeCheck = true;
+            LoginCheck = false;                                                               
+        } else { 
+            LoginCheck = false;                                                                                    
+            CodeCheck = false;                                                                       
         }
 
-        if (LoginCheck) {
+        if (LoginCheck&&CodeCheck) {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
@@ -114,7 +124,7 @@ public class LoginServlet extends HttpServlet {
             out.println("</body></html>");
             response.setHeader("Refresh", "5;URL=/demo/WorkManage/shows");
         } 
-        else 
+        else if(CodeCheck)
         {
             HttpSession session = request.getSession();
             session.setAttribute("username","");
@@ -134,6 +144,16 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
             out.println("登陆失败！<br>");
             out.println("检查用户名或密码后重试！");
+            out.println("</body></html>");
+            response.setHeader("Refresh", "5;URL=/demo/LoginServlet");
+        }
+        else
+        {
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
+            out.println("登陆失败！<br>");
+            out.println("验证码错误！");
             out.println("</body></html>");
             response.setHeader("Refresh", "5;URL=/demo/LoginServlet");
         }
