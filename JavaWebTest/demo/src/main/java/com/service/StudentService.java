@@ -46,16 +46,13 @@ public class StudentService {
 		}
     }
     public static List<Student> getAllStudent() {
-		// TODO Auto-generated method stub
 		return studentList;
 	}
     public static boolean insertStudentInfo(Student curStudent) {
-		// TODO Auto-generated method stub
 		studentList.add(curStudent);
 		return true;
 	}
 	public static boolean updateStudentInfo(Student curStudent) {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(curStudent.getStuCode())) {
 				studentList.remove(studentList.get(i));
@@ -65,7 +62,6 @@ public class StudentService {
 		return true;
 	}
 	public static boolean deleteStudentInfo(String curStudentId) {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(curStudentId)) {
 				studentList.remove(studentList.get(i));
@@ -74,7 +70,6 @@ public class StudentService {
 		return true;
 	}
 	public static Student selectOneStudent(String id) {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < studentList.size(); i++) {
 			if (studentList.get(i).getStuCode().equals(id)) {
 				return studentList.get(i);

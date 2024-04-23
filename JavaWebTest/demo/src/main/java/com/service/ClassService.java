@@ -23,14 +23,12 @@ public class ClassService {
 
     // 获取所有班级信息
     public static List<Class> getAllClass() {
-		// TODO Auto-generated method stub
 
 		// 返回班级信息List
 		return list;
 	}
 	// 根据班级ID获取班级名称
     public static String getClassNameByClassId(int id) {
-		// TODO Auto-generated method stub
 		// 遍历班级信息List
 		for (int i = 0; i < list.size(); i++) {
 			// 如果班级ID与传入的ID相等
@@ -44,7 +42,6 @@ public class ClassService {
 	}
 	// 根据班级ID获取班级信息
     public static Class getOneClassById(int id) {
-		// TODO Auto-generated method stub
 		// 遍历班级信息List
 		for (int i = 0; i < list.size(); i++) {
 			// 如果班级ID与传入的ID相等
