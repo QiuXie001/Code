@@ -1,0 +1,16 @@
+2024-04-24 09:54:06.6740 Error 图书类型不能为空
+------------begin-------------
+   在 db.efHelper.checkNotNull(Object obj, String message) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\lib\db\efHelper.cs:行号 414
+   在 db.bll.bks_Book._checkInput(bks_Book entry) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\bll\book\bks_Book.cs:行号 48
+   在 db.bll.bks_Book.update(bks_Book entry, dbEntities dc) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\bll\book\bks_Book.cs:行号 82
+   在 web.Areas.admin.Controllers.bks_BookController.Update(bks_Book model) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\Areas\admin\Controllers\bks_BookController.cs:行号 221
+------------End-------------
+ 
+2024-04-24 11:31:24.0739 Error 图书类型不能为空
+------------begin-------------
+   在 db.efHelper.checkNotNull(Object obj, String message) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\lib\db\efHelper.cs:行号 414
+   在 db.bll.bks_Book._checkInput(bks_Book entry) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\bll\book\bks_Book.cs:行号 49
+   在 db.bll.bks_Book.update(bks_Book entry, dbEntities dc) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\dbLibrary\bll\book\bks_Book.cs:行号 87
+   在 web.Areas.admin.Controllers.bks_BookController.Update(bks_Book model) 位置 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\Areas\admin\Controllers\bks_BookController.cs:行号 221
+------------End-------------
+ 

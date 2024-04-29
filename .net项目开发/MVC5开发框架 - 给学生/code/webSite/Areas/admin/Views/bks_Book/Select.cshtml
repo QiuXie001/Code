@@ -41,12 +41,12 @@
 <div class="container" id="container" data-width="@Model.PageWidth" data-url="/admin/bks_Book/select">
     <div class="search">
         @*<span>图书类型：@Html.DropDownListMulFor(a => a.bookTypeCode, db.bll.bks_bookType.bindDdl(true), new { @class = "inputSelect", style = "width:200px" })</span>*@
-        <span>图书类型：@Html.DropDownListFor(a => a.bookTypeCode, db.bll.bks_bookType.bindDdl(true), new { @class = "inputSelect bookTypeCode" })</span>
+        <span>图书类型：@Html.DropDownListFor(a => a.bookTypeCode, db.bll.bks_Book.bindDdl(true), new { @class = "inputSelect bookTypeCode" })</span>
         <span>出版社：@Html.DropDownListFor(a => a.pressCode, db.bll.bks_Press.bindDdl(true), new { @class = "Press" })</span>
-        <span>图书下拉框：@Html.DropDownListFor(a => a.bookCode, db.bll.bks_book.bindDdl(true),new { @class = "bookCodeDdl" })</span>
+        <span>图书下拉框：@Html.DropDownListFor(a => a.bookCode, db.bll.bks_Book.bindDdl(true),new { @class = "bookCodeDdl" })</span>
         <span>图书名称：@Html.TextBoxFor(a => a.bookName)</span>
         <span>出版日期：@Html.TextBoxDateFor(a => a.pressDateStart)~@Html.TextBoxDateFor(a => a.pressDateEnd)</span>
-        <span>是否在售：@Html.DropDownListFor(a => a.isSell, db.bll.bks_bookType.bindYesOrNot(true))</span>
+        <span>是否在售：@Html.DropDownListFor(a => a.isSell, db.bll.bks_Book.bindYesOrNot(true))</span>
 
     </div>
     <div class="toolbar">

@@ -142,8 +142,9 @@
     <Compile Include="bll\audit\af_AuditNode.cs" />
     <Compile Include="bll\audit\af_AuditType.cs" />
     <Compile Include="bll\audit\af_NodeRelation.cs" />
-    <Compile Include="bll\book\bks_book.cs" />
-    <Compile Include="bll\book\bks_bookType.cs" />
+    <Compile Include="bll\book\bks_Book.cs" />
+    <Compile Include="bll\book\bks_BookStock.cs" />
+    <Compile Include="bll\book\bks_BookType.cs" />
     <Compile Include="bll\book\bks_Press.cs" />
     <Compile Include="bll\rbac\rbac_DataPriv.cs" />
     <Compile Include="bll\rbac\rbac_Module.cs" />
@@ -182,6 +183,7 @@
     </Compile>
     <Compile Include="lib\db\ruiDbContext.cs" />
     <Compile Include="lib\db\efHelper.cs" />
+    <Compile Include="meta\book\bks_Book.cs" />
     <Compile Include="prj\appReturnResult.cs" />
     <Compile Include="prj\dataCheck.cs" />
     <Compile Include="prj\enumHelperPrj.cs" />
@@ -315,6 +317,7 @@
     <Compile Include="view\audit\af_AuditType.cs" />
     <Compile Include="view\audit\af_SelectAuditFlow.cs" />
     <Compile Include="view\book\bks_Book.cs" />
+    <Compile Include="view\book\bks_BookStock.cs" />
     <Compile Include="view\book\bks_BookType.cs" />
     <Compile Include="view\book\bks_Press.cs" />
     <Compile Include="view\book\bks_Supplier.cs" />

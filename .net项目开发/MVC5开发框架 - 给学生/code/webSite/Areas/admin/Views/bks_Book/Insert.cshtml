@@ -1,0 +1,155 @@
+﻿@model db.bks_Book
+
+@{
+	ViewBag.Title = "Insert";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+	@Html.ValidationSummary(true)
+    
+	<div class="dialog">
+        <div class="editor-label">
+			@Html.LabelFor(model => model.bookCode)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.bookCode)
+			@Html.ValidationMessageFor(model => model.bookCode)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.bookName)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.bookName)
+			@Html.ValidationMessageFor(model => model.bookName)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.isbnNO)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.isbnNO)
+			@Html.ValidationMessageFor(model => model.isbnNO)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.price)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.price)
+			@Html.ValidationMessageFor(model => model.price)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.authorName)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.authorName)
+			@Html.ValidationMessageFor(model => model.authorName)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.authorIntroduce)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.authorIntroduce)
+			@Html.ValidationMessageFor(model => model.authorIntroduce)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.bookIntroduce)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.bookIntroduce)
+			@Html.ValidationMessageFor(model => model.bookIntroduce)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.bookDirectory)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.bookDirectory)
+			@Html.ValidationMessageFor(model => model.bookDirectory)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.bookTypeCode)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.bookTypeCode)
+			@Html.ValidationMessageFor(model => model.bookTypeCode)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.pressCode)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.pressCode)
+			@Html.ValidationMessageFor(model => model.pressCode)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.pressDate)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.pressDate)
+			@Html.ValidationMessageFor(model => model.pressDate)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.release)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.release)
+			@Html.ValidationMessageFor(model => model.release)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.surfacePic)
+		</div>
+        <div class="editor-field"  style="height:170px">
+            <img src="@Model.surfacePic" style="height:150px">
+            @Html.HiddenFor(a => a.surfacePic)
+			<input type="file" name="surfacePicCtl">
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.isSell)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.isSell)
+			@Html.ValidationMessageFor(model => model.isSell)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.stockSum)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.stockSum)
+			@Html.ValidationMessageFor(model => model.stockSum)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.sellSum)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.sellSum)
+			@Html.ValidationMessageFor(model => model.sellSum)
+        </div>
+
+        <div class="editor-label">
+			@Html.LabelFor(model => model.remark)
+		</div>
+		<div class="editor-field">	
+			@Html.EditorFor(model => model.remark)
+			@Html.ValidationMessageFor(model => model.remark)
+        </div>
+
+        <p class="button">
+            <a class="billSave opSave" data-close="true">保存</a>
+            <a class="opClose">关闭</a>
+        </p>
+    </div>
+}

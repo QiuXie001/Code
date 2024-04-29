@@ -30,7 +30,7 @@ namespace web.Areas.admin.Controllers
             rui.jsonResult result = new rui.jsonResult();
             try
             {
-                string msg = db.bll.bks_book.Sell(bookCode, dc);
+                string msg = db.bll.bks_Book.Sell(bookCode, dc);
                 result.data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace web.Areas.admin.Controllers
             rui.jsonResult result = new rui.jsonResult();
             try
             {
-                string msg = db.bll.bks_book.NoSell(bookCode, dc);
+                string msg = db.bll.bks_Book.NoSell(bookCode, dc);
                 result.data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace web.Areas.admin.Controllers
                 List<string> bookCodeList = rui.requestHelper.getList("detail.bookCode");
                 List<string> priceList = rui.requestHelper.getList("detail.price");
                 //将获取数据传给业务类
-                string msg = db.bll.bks_book.batchSave(bookCodeList, priceList, dc);
+                string msg = db.bll.bks_Book.batchSave(bookCodeList, priceList, dc);
                 result.Data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -92,7 +92,7 @@ namespace web.Areas.admin.Controllers
             rui.jsonResult result = new rui.jsonResult();
             try
             {
-                string msg = db.bll.bks_book.batchSell(keyFieldValues, dc);
+                string msg = db.bll.bks_Book.batchSell(keyFieldValues, dc);
                 result.data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace web.Areas.admin.Controllers
             rui.jsonResult result = new rui.jsonResult();
             try
             {
-                string msg = db.bll.bks_book.batchNoSell(keyFieldValues, dc);
+                string msg = db.bll.bks_Book.batchNoSell(keyFieldValues, dc);
                 result.data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace web.Areas.admin.Controllers
             rui.jsonResult result = new rui.jsonResult();
             try
             {
-                string msg = db.bll.bks_book.batchChangeBookType(keyFieldValues, bookTypeCode, dc);
+                string msg = db.bll.bks_Book.batchChangeBookType(keyFieldValues, bookTypeCode, dc);
                 result.data = rui.jsonResult.getAJAXResult(msg, true);
             }
             catch (Exception ex)
@@ -145,7 +145,7 @@ namespace web.Areas.admin.Controllers
             try
             {
                 Dictionary<string, string> dic = new Dictionary<string, string>();
-                dic.Add("bookList", db.bll.bks_book.getJsonBookDdl(bookTypeCode, PressCode));
+                dic.Add("bookList", db.bll.bks_Book.getJsonBookDdl(bookTypeCode, PressCode));
                 result.data = rui.jsonResult.getAJAXResult("获取成功", true, dic);
             }
             catch (Exception ex)
@@ -154,6 +154,103 @@ namespace web.Areas.admin.Controllers
                 result.data = rui.jsonResult.getAJAXResult(ex.Message, false);
             }
             return Json(result.data);
+        }
+
+        //详情
+        public ActionResult Detail(string rowID)
+        {
+            db.bks_Book model = db.bll.bks_Book.getEntryByRowID(rowID, dc);
+            model.bookTypeCode = bks_BookType.getNameByCode(model.bookTypeCode, dc);
+            model.pressCode = bks_Press.getNameByCode(model.pressCode, dc);
+            return View(model);
+        }
+
+        //展示新增
+        [HttpGet]
+        public ActionResult Insert()
+        {
+            db.bks_Book model = new db.bks_Book();
+            return View(model);
+        }
+
+        //保存新增
+        [HttpPost]
+        public JsonResult Insert(db.bks_Book model)
+        {
+            JsonResult result = new JsonResult();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string rowID = db.bll.bks_Book.insert(model, dc);
+                    result.Data = rui.jsonResult.getAJAXResult("新增成功", true,
+                        rui.jsonResult.getDicByRowID(rowID));
+                }
+                else
+                {
+                    result.Data = rui.jsonResult.getAJAXResult("输入不合法", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                rui.logHelper.log(ex);
+                result.Data = rui.jsonResult.getAJAXResult(ex.Message, false);
+            }
+            return result;
+        }
+
+        //展示更新
+        [HttpGet]
+        public ActionResult Update(string rowID)
+        {
+            db.bks_Book model = db.bll.bks_Book.getEntryByRowID(rowID, dc);
+            model.bookTypeCode = bks_BookType.getNameByCode(model.bookTypeCode, dc);
+            model.pressCode = bks_Press.getNameByCode(model.pressCode, dc);
+            return View(model);
+        }
+
+        //保存更新
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Update(db.bks_Book model)
+        {
+            JsonResult result = new JsonResult();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.bll.bks_Book.update(model, dc);
+                    result.Data = rui.jsonResult.getAJAXResult("更新成功", true);
+                }
+                else
+                {
+                    result.Data = rui.jsonResult.getAJAXResult("输入不合法", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                rui.logHelper.log(ex);
+                result.Data = rui.jsonResult.getAJAXResult(ex.Message, false);
+            }
+            return result;
+        }
+
+        //删除
+        [HttpPost]
+        public JsonResult Delete(string rowID)
+        {
+            JsonResult result = new JsonResult();
+            try
+            {
+                db.bll.bks_Book.delete(rowID, dc);
+                result.Data = rui.jsonResult.getAJAXResult("删除成功", true);
+            }
+            catch (Exception ex)
+            {
+                rui.logHelper.log(ex);
+                result.Data = rui.jsonResult.getAJAXResult(ex.Message, false);
+            }
+            return result;
         }
     }
 }

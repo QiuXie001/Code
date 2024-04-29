@@ -405,6 +405,13 @@ namespace db
             value = value.Replace("-", "");
             return value;
         }
+        public static void checkNotNull(Object obj, String message)
+        {
+            if (obj == null)
+            {
+                throw new Exception(message + "不能为空");
+            }
+        }
 
     }
 }

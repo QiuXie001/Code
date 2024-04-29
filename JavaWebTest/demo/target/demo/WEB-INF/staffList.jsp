@@ -15,6 +15,9 @@
 <title>员工列表</title>
 </head>
 <body>
+<h1>欢迎您，<%= session.getAttribute("username") %></h1>
+<p>当前系统在线人数：<%= application.getAttribute("onlineUserCount") %>人</p>
+  <a href="/demo/LogoutServlet">退出</a>
   <table border="1" width="75%">
   <tr><td colspan="9" align="center"><b>员工管理系统</b></tr>
   <tr><th>#</th><th>学号</th><th>姓名</th><th>性别</th><th>年龄</th><th>所在班级</th><th>手机号</th><th>住址</th><th>操作</th></tr>

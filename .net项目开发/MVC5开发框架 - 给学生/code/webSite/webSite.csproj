@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -23,6 +24,8 @@
     <Use64BitIISExpress />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,11 +50,10 @@
       <HintPath>..\packages\Dapper.1.50.0\lib\net45\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="IntelliLock.Licensing">
       <HintPath>..\packages\_dll\IntelliLock.Licensing.dll</HintPath>
@@ -127,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Views\bks_BookStock\" />
     <Folder Include="Content\images\source\" />
     <Folder Include="Models\" />
     <Folder Include="uEditor\net\upload\image\" />
@@ -145,8 +148,10 @@
     <Compile Include="Areas\admin\Controllers\af_AuditFlowController.cs" />
     <Compile Include="Areas\admin\Controllers\af_AuditTypeController.cs" />
     <Compile Include="Areas\admin\Controllers\bks_BookController.cs" />
+    <Compile Include="Areas\admin\Controllers\bks_BookStockController.cs" />
     <Compile Include="Areas\admin\Controllers\bks_BookTypeController.cs" />
     <Compile Include="Areas\admin\Controllers\bks_PressController.cs" />
+    <Compile Include="Areas\admin\Controllers\bks_SupplierController.cs" />
     <Compile Include="Areas\admin\Controllers\rbac_ModuleController.cs" />
     <Compile Include="Areas\admin\Controllers\rbac_ResourceController.cs" />
     <Compile Include="Areas\admin\Controllers\rbac_ResourceOpController.cs" />
@@ -792,6 +797,17 @@
     <Content Include="Areas\admin\Views\bks_BookType\Select.cshtml" />
     <Content Include="Areas\admin\Views\bks_Press\Select.cshtml" />
     <Content Include="Areas\admin\Views\bks_Book\_ShowData.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Book\Update.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Book\Detail.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Book\Insert.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Supplier\Select.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Press\Insert.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Press\Detail.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Press\Update.cshtml" />
+    <Content Include="Areas\admin\Views\bks_BookType\Detail.cshtml" />
+    <Content Include="Areas\admin\Views\bks_BookType\Insert.cshtml" />
+    <Content Include="Areas\admin\Views\bks_BookType\Update.cshtml" />
+    <Content Include="Areas\admin\Views\bks_Press\_ShowData.cshtml" />
     <Content Include="Areas\admin\Views\bks_BookType\_ShowData.cshtml" />
     <None Include="Content\scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Content\scripts\jquery-1.12.4.js" />
@@ -1489,6 +1505,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

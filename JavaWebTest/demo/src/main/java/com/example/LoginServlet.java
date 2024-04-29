@@ -82,10 +82,13 @@ public class LoginServlet extends HttpServlet {
         // System.out.println(UNameFrompProp + "/" + PWDFromProp);
         // System.out.println(username + "/" + password);
 
-        if (UNameFrompProp.equals(username) && PWDFromProp.equals(password)&& checkCode.equals(savedCode)) {
+        if (username.equals(UNameFrompProp) && password.equals(PWDFromProp)&& checkCode.equals(savedCode)) {
             LoginCheck = true;
             CodeCheck = true;
             SuccessLogin = true;
+            HttpSession session = request.getSession();
+            session.setAttribute("LoginState","true");
+            session.setAttribute("username",username);
             if (rememberPassword) {
                 Cookie usernameCookie = new Cookie("username", username);
                 Cookie passwordCookie = new Cookie("password", password);
@@ -96,8 +99,6 @@ public class LoginServlet extends HttpServlet {
             }
             else
             {
-                HttpSession session = request.getSession();
-                session.setAttribute("username","");
                 session.setAttribute("password","");
                 Cookie usernameCookie = new Cookie("username", "");
                 Cookie passwordCookie = new Cookie("password", "");
@@ -115,7 +116,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         if (LoginCheck&&CodeCheck) {
-            response.setContentType("text/html;charset=UTF-8");
+            
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
             out.println("登陆成功！<br>");
@@ -139,7 +140,6 @@ public class LoginServlet extends HttpServlet {
             passwordCookie.setPath("/");
             response.addCookie(passwordCookie);
 
-            response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
             out.println("登陆失败！<br>");
@@ -149,7 +149,6 @@ public class LoginServlet extends HttpServlet {
         }
         else
         {
-            response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html><html><head><title>Login</title></head><body>");
             out.println("登陆失败！<br>");

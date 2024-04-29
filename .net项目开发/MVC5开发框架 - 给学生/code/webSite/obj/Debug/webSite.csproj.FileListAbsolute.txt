@@ -138,7 +138,6 @@ D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\Dapper.xm
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\EntityFramework.xml
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\System.Web.Mvc.xml
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\System.Web.Optimization.xml
-D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\zh-Hans\EntityFramework.resources.dll
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\zh-Hans\System.Web.Optimization.resources.dll
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\obj\Debug\webSite.csproj.AssemblyReference.cache
@@ -146,3 +145,5 @@ D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\obj\Debug\web
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\obj\Debug\webSite.csproj.Up2Date
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\obj\Debug\webSite.dll
 D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\obj\Debug\webSite.pdb
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\EntityFramework.SqlServer.dll
+D:\Code\.net项目开发\MVC5开发框架 - 给学生\code\WebSite\bin\EntityFramework.SqlServer.xml

@@ -37,14 +37,7 @@
                             @Html.ActionLink("详情", "Detail", new { rowID = rowID }, new { data_show = rui.privCtl.isPriv(ctrl, rui.privCtl.eOp.Detail), @class = "showDialog", })
                             @Html.ActionLink("修改", "Update", new { rowID = rowID }, new { data_show = rui.privCtl.isPriv(ctrl, rui.privCtl.eOp.Update), @class = "showDialogR" })
                             @Html.ActionLink("删除", "Delete", new { rowID = rowID }, new { data_show = rui.privCtl.isPriv(ctrl, rui.privCtl.eOp.Delete), @class = "listDelete" })
-                        </td>
-                    }
-                    else if(colName == "showOrder")
-                    {
-                        <td>
-                            @Html.Hidden("detail.bookTypeCode",bookTypeCode)
-                            @Html.TextBox("detail.showOrder", Model.dataTable.Rows[i]["showOrder"],new { style="width:45px"})
-                        </td>
+                            </td>
                     }
                     else
                     {
