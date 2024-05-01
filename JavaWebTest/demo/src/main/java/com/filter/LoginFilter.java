@@ -15,7 +15,7 @@ public class LoginFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        excludedPage = "/demo/LoginServlet,/demo/CheckServlet";// 此处的ignores就是在web.xml定义的名称一样。
+        excludedPage = "/demo/LoginServlet,/demo/CheckServlet,/demo/LogoutServlet,/demo/logout.jsp";// 此处的ignores就是在web.xml定义的名称一样。
         if (excludedPage != null && excludedPage != "") {
             excludedPages = excludedPage.split(",");
         }
@@ -28,12 +28,13 @@ public class LoginFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession();
         boolean flag = false;
-        if (httpRequest.getRequestURI().equals(excludedPages[0]) && session.getAttribute("LoginState") != null) {
+        if (httpRequest.getRequestURI().equals("/demo/LoginServlet") && session.getAttribute("LoginState") != null) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/WorkManage/shows");
         } 
-        else {
+        else 
+        {
             for (String page : excludedPages) {
-                if (httpRequest.getRequestURI().equals(page)) {
+                if (httpRequest.getRequestURI().contains(page)) {
                     flag = true;
                 }
             }
@@ -41,9 +42,8 @@ public class LoginFilter implements Filter {
                 chain.doFilter(request, response);
             } else {
 
-                String username = (String) session.getAttribute("username");
                 String LoginState = (String) session.getAttribute("LoginState");
-                if (username == null || username == "" || LoginState == null) {
+                if (LoginState == null) {
                     // 用户未登录，重定向到登录页面
                     httpResponse.sendRedirect(httpRequest.getContextPath() + "/LoginServlet");
                 } else {

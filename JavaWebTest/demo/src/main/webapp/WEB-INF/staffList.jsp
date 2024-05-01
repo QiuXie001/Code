@@ -42,9 +42,9 @@
            out.print("<td>" + student.getBelongClassName() + "</td>"); 
            out.print("<td>" + student.getTelephone() + "</td>"); 
            out.print("<td>" + student.getAddress() + "</td>"); 
-           out.println("<td><a href=\"demo/WorkManageServlet/update?id="+student.getStuCode()+"\">修改</a> <a href=\"demo/WorkManageServlet/delete?id="+student.getStuCode()+"\" onclick=\"return confirm('确定删除该学生吗')\">删除</a></td></tr>");
+           out.println("<td><a href=\"/demo/WorkManageServlet/update?id="+student.getStuCode()+"\">修改</a> <a href=\"/demo/WorkManageServlet/delete?id="+student.getStuCode()+"\" onclick=\"return confirm('确定删除该学生吗')\">删除</a></td></tr>");
  		     }    
-         out.println("<tr><td colspan=\"6\" align=\"center\"><a href=\"demo/WorkManageServlet/add\">添加员工</a> </td></tr>");     
+         out.println("<tr><td colspan=\"6\" align=\"center\"><a href=\"/demo/WorkManageServlet/add\">添加员工</a> </td></tr>");     
      
 		%>
   

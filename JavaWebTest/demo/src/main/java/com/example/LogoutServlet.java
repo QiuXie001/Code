@@ -16,11 +16,6 @@ public class LogoutServlet extends HttpServlet{
             throws ServletException, IOException {
 
                 HttpSession session = request.getSession();
-                session.setAttribute("username","");
-                session.setAttribute("password","");
-                session.setAttribute("LoginState",null);
                 session.invalidate();
-                request.getRequestDispatcher("/WEB-INF/logout.jsp").forward(request, response);
-		
     }
 }
