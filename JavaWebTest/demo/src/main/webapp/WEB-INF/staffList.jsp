@@ -4,7 +4,6 @@
 <jsp:directive.page import="java.util.List" />
 
 <%
-
     List<com.model.Student> studentList = (List<com.model.Student>)request.getAttribute("studentList");
 %>
 

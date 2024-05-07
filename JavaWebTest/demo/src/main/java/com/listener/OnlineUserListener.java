@@ -13,7 +13,7 @@ public class OnlineUserListener implements HttpSessionListener {
 
     //当一个用户打开网站的时候开启创建session执行的方法
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
-       System.out.println("=====有一位用户上线了=====");
+       System.out.println("=====login=====");
        System.out.println("Id: "+httpSessionEvent.getSession().getId()+"=====");
        
        OnlineUserListener.onlineUserCount++;
@@ -24,7 +24,7 @@ public class OnlineUserListener implements HttpSessionListener {
     }
    //关闭网站的时候销毁session执行的的方法
    public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
-       System.out.println("=====用户下线了=====");
+       System.out.println("=====logout=====");
        System.out.println("Id: "+httpSessionEvent.getSession().getId()+"=====");
        
        
