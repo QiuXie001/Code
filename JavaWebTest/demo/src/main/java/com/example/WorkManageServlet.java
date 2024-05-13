@@ -25,7 +25,7 @@ public class WorkManageServlet extends HttpServlet{
         String uri = request.getRequestURI();
 		if (uri.endsWith("/shows")) 
 		{
-			List<Student> curList = com.service.StudentService.getAllStudent();
+			List<Student> curList = com.service.StudentService.getAllStudents();
 			request.setAttribute("studentList", curList);
 			request.getRequestDispatcher("/WEB-INF/staffList.jsp").forward(request, response);
 		}
@@ -60,7 +60,7 @@ public class WorkManageServlet extends HttpServlet{
 				String curClassName = com.service.ClassService.getClassNameByClassId(curClassId);
 				nowData.setBelongClassName(curClassName);
 
-				com.service.StudentService.updateStudentInfo(nowData);
+				com.service.StudentService.updateStudent(nowData);
 				response.sendRedirect("/demo/WorkManage/shows");
 
 			}
@@ -90,7 +90,7 @@ public class WorkManageServlet extends HttpServlet{
 				String curClassName = com.service.ClassService.getClassNameByClassId(curClassId);
 				nowData.setBelongClassName(curClassName);
 
-				com.service.StudentService.insertStudentInfo(nowData);
+				com.service.StudentService.insertStudent(nowData);
 				response.sendRedirect("/demo/WorkManage/shows");
 			}
     	}
@@ -99,7 +99,7 @@ public class WorkManageServlet extends HttpServlet{
 		{
 			String id = request.getParameter("id");
 
-			com.service.StudentService.deleteStudentInfo(id);
+			com.service.StudentService.deleteStudent(id);
 			response.sendRedirect("/demo/WorkManage/shows");
 
 		}

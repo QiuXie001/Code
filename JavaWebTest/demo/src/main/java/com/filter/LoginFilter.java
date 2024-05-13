@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class LoginFilter implements Filter {
     private String excludedPage;
     private String[] excludedPages;
@@ -24,15 +24,15 @@ public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
+
+        chain.doFilter(request, response);
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession();
         boolean flag = false;
         if (httpRequest.getRequestURI().equals("/demo/LoginServlet") && session.getAttribute("LoginState") != null) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/WorkManage/shows");
-        } 
-        else 
-        {
+        } else {
             for (String page : excludedPages) {
                 if (httpRequest.getRequestURI().contains(page)) {
                     flag = true;

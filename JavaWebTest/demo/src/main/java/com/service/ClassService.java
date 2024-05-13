@@ -1,29 +1,58 @@
 package com.service;
 
 import com.model.Class;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClassService {
     // 创建一个List来存储班级信息
     public static List<Class> list = new ArrayList<Class>();
+    private static final String URL = "jdbc:mysql://110.40.171.227:3306/studentmanage";
+	private static final String USER = "root";
+	private static final String PASSWORD = "root";
+    
+    private static final String SELECT_ALL_CLASSES_SQL = "SELECT classId, className FROM Class";
+    
 	// 静态初始化块，用于初始化List
-	static {
-		// 循环创建从1到8的班级信息
-		for (int i = 1; i <= 8; i++) {
-			Class tmp = new Class();
-			// 设置班级ID
-			tmp.setClassId(i);
-			// 设置班级名称
-			tmp.setClassName(i + "班");
-			// 将班级信息添加到List中
-			list.add(tmp);
-		}
-	}
+    public static void InitClassList() {
+        List<Class> list = new ArrayList<>();
+        try {
+            // 加载驱动
+            java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
+            // 建立连接
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			
+            // 创建PreparedStatement
+            PreparedStatement stmt = conn.prepareStatement(SELECT_ALL_CLASSES_SQL);
+
+            // 执行查询
+            ResultSet rs = stmt.executeQuery();
+            list.clear();
+            // 处理结果
+            while (rs.next()) {
+                Class tmp = new Class();
+                tmp.setClassId(rs.getInt("classId"));
+                tmp.setClassName(rs.getString("className"));
+                list.add(tmp);
+            }
+
+            // 关闭资源
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     // 获取所有班级信息
     public static List<Class> getAllClass() {
-
+		InitClassList();
 		// 返回班级信息List
 		return list;
 	}

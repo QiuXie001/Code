@@ -1,81 +1,122 @@
 package com.service;
 
-import com.model.*;
-import com.model.Class;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.*;
-
-import org.apache.commons.beanutils.BeanUtils;
-
+import com.model.Student;
 
 public class StudentService {
-    Student Stu = new Student();
-    Class Class = new Class();
-    public static List<Student> studentList = new ArrayList<Student>();
-    static {
+	private static final String URL = "jdbc:mysql://110.40.171.227:3306/studentmanage";
+	private static final String USER = "root";
+	private static final String PASSWORD = "root";
+	private static final String INSERT_STUDENT_SQL = "INSERT INTO Student (stuCode, stuName, age, sex, belongClass, belongClassName, telephone, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_CLASSES_SQL = "SELECT * FROM Student";
+    private static final String UPDATE_STUDENT_SQL = "UPDATE Student SET stuName = ?, age = ?, sex = ?, belongClass = ?, belongClassName = ?, telephone = ?, address = ? WHERE stuCode = ?";
+    private static final String DELETE_STUDENT_SQL = "DELETE FROM Student WHERE stuCode = ?";
+
+	static List<Student> students = new ArrayList<>();
+
+	public static List<Student> getAllStudents() {
 		try {
-			Student tmp1 = new Student();
-			Map<String, Object> curInfo1 = new HashMap<String, Object>();
-			curInfo1.put("stuCode", "10001");
-			curInfo1.put("stuName", "王小亮");
-			curInfo1.put("age", 19);
-			curInfo1.put("sex", 1); // 0表示男，1表示女
-			curInfo1.put("belongClass", 8);
-			curInfo1.put("belongClassName", "8班");
-			curInfo1.put("telephone", "12345678901");
-			curInfo1.put("address", "中国");
-
-			Student tmp2 = new Student();
-			Map<String, Object> curInfo2 = new HashMap<String, Object>();
-			curInfo2.put("stuCode", "10002");
-			curInfo2.put("stuName", "李小明");
-			curInfo2.put("age", 20);
-			curInfo2.put("sex", 0); // 0表示男，1表示女
-			curInfo2.put("belongClass", 2);
-			curInfo2.put("belongClassName", "2班");
-			curInfo2.put("telephone", "12345670000");
-			curInfo2.put("address", "中国second");
-
-			BeanUtils.populate(tmp1, curInfo1);
-			BeanUtils.populate(tmp2, curInfo2);
-
-			studentList.add(tmp1);
-			studentList.add(tmp2);
+			java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement stmt = conn.prepareStatement(SELECT_ALL_CLASSES_SQL);
+			ResultSet rs = stmt.executeQuery();
+			students.clear();
+			while (rs.next()) {
+				Student student = new Student();
+				student.setStuCode(rs.getString("stuCode"));
+				student.setStuName(rs.getString("stuName"));
+				student.setAge(rs.getInt("age"));
+				student.setSex(rs.getInt("sex"));
+				student.setBelongClass(rs.getInt("belongClass"));
+				student.setBelongClassName(rs.getString("belongClassName"));
+				student.setTelephone(rs.getString("telephone"));
+				student.setAddress(rs.getString("address"));
+				students.add(student);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-    }
-    public static List<Student> getAllStudent() {
-		return studentList;
+		return students;
 	}
-    public static boolean insertStudentInfo(Student curStudent) {
-		studentList.add(curStudent);
-		return true;
-	}
-	public static boolean updateStudentInfo(Student curStudent) {
-		for (int i = 0; i < studentList.size(); i++) {
-			if (studentList.get(i).getStuCode().equals(curStudent.getStuCode())) {
-				studentList.remove(studentList.get(i));
-				studentList.add(curStudent);
-			}
+
+	public static boolean insertStudent(Student student) {
+		try {
+			
+            java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement stmt = conn.prepareStatement(INSERT_STUDENT_SQL);
+			stmt.setString(1, student.getStuCode());
+			stmt.setString(2, student.getStuName());
+			stmt.setInt(3, student.getAge());
+			stmt.setInt(4, student.getSex());
+			stmt.setInt(5, student.getBelongClass());
+			stmt.setString(6, student.getBelongClassName());
+			stmt.setString(7, student.getTelephone());
+			stmt.setString(8, student.getAddress());
+			int rowsInserted = stmt.executeUpdate();
+			stmt.close();
+			conn.close();
+			return rowsInserted > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-		return true;
 	}
-	public static boolean deleteStudentInfo(String curStudentId) {
-		for (int i = 0; i < studentList.size(); i++) {
-			if (studentList.get(i).getStuCode().equals(curStudentId)) {
-				studentList.remove(studentList.get(i));
-			}
+
+	public static boolean updateStudent(Student student) {
+		try {
+			java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement stmt = conn.prepareStatement(UPDATE_STUDENT_SQL);
+			stmt.setString(1, student.getStuName());
+			stmt.setInt(2, student.getAge());
+			stmt.setInt(3, student.getSex());
+			stmt.setInt(4, student.getBelongClass());
+			stmt.setString(5, student.getBelongClassName());
+			stmt.setString(6, student.getTelephone());
+			stmt.setString(7, student.getAddress());
+			stmt.setString(8, student.getStuCode());
+			int rowsUpdated = stmt.executeUpdate();
+			stmt.close();
+			conn.close();
+			return rowsUpdated > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-		return true;
 	}
+
+	public static boolean deleteStudent(String stuCode) {
+		try {
+			java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement stmt = conn.prepareStatement(DELETE_STUDENT_SQL);
+			stmt.setString(1, stuCode);
+			int rowsDeleted = stmt.executeUpdate();
+			stmt.close();
+			conn.close();
+			return rowsDeleted > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 	public static Student selectOneStudent(String id) {
-		for (int i = 0; i < studentList.size(); i++) {
-			if (studentList.get(i).getStuCode().equals(id)) {
-				return studentList.get(i);
+		for (int i = 0; i < students.size(); i++) {
+			if (students.get(i).getStuCode().equals(id)) {
+				return students.get(i);
 			}
 		}
 		return null;
 	}
-	
 }
